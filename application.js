@@ -7,4 +7,10 @@ $(document).ready(function() {
 
 	// Initialize dropdowns
 	$('select').material_select();
+
+	// Submit form button
+	$('#submit-button').click(function(event) {
+		event.preventDefault();
+		window.location = "confirmation.html";
+	});
 });

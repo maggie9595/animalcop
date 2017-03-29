@@ -21,7 +21,7 @@
 			<nav class="indigo darken-2"> 
 				<div class="container">
 					<div class="nav-wrapper grey lighten-2">
-						<a href="index.html" class="brand-logo ">Report Animal Neglect and Cruelty</a>
+						<a href="index.html" class="brand-logo">Report Animal Neglect and Cruelty</a>
 						<ul class="right side-nav" id="nav-mobile">
 				         	<li class="hide-on-small-only"><a href="parallax.html"><i class="mdi-navigation-arrow-back"></i></a></li>
 				        </ul>
@@ -81,12 +81,14 @@
 								<label for="address">Location of incident (required)</label>
 							</div>
 						</div>
+
 						<div class="row">
 							<div class="input-field col s8">
 								<input placeholder="xxx-xxx-xxxx" id="callback_number" type="text">
 								<label for="callback_number">Callback number (optional)</label>
 							</div>
 						</div>
+
 						<div class="row margin-top-40">
 							<div class="input-field col s3">
 								<input placeholder="Select date" id="date" type="date" class="datepicker">
@@ -105,7 +107,122 @@
 					  	<input type="checkbox" id="ongoing" />
       					<label for="ongoing">This is an ongoing incident</label>
 
+      					<div class="row margin-top-30">
+							<div class="input-field col s8">
+								<input placeholder="Name" id="owner_name" type="text">
+								<label for="owner_name">Animal owner's name (if available)</label>
+							</div>
+						</div>
 
+						<div class="row">
+							<div class="input-field col s8">
+								<select>
+									<option value="" disabled selected>Choose (provide an estimate if you are unsure)</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6 or more</option>
+								</select>
+								<label>Number of animals involved (required)</label>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col s8">
+								<label>Type of animal (required)<br>Select all that apply.</label>
+								<p>
+									<input type="checkbox" id="dog" />
+									<label for="dog">Dog</label>
+								</p>
+								<p>
+									<input type="checkbox" id="cat" />
+									<label for="cat">Cat</label>
+								</p>
+								<p>
+									<input type="checkbox" id="bird" />
+									<label for="bird">Bird</label>
+								</p>
+								<p>
+									<input type="checkbox" id="mammal" />
+									<label for="mammal">Small mammal (rodent, rabbit, etc.)</label>
+								</p>
+								<p>
+									<input type="checkbox" id="farm" />
+									<label for="farm">Farm animal (horse, pig, etc.)</label>
+								</p>
+								<p>
+									<input type="checkbox" id="unknown" />
+									<label for="unknown">Unknown</label>
+								</p>
+
+								<div class="row">
+									<div class="margin-top-0 input-field inline col s10">
+										<input placeholder="Other" id="other" type="text">
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="row margin-top-40">
+							<div class="input-field col s8">
+								<textarea placeholder="Enter incident description" id="description" class="materialize-textarea"></textarea>
+								<label for="description">Please describe the appearance of the animal (breed, color, size, etc.) (required)<br> If there are multiple animals, please describe each one involved in the incident.</label>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col s9">
+								<label>Do any of the animals have... (optional)<br>Select all that apply.</label>
+								<p>
+									<input type="checkbox" id="wounds" />
+									<label for="wounds">Visible wounds?</label>
+								</p>
+								<p>
+									<input type="checkbox" id="hunger" />
+									<label for="hunger">Signs of severe hunger/thirst?</label>
+								</p>
+								<p>
+									<input type="checkbox" id="shelter" />
+									<label for="shelter">Inadequate shelter given extreme weather conditions?</label>
+								</p>
+							</div>
+						</div>
+
+
+
+						<div class="row margin-top-30">
+							<div class="col s8">
+								<label>Upload pictures of the incident (optional)</label>
+								<div class="file-field input-field">
+									<div class="btn indigo">
+										<span>Upload</span>
+										<input type="file">
+									</div>
+									<div class="file-path-wrapper col s8">
+										<input class="file-path" type="text">
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<br>
+						<br>
+						<br>
+
+						<div class="row">
+							<div class="input-field col s8">
+								<textarea placeholder="Enter additional details" id="details" class="materialize-textarea"></textarea>
+								<label for="details">Additional details (optional)<br>Please provide any additional information that might help us understand the situation and respond in the most appropriate manner.</label>
+							</div>
+						</div>
+
+						<div class="row margin-top-30">
+							<button class="indigo btn-large waves-effect waves-light" type="submit" name="action" id="submit-button">Submit
+							    <i class="material-icons right">send</i>
+							</button>
+						</div>
 					</form>
 				</div>
 
@@ -119,11 +236,11 @@
 		<script type="text/javascript" src="application.js"></script>
 	</body>
 
-	<footer class="page-footer indigo darken-2">
+	<!-- <footer class="page-footer indigo darken-2">
 		<div class="footer-copyright">
 			<div class="container">
 				© 2017 Team Animal Cop
 			</div>
 		</div>
-	</footer>
+	</footer> -->
 </html>
