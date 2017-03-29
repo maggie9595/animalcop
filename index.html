@@ -51,17 +51,61 @@
 				<div class="row">
 					<form class="col s12">
 						<div class="row">
-							<div class="input-field col s6">
+							<div class="input-field col s8">
 								<input placeholder="Your name" id="reporter_name" type="text">
 								<label for="reporter_name">Name (optional)</label>
 							</div>
 						</div>
 						<div class="row">
-							<div class="input-field col s6">
+							<div class="input-field col s8">
 								<input placeholder="xxx-xxx-xxxx" id="callback_number" type="text">
 								<label for="callback_number">Callback number (optional)</label>
 							</div>
 						</div>
+						<div class="row">
+							<div class="input-field col s8">
+								<input placeholder="name@domain.com" id="email" type="text">
+								<label for="email">Email (optional)</label>
+							</div>
+						</div>
+					</form>
+				</div>
+
+				<h5 class="margin-top-15">Incident Information</h5>
+
+				<div class="row">
+					<form class="col s12">
+						<div class="row">
+							<div class="input-field col s8">
+								<input placeholder="Address" id="address" type="text">
+								<label for="address">Location of incident (required)</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="input-field col s8">
+								<input placeholder="xxx-xxx-xxxx" id="callback_number" type="text">
+								<label for="callback_number">Callback number (optional)</label>
+							</div>
+						</div>
+						<div class="row margin-top-40">
+							<div class="input-field col s3">
+								<input placeholder="Select date" id="date" type="date" class="datepicker">
+								<label for="date" id="date-label">Date of incident (required)<br>If this is an ongoing incident, please provide the time you last witnessed it.</label>
+							</div>
+							<div class="input-field inline col s3">
+								<input placeholder="XX:XX" id="time" type="text">
+							</div>
+							<div class="input-field inline col s2">
+								<select>
+									<option value="AM">AM</option>
+									<option value="PM">PM</option>
+								</select>
+					  		</div>
+					  	</div>
+					  	<input type="checkbox" id="ongoing" />
+      					<label for="ongoing">This is an ongoing incident</label>
+
+
 					</form>
 				</div>
 
