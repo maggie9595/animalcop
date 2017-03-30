@@ -13,4 +13,15 @@ $(document).ready(function() {
 		event.preventDefault();
 		window.location = "confirmation.html";
 	});
+
+	// Learn more buttons for types of incidents
+	$("#learn-more-shelter").click(function() {
+		if ($(this).text() == "Close") {
+			$("#shelter-more-info").hide("slow");
+			$(this).text("Learn more  ►");
+		} else {
+			$("#shelter-more-info").show("slow");
+			$(this).text("Close");
+		}
+	});
 });

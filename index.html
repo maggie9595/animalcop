@@ -175,8 +175,6 @@
 							</div>
 						</div>
 
-						<br>
-
 						<div class="row">
 							<div class="col s9">
 								<label>Type of incident (required)<br>
@@ -184,22 +182,33 @@
 								<p>
 									<input type="checkbox" id="shelter" />
 									<label for="shelter">Inadequate shelter (either in general or based on weather conditions)</label>
+									<span class="badge indigo" id="learn-more-shelter">Learn more  ►</span>
 								</p>
+								<div id="shelter-more-info" class="hidden">
+									Any shelter must be proportional to the animal size, have at least three walls, a waterproof roof, and protects the animal for regional from the elements.
+									<br><br>
+									<a href="#">Learn more about this law</a>
+								</div>
+
 								<p>
 									<input type="checkbox" id="conditions" />
 									<label for="conditions">Improper conditions (dirty, lack of food/water, etc.)</label>
+									<span class="badge indigo">Learn more</span>
 								</p>
 								<p>
 									<input type="checkbox" id="outside" />
 									<label for="outside">Animal left outside</label>
+									<span class="badge indigo">Learn more</span>
 								</p>
 								<p>
 									<input type="checkbox" id="violence" />
 									<label for="violence">Physical violence against animal</label>
+									<span class="badge indigo">Learn more</span>
 								</p>
 								<p>
 									<input type="checkbox" id="illness" />
 									<label for="illness">Neglect of animal's illness or injuries</label>
+									<span class="badge indigo">Learn more</span>
 								</p>
 							</div>
 						</div>
