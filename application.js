@@ -18,7 +18,7 @@ $(document).ready(function() {
 	$("#learn-more-shelter").click(function() {
 		if ($(this).text() == "Close") {
 			$("#shelter-more-info").hide("slow");
-			$(this).text("Learn more  ►");
+			$(this).text("Learn more &#9654;");
 		} else {
 			$("#shelter-more-info").show("slow");
 			$(this).text("Close");
@@ -28,7 +28,7 @@ $(document).ready(function() {
 	$("#learn-more-conditions").click(function() {
 		if ($(this).text() == "Close") {
 			$("#conditions-more-info").hide("slow");
-			$(this).text("Learn more  ►");
+			$(this).text("Learn more &#9654;");
 		} else {
 			$("#conditions-more-info").show("slow");
 			$(this).text("Close");
@@ -38,7 +38,7 @@ $(document).ready(function() {
 	$("#learn-more-outside").click(function() {
 		if ($(this).text() == "Close") {
 			$("#outside-more-info").hide("slow");
-			$(this).text("Learn more  ►");
+			$(this).text("Learn more &#9654;");
 		} else {
 			$("#outside-more-info").show("slow");
 			$(this).text("Close");

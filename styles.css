@@ -49,6 +49,7 @@ span.badge {
 	right: inherit;
 	margin-left: 5px;
 	margin-top: 3px;
+	cursor: pointer;
 }
 
 .hidden {
