@@ -24,4 +24,24 @@ $(document).ready(function() {
 			$(this).text("Close");
 		}
 	});
+
+	$("#learn-more-conditions").click(function() {
+		if ($(this).text() == "Close") {
+			$("#conditions-more-info").hide("slow");
+			$(this).text("Learn more  ►");
+		} else {
+			$("#conditions-more-info").show("slow");
+			$(this).text("Close");
+		}
+	});
+
+	$("#learn-more-outside").click(function() {
+		if ($(this).text() == "Close") {
+			$("#outside-more-info").hide("slow");
+			$(this).text("Learn more  ►");
+		} else {
+			$("#outside-more-info").show("slow");
+			$(this).text("Close");
+		}
+	});
 });
