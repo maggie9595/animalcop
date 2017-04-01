@@ -78,11 +78,46 @@
 						<div class="row">
 							<div class="input-field col s8">
 								<div class="bold-label">Location of incident (required)</div>
-								<input placeholder="Address" id="address" type="text">
+								<!-- <input placeholder="Address" id="address" type="text"> -->
+								<!-- Google Maps -->
+								<div class="pac-card" id="pac-card">
+									<div>
+										<div id="title">
+										Autocomplete search
+										</div>
+										<div id="type-selector" class="pac-controls">
+											<input type="radio" name="type" id="changetype-all" checked="checked">
+											<label for="changetype-all">All</label>
+
+											<input type="radio" name="type" id="changetype-establishment">
+											<label for="changetype-establishment">Establishments</label>
+
+											<input type="radio" name="type" id="changetype-address">
+											<label for="changetype-address">Addresses</label>
+
+											<input type="radio" name="type" id="changetype-geocode">
+											<label for="changetype-geocode">Geocodes</label>
+										</div>
+										<div id="strict-bounds-selector" class="pac-controls">
+											<input type="checkbox" id="use-strict-bounds" value="">
+											<label for="use-strict-bounds">Strict Bounds</label>
+										</div>
+									</div>
+									<div id="pac-container">
+										<input id="pac-input" type="text"
+										placeholder="Enter a location">
+									</div>
+								</div>
+								<div id="map" class="margin-top-15"></div>
+								<div id="infowindow-content">
+									<img src="" width="16" height="16" id="place-icon">
+									<span id="place-name"  class="title"></span><br>
+									<span id="place-address"></span>
+								</div>
 							</div>
 						</div>
 
-						<div class="row">
+						<div class="row margin-top-20">
 							<div class="input-field col s8">
 							<div class="bold-label">Time of incident (required)</div>
 							<div class="regular-label">If this is an ongoing incident, please provide the time you last witnessed it.</div>
@@ -292,9 +327,16 @@
 			</div>
 		</main>
 
+		<br>
+		<br>
+		<br>
+
 		<!--Import jQuery before materialize.js-->
 		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+		<!-- Google Maps -->
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAn6V9t-lR5_9IzWjc5FGhBWj67bQQqpkY&libraries=places&callback=initMap"
+        async defer></script>
 		<!-- Import custom application javascript -->
 		<script type="text/javascript" src="application.js"></script>
 	</body>
