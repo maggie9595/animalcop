@@ -79,6 +79,26 @@ function initMap() {
       anchorPoint: new google.maps.Point(0, -29)
     });
 
+    // Try HTML5 geolocation.
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var pos = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
+
+        infowindow.setPosition(pos);
+        infowindow.setContent('Location found.');
+        infowindow.open(map);
+        map.setCenter(pos);
+      }, function() {
+        handleLocationError(true, infowindow, map.getCenter());
+      });
+    } else {
+      // Browser doesn't support Geolocation
+      handleLocationError(false, infowindow, map.getCenter());
+    }
+
     autocomplete.addListener('place_changed', function() {
       infowindow.close();
       marker.setVisible(false);
@@ -134,4 +154,12 @@ function initMap() {
           console.log('Checkbox clicked! New state=' + this.checked);
           autocomplete.setOptions({strictBounds: this.checked});
     });
+
+    function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infowindow.setPosition(pos);
+        infowindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+        infowindow.open(map);
+    }
 }
