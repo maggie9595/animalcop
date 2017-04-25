@@ -80,13 +80,29 @@ function initMap() {
       draggable: true,
       anchorPoint: new google.maps.Point(0, -29)
     });
-    
+    marker.addListener('dragend', reverseGeocode);
 
-
-function handleEvent(event) {
-    alert(event.latLng.lat());
-    alert(event.latLng.lng());
-}
+	function reverseGeocode(event) {
+		var latlng = {lat: event.latLng.lat(), lng: event.latLng.lng()};
+		var geocoder = new google.maps.Geocoder;
+		geocoder.geocode({'location': latlng}, function(results, status) {
+          if (status === 'OK') {
+            if (results[1]) {
+              map.setZoom(17);
+              var marker = new google.maps.Marker({
+                position: latlng,
+                map: map
+              });
+              infowindow.setContent(results[1].formatted_address);
+              infowindow.open(map, marker);
+            } else {
+              window.alert('No results found');
+            }
+          } else {
+            window.alert('Geocoder failed due to: ' + status);
+          }
+        });
+	}
 
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
