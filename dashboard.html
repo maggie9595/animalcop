@@ -37,232 +37,35 @@
 
 		<main>
 			<div class="container">
-				<div class="row">
-					<form class="col s12">
-						<div class="row">
-							<div class="input-field col s8">
-								<!-- Google Maps -->
-								<div class="pac-card" id="pac-card">
-									<div id="pac-container">
-										<input id="pac-input" type="text"
-										placeholder="Enter a location">
-									</div>
-								</div>
-								<div id="map" class="margin-top-15"></div>
-								<div id="infowindow-content">
-									<img src="" width="16" height="16" id="place-icon">
-									<span id="place-name"  class="title"></span><br>
-									<span id="place-address"></span>
-								</div>
-							</div>
-						</div>
-
-						<div class="row margin-top-20">
-							<div class="input-field col s8">
-							<div class="bold-label">Time of incident (required)</div>
-							<div class="regular-label">If this is an ongoing incident, please provide the time you last witnessed it.</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="input-field col s3">
-								<input placeholder="Select date" id="date" type="date" class="datepicker">
-							</div>
-							<div class="input-field inline col s3">
-								<input placeholder="XX:XX" id="time" type="text">
-							</div>
-							<div class="input-field inline col s2">
-								<select>
-									<option value="AM">AM</option>
-									<option value="PM">PM</option>
-								</select>
-					  		</div>
-					  	</div>
-					  	<input type="checkbox" id="ongoing" />
-      					<label for="ongoing">This is an ongoing incident</label>
-
-      					<div class="row margin-top-15">
-							<div class="input-field col s8">
-								<div class="bold-label">Animal owner's name (if available)</div>
-								<input placeholder="Name" id="owner_name" type="text">
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="input-field col s8">
-								<div class="bold-label">Number of animals involved (required)</div>
-								<div class="regular-label">Please provide an estimate if you are unsure.</div>
-								<select>
-									<option value="" disabled selected>Choose</option>
-									<option value="1">1</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
-									<option value="5">5</option>
-									<option value="6">6 or more</option>
-								</select>
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="col s8">
-								<div class="bold-label">Type of animal (required)</div>
-								<div class="regular-label">Select all that apply.</div>
-								<p>
-									<input type="checkbox" id="dog" />
-									<label for="dog">Dog</label>
-								</p>
-								<p>
-									<input type="checkbox" id="cat" />
-									<label for="cat">Cat</label>
-								</p>
-								<p>
-									<input type="checkbox" id="bird" />
-									<label for="bird">Bird</label>
-								</p>
-								<p>
-									<input type="checkbox" id="chicken" />
-									<label for="chicken">Chicken</label>
-								</p>
-								<p>
-									<input type="checkbox" id="mammal" />
-									<label for="mammal">Small mammal (rodent, rabbit, etc.)</label>
-								</p>
-								<p>
-									<input type="checkbox" id="farm" />
-									<label for="farm">Farm animal (horse, pig, etc.)</label>
-								</p>
-								<p>
-									<input type="checkbox" id="unknown" />
-									<label for="unknown">Unknown</label>
-								</p>
-
-								<div class="row">
-									<div class="margin-top-0 input-field inline col s10">
-										<input placeholder="Other" id="other" type="text">
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="input-field col s8">
-								<div class="bold-label">Please describe the appearance of the animal (breed, color, size, etc.) (required)</div>
-								<div class="regular-label">If there are multiple animals, please describe each one involved in the incident.</div>
-								<textarea placeholder="Enter incident description" id="description" class="materialize-textarea"></textarea>
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="col s9">
-								<div class="bold-label">Type of incident (required)</div>
-								<div class="regular-label">Please note that these are the incidents listed are what constitutes under PA and federal law as animal cruelty. If you are attempting to report an incident involving dangerous animals, theft, or a stray animal, please contact the City of Pittsburgh Animal Control at (412) 255-2036.<br>Select all that apply.</div>
-								<p>
-									<input type="checkbox" id="shelter" />
-									<label for="shelter">Inadequate shelter (either in general or based on weather conditions)</label>
-									<span class="badge indigo" id="learn-more-shelter">Learn more &#9654;</span>
-								</p>
-								<div id="shelter-more-info" class="hidden">
-									Any shelter must be proportional to the animal size, have at least three walls, a waterproof roof, and protects the animal for regional from the elements.
-									<br><br>
-									<a href="#">Learn more about this law</a>
-								</div>
-
-								<p>
-									<input type="checkbox" id="conditions" />
-									<label for="conditions">Improper conditions (dirty, lack of food/water, etc.)</label>
-									<span class="badge indigo" id="learn-more-conditions">Learn more &#9654;</span>
-								</p>
-								<div id="conditions-more-info" class="hidden">
-									Sanitation: Animals must be in a space free of excretions and other waste materials, dirt and trash that may be a health hazard.
-									<br>
-									Food & Water: Animals need access to portable drinking water and edible food.
-									<br><br>
-									<a href="#">Learn more about this law</a>
-								</div>
-
-								<p>
-									<input type="checkbox" id="outside" />
-									<label for="outside">Animal left outside</label>
-									<span class="badge indigo" id="learn-more-outside">Learn more &#9654;</span>
-								</p>
-								<div id="outside-more-info" class="hidden">
-									Animals may be left outside if the following conditions are met: 
-									<ul>
-										<li>- Animal is not outside for more than half an hour when the temperature is below 32 F or above 90 F.</li>
-										<li>- The animal has access to portable drinking water, edible food, and adequate shade or shelter.</li>
-									</ul>
-									<a href="#">Learn more about this law</a>
-								</div>
-
-								<p>
-									<input type="checkbox" id="violence" />
-									<label for="violence">Physical violence against animal</label>
-									<span class="badge indigo" id="learn-more-violence">Learn more &#9654;</span>
-								</p>
-
-								<p>
-									<input type="checkbox" id="illness" />
-									<label for="illness">Neglect of animal's illness or injuries</label>
-									<span class="badge indigo" id="learn-more-illness">Learn more &#9654;</span>
-								</p>
-							</div>
-						</div>
-
-						<br>
-
-						<div class="row">
-							<div class="col s9">
-								<div class="bold-label">Do any of the animals have... (optional)</div>
-								<div class="regular-label">Select all that apply.</div>
-								<p>
-									<input type="checkbox" id="wounds" />
-									<label for="wounds">Visible wounds?</label>
-								</p>
-								<p>
-									<input type="checkbox" id="hunger" />
-									<label for="hunger">Signs of severe hunger/thirst?</label>
-								</p>
-								<p>
-									<input type="checkbox" id="shelter" />
-									<label for="shelter">Inadequate shelter given extreme weather conditions?</label>
-								</p>
-							</div>
-						</div>
-
-						<br>
-
-						<div class="row">
-							<div class="col s8">
-								<div class="bold-label">Upload pictures of the animal(s) (optional)</div>
-								<div class="file-field input-field">
-									<div class="btn indigo">
-										<span>Upload</span>
-										<input type="file">
-									</div>
-									<div class="file-path-wrapper col s8">
-										<input class="file-path" type="text">
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="input-field col s8">
-								<div class="bold-label">Additional details (optional)</div>
-								<div class="regular-label">Please provide any additional information that might help us understand the situation and respond in the most appropriate manner.</div>
-								<textarea placeholder="Enter additional details" id="details" class="materialize-textarea"></textarea>
-							</div>
-						</div>
-
-						<br>
-
-						<div class="row">
-							<button class="indigo btn-large waves-effect waves-light margin-left-10" type="submit" name="action" id="submit-button">Submit
-							    <i class="material-icons right">send</i>
-							</button>
-						</div>
-					</form>
+				<div class="row margin-top-20 center">
+					<button class="indigo btn waves-effect waves-light margin-left-10" name="action" id="start-trip-button">Start trip
+					    <i class="material-icons right">navigation</i>
+					</button>
 				</div>
+
+				<div class="row margin-top-20 center">
+					<div class="switch">
+						<label>
+							Hide backlog
+							<input type="checkbox">
+							<span class="lever"></span>
+							Show backlog
+						</label>
+					</div>
+				</div>
+
+				<!-- Google Maps -->
+				<div class="row">
+					<div id="ho-map" class="margin-top-20"></div>
+					<div id="infowindow-content">
+						<img src="" width="16" height="16" id="place-icon">
+						<span id="place-name"  class="title"></span><br>
+						<span id="place-address"></span>
+					</div>
+				</div>
+
+
+
 
 			</div>
 		</main>
@@ -275,7 +78,7 @@
 		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
 		<!-- Google Maps -->
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAn6V9t-lR5_9IzWjc5FGhBWj67bQQqpkY&libraries=places&callback=initMap"
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAn6V9t-lR5_9IzWjc5FGhBWj67bQQqpkY&callback=initMap"
         async defer></script>
 		<!-- Import custom application javascript -->
 		<script type="text/javascript" src="dashboard.js"></script>

@@ -59,8 +59,6 @@ function initMap() {
   });
   var card = document.getElementById('pac-card');
   var input = document.getElementById('pac-input');
-  var types = document.getElementById('type-selector');
-  var strictBounds = document.getElementById('strict-bounds-selector');
 
   map.controls[google.maps.ControlPosition.TOP_RIGHT].push(card);
 
@@ -163,10 +161,10 @@ function initMap() {
   });
 
   function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-      infowindow.setPosition(pos);
-      infowindow.setContent(browserHasGeolocation ?
-                            'Error: The Geolocation service failed.' :
-                            'Error: Your browser doesn\'t support geolocation.');
-      infowindow.open(map);
+    infowindow.setPosition(pos);
+    infowindow.setContent(browserHasGeolocation ?
+                          'Error: The Geolocation service failed.' :
+                          'Error: Your browser doesn\'t support geolocation.');
+    infowindow.open(map);
   }
 }
