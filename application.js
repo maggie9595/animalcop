@@ -74,10 +74,19 @@ function initMap() {
     var infowindow = new google.maps.InfoWindow();
     var infowindowContent = document.getElementById('infowindow-content');
     infowindow.setContent(infowindowContent);
+
     var marker = new google.maps.Marker({
       map: map,
+      draggable: true,
       anchorPoint: new google.maps.Point(0, -29)
     });
+    
+
+
+function handleEvent(event) {
+    alert(event.latLng.lat());
+    alert(event.latLng.lng());
+}
 
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
