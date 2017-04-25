@@ -12,8 +12,8 @@ $(document).ready(function() {
   $(".button-collapse").sideNav();
 
   // Initialize jQuery Sortable
-  $("#sortable").sortable();
-  $("#sortable").disableSelection();
+  $(".sortable").sortable();
+  $(".sortable").disableSelection();
 	
 });
 
