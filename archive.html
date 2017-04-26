@@ -27,8 +27,8 @@
 					<ul id="slide-out" class="side-nav">
 						<center><li><a class="subheader">Menu</a></li></center>
 						<li><a class="waves-effect" href="dashboard.html">Itinerary/Backlog</a></li>
-						<li><a class="waves-effect" href="#!">Archived Cases</a></li>
-						<li><a class="waves-effect" href="#!">My Account</a></li>
+						<li><a class="waves-effect" href="archive.html">Archived Cases</a></li>
+						<li><a class="waves-effect" href="account.html">My Account</a></li>
 					</ul>
   					<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
 				</div>
@@ -37,43 +37,17 @@
 
 		<main>
 			<div class="container">
-				<div class="row margin-top-20 center">
-					<button class="indigo btn waves-effect waves-light margin-left-10" name="action" id="start-trip-button">Start trip
-					    <i class="material-icons right">navigation</i>
-					</button>
-				</div>
-
-				<div class="row margin-top-20 center">
-					<div class="switch">
-						<label>
-							Hide backlog
-							<input type="checkbox">
-							<span class="lever"></span>
-							Show backlog
-						</label>
-					</div>
-				</div>
-
-				<!-- Google Maps -->
-				<div class="row">
-					<div id="ho-map" class="margin-top-20"></div>
-					<div id="infowindow-content">
-						<img src="" width="16" height="16" id="place-icon">
-						<span id="place-name"  class="title"></span><br>
-						<span id="place-address"></span>
+				<div class="row margin-top-20">
+					<div class="input-field col s12">
+						<i class="material-icons prefix">search</i>
+						<input id="search-tool" type="text" class="validate">
+						<label for="search-tool">Search in previous cases</label>
 					</div>
 				</div>
 
 				<div class="row margin-top-20">
-					<div class="col s12">
-						<ul class="tabs">
-							<li class="tab col s3"><a class="active" href="#itinerary">Itinerary</a></li>
-							<li class="tab col s3"><a href="#backlog">Backlog</a></li>
-						</ul>
-					</div>
-					
 					<div id="itinerary" class="col s12">
-						<ul class="collection sortable">
+						<ul class="collection">
 							<li class="collection-item avatar">
 								<i class="material-icons circle">remove</i>
 								<span class="title"><b>456 Beeler St</b></span>
@@ -109,29 +83,6 @@
 						</ul>
 					</div>
 					
-					<div id="backlog" class="col s12">
-						<ul class="collection sortable">
-							<li class="collection-item avatar">
-								<i class="material-icons circle">add</i>
-								<span class="title"><b>101 Harris St</b></span>
-								<p>Animal Noise<br>
-								4 Days Ago
-								</p>
-								<a href="#!" class="secondary-content"><span class="new badge yellow darken-2" data-badge-caption="">Low</span><i class="material-icons">more_vert</i></a>
-							</li>
-							<li class="collection-item avatar">
-								<i class="material-icons circle">add</i>
-								<span class="title"><b>15 Roselawn Ter</b></span>
-								<p>Animal Noise<br>
-								4 Days Ago
-								</p>
-								<a href="#!" class="secondary-content"><span class="new badge yellow darken-2" data-badge-caption="">Low</span><i class="material-icons">more_vert</i></a>
-							</li>
-						</ul>
-					</div>
-				</div>
-
-
 			</div>
 		</main>
 
@@ -144,9 +95,6 @@
 		<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<script type="text/javascript" src="jquery.ui.touch-punch.min.js"></script>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
-		<!-- Google Maps -->
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAn6V9t-lR5_9IzWjc5FGhBWj67bQQqpkY&callback=initMap"
-        async defer></script>
 		<!-- Import custom application javascript -->
 		<script type="text/javascript" src="archive.js"></script>
 	</body>
