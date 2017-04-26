@@ -170,3 +170,13 @@ span.badge.new {
 .sortable {
 	cursor: move;
 }
+
+.dropdown-content li>a, .dropdown-content li>span {
+	color: black;
+	text-decoration: none;
+}
+
+.right .dropdown-button {
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
