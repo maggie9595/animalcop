@@ -11,6 +11,12 @@
 		<link type="text/css" rel="stylesheet" href="styles.css" media="screen,projection"/>
 		<!--Let browser know website is optimized for mobile-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+		<!-- Load Modal on Open -->
+
+
+</script>
 	</head>
 
 	<body>
@@ -33,6 +39,7 @@
 				<br>
 				<a href="http://www.animalrescue.org/" target="_blank"><img src="images/arl-wphs-combined-logo.jpg" width="200"></a>
 				<b><p>Please use the following form to share as much as you can about the animal abuse or neglect situation. We care deeply about all animals and are eager to help.</p>
+				<p>Provide a detailed report to help our Humane Officer appropriately address your case.</p>
 				<p>Once you report animal abuse, a humane officer will be notified and assess the situation, and may bring the case to court.</p>
 				<p>Please be aware that misreporting can have serious consequences for the shelter, humane officers and animals involved.</p></b>
 
@@ -291,10 +298,26 @@
 						<br>
 
 						<div class="row">
+						   <!-- Modal Trigger -->
+							  <a class="waves-effect waves-light btn" href="#modal1">Submit</a>
+
+							  <!-- Modal Structure -->
+							  <div id="modal1" class="modal">
+							    <div class="modal-content">
+							      <h4>Modal Header</h4>
+							      <p>A bunch of text</p>
+							    </div>
+							    <div class="modal-footer">
+							      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Confirm Submit</a>
+							    </div>
+							  </div>
+
+
+<!-- 						<div class="row">
 							<button class="indigo btn-large waves-effect waves-light margin-left-10" type="submit" name="action" id="submit-button">Submit
 							    <i class="material-icons right">send</i>
 							</button>
-						</div>
+						</div> -->
 					</form>
 				</div>
 
@@ -313,6 +336,19 @@
         async defer></script>
 		<!-- Import custom application javascript -->
 		<script type="text/javascript" src="form.js"></script>
+		<script type="text/javascript">
+			 $(document).ready(function(){
+   			 // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+   			 $('#modal1').modal('show');
+
+  				});
+
+   		 	$(window).on('load',function(){
+       		$('#modal1').modal('show');
+   			});
+
+
+		</script>
 	</body>
 
 	<!-- <footer class="page-footer indigo darken-2">
