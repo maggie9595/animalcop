@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Report Animal Neglect and Cruelty</title>
+
+		<!--Import Google Icon Font-->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!--Import materialize.css-->
+		<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css" media="screen,projection">
+		<!-- Import custom application styles -->
+		<link type="text/css" rel="stylesheet" href="styles.css" media="screen,projection"/>
+		<!--Let browser know website is optimized for mobile-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+
+
+</script>
+	</head>
+
+	<body>
+		<header>
+			<nav class="indigo darken-2"> 
+				<div class="container">
+					<div class="nav-wrapper grey lighten-2">
+						<a href="home2.html" class="brand-logo">Report Animal Neglect and Cruelty</a>
+						<ul class="right side-nav" id="nav-mobile">
+				         	<li class="hide-on-small-only"><a href="parallax.html"><i class="mdi-navigation-arrow-back"></i></a></li>
+				        </ul>
+				        <a class="button-collapse" href="#" data-activates='nav-mobile'><i class="mdi-navigation-menu"></i></a>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<main>
+			<div class="container">
+				<br>
+				<h4>Contact Another Agency About your Report</h4>
+
+						<div class="row">
+							<div class="col s9">
+								<div class="bold-label">Type of incident (required)</div>
+								<div class="regular-label">Use this to see which agency you should report to.</div>
+								<div>
+								<p>
+									<div class="row">
+										<div class="col md8 s8">
+										<input type="checkbox" id="shelter" />
+										<label for="shelter">Animal that is lost, running-at large, or stray.</label>
+										</div>
+										<div class="col md4 s4">
+										<span class="badge orange" id="learn-more-shelter">Learn more &#9654;</span>
+										</div>
+
+									</div>
+
+								</p>
+								<div id="shelter-more-info" class="hidden">
+									Any shelter must be proportional to the animal size, have at least three walls, a waterproof roof, and protects the animal for regional from the elements.
+									<br><br>
+									<a href="#">Learn more about this law</a>
+								</div>
+
+								<p>
+								<div class="row">
+										<div class="col md8 s8">
+											<input type="checkbox" id="conditions" />
+											<label for="conditions">Animal being a nuisance or making disruptive noises</label>	
+										</div>
+										<div class="col md4 s4 right" >
+											<span class="badge orange" id="learn-more-conditions">Learn more &#9654;</span>
+										</div>
+								</div>
+								</p>
+								<div id="conditions-more-info" class="hidden">
+									Sanitation: Animals must be in a space free of excretions and other waste materials, dirt and trash that may be a health hazard.
+									<br>
+									Food & Water: Animals need access to portable drinking water and edible food.
+									<br><br>
+									<a href="#">Learn more about this law</a>
+								</div>
+
+								<p>
+								<div class="row">
+										<div class="col md8 s8">
+											<input type="checkbox" id="outside" />
+											<label for="outside">Animal attacks, bites, or otherwise dangerous animals</label>
+										</div>
+										<div class="col md4 s4">
+										<span class="badge orange" id="learn-more-outside">Learn more &#9654;</span>
+										</div>
+								</div>
+								</p>
+								<div id="outside-more-info" class="hidden">
+									Animals may be left outside if the following conditions are met: 
+									<ul>
+										<li>- Animal is not outside for more than half an hour when the temperature is below 32 F or above 90 F.</li>
+										<li>- The animal has access to portable drinking water, edible food, and adequate shade or shelter.</li>
+									</ul>
+									<a href="#">Learn more about this law</a>
+								</div>
+
+								<p>
+								<div class="row">
+										<div class="col md8 s8">
+											<input type="checkbox" id="violence" />
+											<label for="violence">Animal without proper licensing or vaccinations.</label>
+										</div>
+										<div class="col md4 s4">
+											<span class="badge orange" id="learn-more-violence">Learn more &#9654;</span>
+										</div>
+								</div>
+								</p>
+
+								<p>
+									<div class="row">
+										<div class="col md8 s8">
+											<input type="checkbox" id="illness" />
+											<label for="illness">Theft of an animal</label>
+										</div>
+										<div class="col md4 s4">
+											<span class="badge orange" id="learn-more-illness">Learn more &#9654;</span>
+										</div>
+									</div>
+
+								</p>
+
+								<p>
+									<div class="row">
+										<div class="col md8 s8">
+											<input type="checkbox" id="illness" />
+											<label for="illness">Pet limit violations</label>
+										</div>
+										<div class="col md4 s4">
+											<span class="badge orange" id="learn-more-illness">Learn more &#9654;</span>
+										</div>
+									</div>
+
+								</p>								
+
+							
+								</div>
+
+							</div>
+						</div>
+
+						<br>
+
+
+						<br>
+
+						<div class="row">
+
+
+
+					</form>
+				</div>
+
+			</div>
+		</main>
+
+		<br>
+		<br>
+		<br>
+
+		<!--Import jQuery before materialize.js-->
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+		<!-- Google Maps -->
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAn6V9t-lR5_9IzWjc5FGhBWj67bQQqpkY&libraries=places&callback=initMap"
+        async defer></script>
+		<!-- Import custom application javascript -->
+		<script type="text/javascript" src="form.js"></script>
+		<script type="text/javascript">
+
+			 $(document).ready(function(){
+   			 // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+
+   			 // <!-- Load Modal on Open -->
+
+   			 $('#modal1').modal('show');
+
+  				});
+
+   		 	$(window).on('load',function(){
+       		$('#modal1').modal('show');
+   			});
+
+
+		</script>
+	</body>
+
+	<!-- <footer class="page-footer indigo darken-2">
+		<div class="footer-copyright">
+			<div class="container">
+				© 2017 Team Animal Cop
+			</div>
+		</div>
+	</footer> -->
+</html>

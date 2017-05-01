@@ -1,3 +1,7 @@
+.right{
+	float:right;
+}
+
 .card-title{
 	font-size:16px;
 }
@@ -47,6 +51,14 @@ main a {
 	width: 500%;
 }
 
+
+help{
+	margin-left:0px;
+	margin-top:10px;
+	margin-bottom:10px;
+	position:center;
+}
+
 span.badge {
 	color: white;
 	font-size: 12px;
@@ -54,6 +66,7 @@ span.badge {
 	margin-left: 5px;
 	margin-top: 3px;
 	cursor: pointer;
+	position:right;
 }
 
 .hidden {
