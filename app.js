@@ -39,22 +39,4 @@ app.use(function(req, res) {
 
 var httpServer = require('http').createServer(app);
 
-/*
- * Boilerplate for setting up socket.io alongside Express.
- * If socket.io is not needed, comment out the 2 socket.io lines
- */
-//var sio =require('socket.io')(httpServer);
-
-// The server socket.io code is in the socketio directory.
-//require('./socketio/serverSocket.js').init(sio);
-
-/*
- * OpenShift will provide environment variables indicating the IP 
- * address and PORT to use.  If those variables are not available
- * (e.g. when you are testing the application on your laptop) then
- * use default values of localhost (127.0.0.1) and 50000 (arbitrary).
- */
-var ipaddress = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
-var port      = process.env.OPENSHIFT_NODEJS_PORT || 50000;
-
-httpServer.listen(port, ipaddress, function() {console.log('Listening on '+ipaddress+':'+port);});
+httpServer.listen(50000, function() {console.log('Listening on port:'+this.address().port);});
