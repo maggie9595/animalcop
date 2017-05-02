@@ -103,7 +103,6 @@ span.badge {
 #infowindow-content {
 	display: none;
 }
-
 #map #infowindow-content {
 	display: inline;
 }
