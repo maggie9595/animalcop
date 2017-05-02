@@ -13,7 +13,8 @@ exports.init = function(app) {
 
 // No path:  display instructions for use
 index = function(req, res) {
-  res.render('help', {title: 'MongoDB Test'})
+  res.render('index');
+  //res.render('help', {title: 'MongoDB Test'})
 };
 
 /********** CRUD Create *******************************************************
