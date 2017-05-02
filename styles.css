@@ -113,7 +113,6 @@ span.badge {
 }
 
 .pac-card {
-	margin: 5px 5px 0 0;
 	border-radius: 2px 0 0 2px;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -143,7 +142,7 @@ span.badge {
 	background-color: #fff;
 	font-family: Roboto;
 	font-size: 15px;
-	font-weight: 300;
+	font-weight: 300; 
 	margin-left: 12px;
 	padding: 0 11px 0 13px;
 	text-overflow: ellipsis;
