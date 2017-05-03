@@ -205,3 +205,17 @@ span.badge.new {
 .wide-button {
 	width: 200px;
 }
+
+.chips .input {
+  background: none;
+  border: 0;
+  color: rgba(0, 0, 0, 0.6);
+  display: inline-block;
+  font-size: 1rem;
+  height: 3rem;
+  line-height: 32px;
+  outline: 0;
+  margin: 0;
+  padding: 0 !important;
+  width: inherit !important;
+}
