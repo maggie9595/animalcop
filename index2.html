@@ -31,53 +31,65 @@
 			</nav>
 		</header>
 
+		<!--header-->
+		<main style="background-color: #F1F2F2">
+			<div class="container">
+				<br>
+				<h5>Report Animal Neglect and Cruelty</h5>
+				<!--<a href="http://www.animalrescue.org/" target="_blank"><img src="images/arl-wphs-combined-logo.jpg" width="200"></a>-->
+				<p>Please use the following form to share as much as you can about the animal abuse or neglect situation. We care deeply about all animals and are eager to help.</p>
+				<p>Provide a detailed report to help our Humane Officer appropriately address your case.</p>
+				<p>Once you report animal abuse, a humane officer will be notified and assess the situation, and may bring the case to court.</p>
+				<p>Please be aware that misreporting can have serious consequences for the shelter, humane officers and animals involved.</p>
+				<br>
+			</div>
+		</main>
+
 		<main style="background-color: lightgrey">
 			<br>
-			<div class="container" style="background-color: white; padding: 100px">
+			<div class="container" style="background-color: white; padding-left: 100px; padding-right: 100px; padding-top:50px">
 
-				<h5 class="margin-top-15">Incident Information</h5>
-
-				<div class="row">
-					<form class="col s12">
-						<div class="row">
-							<div class="input-field col s8">
-								<div class="bold-label">Location of incident (required)</div>
-								<!-- Google Maps -->
-								<div class="pac-card" id="pac-card">
-									<div id="pac-container">
-										<input id="pac-input" type="text"
-										placeholder="Enter a location">
-									</div>
-								</div>
-								<div id="map" class="margin-top-15"></div>
-								<div id="infowindow-content">
-									<img src="" width="16" height="16" id="place-icon">
-									<span id="place-name"  class="title"></span><br>
-									<span id="place-address"></span>
+				<form>
+					<div class="row">
+						<h5 >Describe the Incident</h5>
+						<div class="input-field">
+							<div class="bold-label">Location of incident (required)</div>
+							<!-- Google Maps -->
+							<div class="pac-card" id="pac-card">
+								<div id="pac-container">
+									<input id="pac-input" type="text"
+									placeholder="Enter a location">
 								</div>
 							</div>
+							<div id="map" class="margin-top-15"></div>
+							<div id="infowindow-content">
+								<img src="" width="16" height="16" id="place-icon">
+								<span id="place-name"  class="title"></span><br>
+								<span id="place-address"></span>
+							</div>
 						</div>
+					</div>
 
-						<div class="row margin-top-20">
-							<div class="input-field col s8">
+					<div class="row margin-top-20">
+						<div class="input-field">
 							<div class="bold-label">Time of incident (required)</div>
 							<div class="regular-label">If this is an ongoing incident, please provide the time you last witnessed it.</div>
-							</div>
 						</div>
-						<div class="row">
-							<div class="input-field col s3">
-								<input placeholder="Select date" id="date" type="date" class="datepicker">
-							</div>
-							<div class="input-field inline col s3">
-								<input placeholder="XX:XX" id="time" type="text">
-							</div>
-							<div class="input-field inline col s2">
-								<select>
-									<option value="AM">AM</option>
-									<option value="PM">PM</option>
-								</select>
-					  		</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s3">
+							<input placeholder="Select date" id="date" type="date" class="datepicker">
+						</div>
+						<div class="input-field inline col s3">
+							<input placeholder="XX:XX" id="time" type="text">
+						</div>
+						<div class="input-field inline col s2">
+							<select>
+								<option value="AM">AM</option>
+								<option value="PM">PM</option>
+							</select>
 					  	</div>
+					</div>
 					  	<input type="checkbox" id="ongoing" />
       					<label for="ongoing">This is an ongoing incident</label>
 
@@ -210,7 +222,7 @@
 							</button>
 						</div>
 					</form>
-				</div>
+				
 				<h5 class="margin-top-30">Your Information</h5>
 				<p>We may need your phone number to contact you for more information or clarification regarding the details of this report. We also provide e-email updates once the incident has been resolved. 
 				<br>
