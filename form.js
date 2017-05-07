@@ -15,10 +15,10 @@ $(document).ready(function() {
 	});
 
 	// Initialize learn more text variable with the arrow character
-	var learnMoreText = $("#learn-more-shelter").html();
+	var learnMoreText = $("#shelter").html();
 
 	// Learn more buttons for types of incidents
-	$("#learn-more-shelter").click(function() {
+	$("#shelter").click(function() {
 		if ($(this).text() == "Close") {
 			$("#shelter-more-info").hide("slow");
 			$(this).html(learnMoreText);
@@ -28,7 +28,7 @@ $(document).ready(function() {
 		}
 	});
 
-	$("#learn-more-conditions").click(function() {
+	$("#conditions").click(function() {
 		if ($(this).text() == "Close") {
 			$("#conditions-more-info").hide("slow");
 			$(this).html(learnMoreText);
@@ -38,7 +38,7 @@ $(document).ready(function() {
 		}
 	});
 
-	$("#learn-more-outside").click(function() {
+	$("#outside").click(function() {
 		if ($(this).text() == "Close") {
 			$("#outside-more-info").hide("slow");
 			$(this).html(learnMoreText);
@@ -48,7 +48,25 @@ $(document).ready(function() {
 		}
 	});
 
-	
+  $("#violence").click(function() {
+    if ($(this).text() == "Close") {
+      $("#violence-more-info").hide("slow");
+      $(this).html(learnMoreText);
+    } else {
+      $("#violence-more-info").show("slow");
+      $(this).text("Close");
+    }
+  });
+
+  $("#illness").click(function() {
+    if ($(this).text() == "Close") {
+      $("#illness-more-info").hide("slow");
+      $(this).html(learnMoreText);
+    } else {
+      $("#illness-more-info").show("slow");
+      $(this).text("Close");
+    }
+  });
 });
 
 // Google Maps

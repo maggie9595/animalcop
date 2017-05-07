@@ -13,8 +13,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 
-
-
 </script>
 	</head>
 
@@ -23,7 +21,7 @@
 			<nav class="indigo darken-2"> 
 				<div class="container">
 					<div class="nav-wrapper grey lighten-2">
-						<a href="home2.html" class="brand-logo">Report Animal Neglect and Cruelty</a>
+						<a href="home2.html" class="brand-logo">Pittsburgh Humane Animal Rescue</a>
 						<ul class="right side-nav" id="nav-mobile">
 				         	<li class="hide-on-small-only"><a href="parallax.html"><i class="mdi-navigation-arrow-back"></i></a></li>
 				        </ul>
@@ -32,73 +30,73 @@
 				</div>
 			</nav>
 		</header>
-
-		<main>
-			<div class="container">
+		<main style="background-color: #F1F2F2; padding-left: 200px; padding-right: 200px">
 				<br>
-				<a href="http://www.animalrescue.org/" target="_blank"><img src="images/arl-wphs-combined-logo.jpg" width="200"></a>
-				<b><p>Please use the following form to share as much as you can about the animal abuse or neglect situation. We care deeply about all animals and are eager to help.</p>
+				<h5>Report Animal Neglect and Cruelty</h5>
+				<!--<a href="http://www.animalrescue.org/" target="_blank"><img src="images/arl-wphs-combined-logo.jpg" width="200"></a>-->
+				<p>Please use the following form to share as much as you can about the animal abuse or neglect situation. We care deeply about all animals and are eager to help.</p>
 				<p>Provide a detailed report to help our Humane Officer appropriately address your case.</p>
 				<p>Once you report animal abuse, a humane officer will be notified and assess the situation, and may bring the case to court.</p>
-				<p>Please be aware that misreporting can have serious consequences for the shelter, humane officers and animals involved.</p></b>
+				<p>Please be aware that misreporting can have serious consequences for the shelter, humane officers and animals involved.</p>
+				<br>
+		</main>
+		<main style="background-color: lightgrey">
 
-				<a href="#">How this form is used</a>
+		<br>
+			<div class="container z-depth-2" style="background-color: white; padding-left: 100px; padding-right: 100px; padding-top:50px">
+				<h5>Incident Type</h5>
 
-				<hr class="margin-top-20">
+				<br>
 
-										<div class="row">
 							<div class="col s9">
-								<div class="bold-label">Type of incident (required)</div>
-								<div class="regular-label">Please note that these are the incidents listed are what constitutes under PA and federal law as animal cruelty. If you are attempting to report an incident involving dangerous animals, theft, or a stray animal, please contact the City of Pittsburgh Animal Control at (412) 255-2036.<br>Select all that apply.</div>
-								<div>
+								<div class="bold-label">Type of incident</div>
+								<div class="regular-label">Please note that the list below shows what is considered animal cruelty under PA and federal law. If you feel you are in immediate danger from an animal, it is always appropriate to call 911.</div>
+								<div style="padding:10px">
+
 								<p>
 									<div class="row">
 										<div class="col md8 s8">
 										<input type="checkbox" id="shelter" />
-										<label for="shelter">Inadequate shelter (either in general or based on weather conditions)</label>
+										<label for="shelter">Animal with inadequate shelter</label>
 										</div>
 										<div class="col md4 s4">
-										<span class="badge indigo" id="learn-more-shelter">Learn more &#9654;</span>
+										<!--<span class="badge indigo" id="learn-more-shelter">Learn more &#9654;</span>-->
 										</div>
-
 									</div>
-
 								</p>
 								<div id="shelter-more-info" class="hidden">
 									Any shelter must be proportional to the animal size, have at least three walls, a waterproof roof, and protects the animal for regional from the elements.
-									<br><br>
-									<a href="#">Learn more about this law</a>
+									<br>
 								</div>
 
 								<p>
-								<div class="row">
+									<div class="row">
 										<div class="col md8 s8">
-											<input type="checkbox" id="conditions" />
-											<label for="conditions">Improper conditions (dirty, lack of food/water, etc.)</label>	
+											<input type="checkbox" id="conditions"/>
+											<label for="conditions">Animal living in improper conditions</label>	
 										</div>
-										<div class="col md4 s4 right" >
-											<span class="badge indigo" id="learn-more-conditions">Learn more &#9654;</span>
+										<div class="col md4 s4 right">
+											<!--<span class="badge indigo" id="learn-more-conditions">Learn more &#9654;</span>-->
 										</div>
-								</div>
+									</div>
 								</p>
 								<div id="conditions-more-info" class="hidden">
 									Sanitation: Animals must be in a space free of excretions and other waste materials, dirt and trash that may be a health hazard.
 									<br>
 									Food & Water: Animals need access to portable drinking water and edible food.
-									<br><br>
-									<a href="#">Learn more about this law</a>
+									<br>
 								</div>
 
 								<p>
-								<div class="row">
+									<div class="row">
 										<div class="col md8 s8">
-											<input type="checkbox" id="outside" />
-											<label for="outside">Animal left outside</label>
+											<input type="checkbox" id="outside"/>
+											<label for="outside">Animal tethered outside in improper conditions</label>
 										</div>
 										<div class="col md4 s4">
-										<span class="badge indigo" id="learn-more-outside">Learn more &#9654;</span>
+										<!--<span class="badge indigo" id="learn-more-outside">Learn more &#9654;</span>-->
 										</div>
-								</div>
+									</div>
 								</p>
 								<div id="outside-more-info" class="hidden">
 									Animals may be left outside if the following conditions are met: 
@@ -106,20 +104,24 @@
 										<li>- Animal is not outside for more than half an hour when the temperature is below 32 F or above 90 F.</li>
 										<li>- The animal has access to portable drinking water, edible food, and adequate shade or shelter.</li>
 									</ul>
-									<a href="#">Learn more about this law</a>
 								</div>
 
 								<p>
-								<div class="row">
+									<div class="row">
 										<div class="col md8 s8">
 											<input type="checkbox" id="violence" />
 											<label for="violence">Physical violence against animal</label>
 										</div>
 										<div class="col md4 s4">
-											<span class="badge indigo" id="learn-more-violence">Learn more &#9654;</span>
+											<!--<span class="badge indigo" id="learn-more-violence">Learn more &#9654;</span>-->
 										</div>
-								</div>
+									</div>
 								</p>
+								<div id="violence-more-info" class="hidden">
+									Violence include:
+									<ul>
+									</ul>
+								</div>
 
 								<p>
 									<div class="row">
@@ -128,22 +130,36 @@
 											<label for="illness">Neglect of animal's illness or injuries</label>
 										</div>
 										<div class="col md4 s4">
-											<span class="badge indigo" id="learn-more-illness">Learn more &#9654;</span>
+											<!--<span class="badge indigo" id="learn-more-illness">Learn more &#9654;</span>-->
 										</div>
 									</div>
-
 								</p>
-									<div class="row">
-
-										<div class="col md2 s2">									
-											<span class="badge orange help">?</span>
-										</div>
-										<div class="col md8 s8">
-											<p>Is the incident that you're looking for not on this form? Then its not under the jurisdiction of the Humane Officer. <a href="null-report.html">We can help you figure out who to call.</a>
-										</p>
-
-										</div>
+								<div id="illness-more-info" class="hidden">
+									Illness is...
+									<ul>
+									</ul>
 								</div>
+
+								<p>
+									<div class="row">
+										<div class="col md8 s8">
+											<input type="checkbox" id="noneoftheabove" />
+											<label for="noneoftheabove">None of the above</label>
+										</div>
+										<div class="col md4 s4">
+											<!--<span class="badge indigo" id="learn-more-illness">Learn more &#9654;</span>-->
+										</div>
+									</div>
+								</p>
+
+								<!--<div class="row">
+									<div class="col md2 s2">									
+										<span class="badge orange help">?</span>
+									</div>
+									<div class="col md8 s8">
+										<p>Is the incident that you're looking for not on this form? Then its not under the jurisdiction of the Humane Officer. <a href="null-report.html">We can help you figure out who to call.</a></p>
+									</div>
+								</div>-->
 
 							</div>
 						</div>
@@ -154,213 +170,37 @@
 							<div class="col s9">
 								<div class="bold-label">Do any of the animals have... (optional)</div>
 								<div class="regular-label">Select all that apply.</div>
-								<p>
-									<input type="checkbox" id="wounds" />
-									<label for="wounds">Visible wounds?</label>
-								</p>
-								<p>
-									<input type="checkbox" id="hunger" />
-									<label for="hunger">Signs of severe hunger/thirst?</label>
-								</p>
-								<p>
-									<input type="checkbox" id="shelter" />
-									<label for="shelter">Inadequate shelter given extreme weather conditions?</label>
-								</p>
+								<div style="padding:10px">
+									<p>
+										<input type="checkbox" id="wounds" />
+										<label for="wounds">Visible wounds?</label>
+									</p>
+									<p>
+										<input type="checkbox" id="hunger" />
+										<label for="hunger">Signs of severe hunger/thirst?</label>
+									</p>
+									<p>
+										<input type="checkbox" id="shelter" />
+										<label for="shelter">Inadequate shelter given extreme weather conditions?</label>
+									</p>
+								</div>
 							</div>
 						</div>
 
 						<br>
 
-				<h5 class="margin-top-30">Your Information</h5>
-				<p>We may need your phone number to contact you for more information or clarification regarding the details of this report. We also provide e-email updates once the incident has been resolved. 
-				<br>
-				If you are willing to be contacted, please provide your information below.</p>
-
-				<div class="row">
-					<form class="col s12">
 						<div class="row">
-							<div class="input-field col s8">
-								<div class="bold-label">Name (optional)</div>
-								<input placeholder="Your name" id="reporter_name" type="text">
-							</div>
-						</div>
-						<div class="row">
-							<div class="input-field col s8">
-								<div class="bold-label">Callback number (optional)</div>
-								<input placeholder="xxx-xxx-xxxx" id="callback_number" type="text">
-							</div>
-						</div>
-						<div class="row">
-							<div class="input-field col s8">
-								<div class="bold-label">Email (optional)</div>
-								<input placeholder="name@domain.com" id="email" type="text">
-							</div>
-						</div>
-					</form>
-				</div>
-
-				<h5 class="margin-top-15">Incident Information</h5>
-
-				<div class="row">
-					<form class="col s12">
-						<div class="row">
-							<div class="input-field col s8">
-								<div class="bold-label">Location of incident (required)</div>
-								<!-- Google Maps -->
-								<div class="pac-card" id="pac-card">
-									<div id="pac-container">
-										<input id="pac-input" type="text"
-										placeholder="Enter a location">
-									</div>
-								</div>
-								<div id="map" class="margin-top-15"></div>
-								<div id="infowindow-content">
-									<img src="" width="16" height="16" id="place-icon">
-									<span id="place-name"  class="title"></span><br>
-									<span id="place-address"></span>
-								</div>
-							</div>
-						</div>
-
-						<div class="row margin-top-20">
-							<div class="input-field col s8">
-							<div class="bold-label">Time of incident (required)</div>
-							<div class="regular-label">If this is an ongoing incident, please provide the time you last witnessed it.</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="input-field col s3">
-								<input placeholder="Select date" id="date" type="date" class="datepicker">
-							</div>
-							<div class="input-field inline col s3">
-								<input placeholder="XX:XX" id="time" type="text">
-							</div>
-							<div class="input-field inline col s2">
-								<select>
-									<option value="AM">AM</option>
-									<option value="PM">PM</option>
-								</select>
-					  		</div>
-					  	</div>
-					  	<input type="checkbox" id="ongoing" />
-      					<label for="ongoing">This is an ongoing incident</label>
-
-      					<div class="row margin-top-15">
-							<div class="input-field col s8">
-								<div class="bold-label">Animal owner's name (if available)</div>
-								<input placeholder="Name" id="owner_name" type="text">
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="input-field col s8">
-								<div class="bold-label">Number of animals involved (required)</div>
-								<div class="regular-label">Please provide an estimate if you are unsure.</div>
-								<select>
-									<option value="" disabled selected>Choose</option>
-									<option value="1">1</option>
-									<option value="2">2</option>
-									<option value="3">3</option>
-									<option value="4">4</option>
-									<option value="5">5</option>
-									<option value="6">6 or more</option>
-								</select>
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="col s8">
-								<div class="bold-label">Type of animal (required)</div>
-								<div class="regular-label">Select all that apply.</div>
-								<p>
-									<input type="checkbox" id="dog" />
-									<label for="dog">Dog</label>
-								</p>
-								<p>
-									<input type="checkbox" id="cat" />
-									<label for="cat">Cat</label>
-								</p>
-								<p>
-									<input type="checkbox" id="bird" />
-									<label for="bird">Bird</label>
-								</p>
-								<p>
-									<input type="checkbox" id="chicken" />
-									<label for="chicken">Chicken</label>
-								</p>
-								<p>
-									<input type="checkbox" id="mammal" />
-									<label for="mammal">Small mammal (rodent, rabbit, etc.)</label>
-								</p>
-								<p>
-									<input type="checkbox" id="farm" />
-									<label for="farm">Farm animal (horse, pig, etc.)</label>
-								</p>
-								<p>
-									<input type="checkbox" id="unknown" />
-									<label for="unknown">Unknown</label>
-								</p>
-
-								<div class="row">
-									<div class="margin-top-0 input-field inline col s10">
-										<input placeholder="Other" id="other" type="text">
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="input-field col s8">
-								<div class="bold-label">Please describe the appearance of the animal (breed, color, size, etc.) (required)</div>
-								<div class="regular-label">If there are multiple animals, please describe each one involved in the incident.</div>
-								<textarea placeholder="Enter incident description" id="description" class="materialize-textarea"></textarea>
-							</div>
-						</div>
-
-
-
-						<div class="row">
-							<div class="col s8">
-								<div class="bold-label">Upload pictures of the animal(s) (optional)</div>
-								<div class="file-field input-field">
-									<div class="btn indigo">
-										<span>Upload</span>
-										<input type="file">
-									</div>
-									<div class="file-path-wrapper col s8">
-										<input class="file-path" type="text">
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="input-field col s8">
-								<div class="bold-label">Additional details (optional)</div>
-								<div class="regular-label">Please provide any additional information that might help us understand the situation and respond in the most appropriate manner.</div>
-								<textarea placeholder="Enter additional details" id="details" class="materialize-textarea"></textarea>
-							</div>
-						</div>
-
-						<br>
-
-
-
-
-						<div class="row">
-							<button class="indigo btn-large waves-effect waves-light margin-left-10" type="submit" name="action" id="submit-button">Submit
-							    <i class="material-icons right">send</i>
+							<button class="grey lighten-2 btn-large waves-effect waves-light margin-left-10" type="next" name="action" id="next-button" style="color: black">Next
 							</button>
 						</div>
-					</form>
+						<br>
 				</div>
-
+				<br>
+				<br>
 			</div>
+
 		</main>
 
-		<br>
-		<br>
-		<br>
 
 		<!--Import jQuery before materialize.js-->
 		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
