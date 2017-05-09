@@ -15,28 +15,32 @@ $(document).ready(function() {
 	});
 
 	// Initialize learn more text variable with the arrow character
-	var learnMoreText = $("#shelter").html();
+	var learnMoreText = $("#learn-more-shelter").html();
+  // In case people want to change the badge wording later
+  var what = "What is this?"
 
 	// Learn more buttons for types of incidents
-	$("#shelter").click(function() {
-		if ($(this).text() == "Close") {
-			$("#shelter-more-info").hide("slow");
-			$(this).html(learnMoreText);
-		} else {
+
+  $("#learn-more-shelter").click(function() {
+		if ($(this).text() == what) {
 			$("#shelter-more-info").show("slow");
 			$(this).text("Close");
+		} else {
+			$("#shelter-more-info").hide("slow");
+			$(this).text(what);
 		}
 	});
 
-  $("#learn-more-shelter").click(function() {
-    if ($(this).text() == "Close") {
-      $("#shelter-more-info").hide("slow");
-      $(this).html(learnMoreText);
-    } else {
+  $("#shelter").click(function() {
+    if($(this).prop('checked') == true) {
       $("#shelter-more-info").show("slow");
-      $(this).text("Close");
+      $("#learn-more-shelter").text("Close");
+    } else if ($("#learn-more-shelter").text() == "Close"){
+        $("#shelter-more-info").hide("slow");
+        $("#learn-more-shelter").text(what);
     }
   });
+
 
 	$("#conditions").click(function() {
 		if ($(this).text() == "Close") {
