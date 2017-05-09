@@ -67,12 +67,16 @@ help{
 
 span.badge {
 	color: white;
-	font-size: 12px;
+	font-size: 10px;
 	right: inherit;
 	margin-left: 5px;
 	margin-top: 3px;
+	padding: 3px;
+	padding-left:8px;
+	padding-right: 8px;
 	cursor: pointer;
 	position:right;
+	border-radius: 4px;
 }
 
 .hidden {
