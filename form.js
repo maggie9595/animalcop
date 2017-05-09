@@ -63,10 +63,10 @@ $(document).ready(function() {
 
   $("#learn-more-outside").click(function() {
     if ($(this).text() == what) {
-      $("#conditions-more-info").show("slow");
+      $("#outside-more-info").show("slow");
       $(this).text("Close");
     } else {
-      $("#conditions-more-info").hide("slow");
+      $("#outside-more-info").hide("slow");
       $(this).text(what);
     }
   });
@@ -122,6 +122,23 @@ $(document).ready(function() {
   });
 
 });
+  
+  //unchecks everything if none of the above is selected
+  $("#noneoftheabove").click(function() {
+    if($(this).prop('checked') == true) {
+      $("#shelter, #conditions, #outside, #violence, #illness").prop('checked', false);
+      $("#shelter-more-info, #conditions-more-info, #outside-more-info, #violence-more-info, #illness-more-info").hide("slow");
+    }
+  });
+
+  //unchecks none of the above if something else is selected
+  $("#shelter, #conditions, #outside, #violence, #illness").click(function() {
+    if($(this).prop('checked') == true && $("#noneoftheabove").prop('checked') == true) {
+      $("#noneoftheabove").prop('checked', false);
+    }
+
+  });
+
 
 // Google Maps
 function initMap() {
