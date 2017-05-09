@@ -28,6 +28,16 @@ $(document).ready(function() {
 		}
 	});
 
+  $("#learn-more-shelter").click(function() {
+    if ($(this).text() == "Close") {
+      $("#shelter-more-info").hide("slow");
+      $(this).html(learnMoreText);
+    } else {
+      $("#shelter-more-info").show("slow");
+      $(this).text("Close");
+    }
+  });
+
 	$("#conditions").click(function() {
 		if ($(this).text() == "Close") {
 			$("#conditions-more-info").hide("slow");
