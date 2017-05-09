@@ -36,51 +36,91 @@ $(document).ready(function() {
       $("#shelter-more-info").show("slow");
       $("#learn-more-shelter").text("Close");
     } else if ($("#learn-more-shelter").text() == "Close"){
-        $("#shelter-more-info").hide("slow");
-        $("#learn-more-shelter").text(what);
+      $("#shelter-more-info").hide("slow");
+      $("#learn-more-shelter").text(what);
     }
   });
 
-
-	$("#conditions").click(function() {
-		if ($(this).text() == "Close") {
-			$("#conditions-more-info").hide("slow");
-			$(this).html(learnMoreText);
-		} else {
-			$("#conditions-more-info").show("slow");
-			$(this).text("Close");
-		}
-	});
-
-	$("#outside").click(function() {
-		if ($(this).text() == "Close") {
-			$("#outside-more-info").hide("slow");
-			$(this).html(learnMoreText);
-		} else {
-			$("#outside-more-info").show("slow");
-			$(this).text("Close");
-		}
-	});
-
-  $("#violence").click(function() {
-    if ($(this).text() == "Close") {
-      $("#violence-more-info").hide("slow");
-      $(this).html(learnMoreText);
+  $("#learn-more-conditions").click(function() {
+    if ($(this).text() == what) {
+      $("#conditions-more-info").show("slow");
+      $(this).text("Close");
     } else {
+      $("#conditions-more-info").hide("slow");
+      $(this).text(what);
+    }
+  });
+
+  $("#conditions").click(function() {
+    if($(this).prop('checked') == true) {
+      $("#conditions-more-info").show("slow");
+      $("#learn-more-conditions").text("Close");
+    } else if ($("#learn-more-conditions").text() == "Close"){
+      $("#conditions-more-info").hide("slow");
+      $("#learn-more-conditions").text(what);
+    }
+  });
+
+  $("#learn-more-outside").click(function() {
+    if ($(this).text() == what) {
+      $("#conditions-more-info").show("slow");
+      $(this).text("Close");
+    } else {
+      $("#conditions-more-info").hide("slow");
+      $(this).text(what);
+    }
+  });
+
+  $("#outside").click(function() {
+    if($(this).prop('checked') == true) {
+      $("#outside-more-info").show("slow");
+      $("#learn-more-outside").text("Close");
+    } else if ($("#learn-more-outside").text() == "Close"){
+      $("#outside-more-info").hide("slow");
+      $("#learn-more-outside").text(what);
+    }
+  });
+
+  $("#learn-more-violence").click(function() {
+    if ($(this).text() == what) {
       $("#violence-more-info").show("slow");
       $(this).text("Close");
+    } else {
+      $("#violence-more-info").hide("slow");
+      $(this).text(what);
+    }
+  });
+
+  $("#violence").click(function() {
+    if($(this).prop('checked') == true) {
+      $("#violence-more-info").show("slow");
+      $("#learn-more-violence").text("Close");
+    } else if ($("#learn-more-violence").text() == "Close"){
+      $("#violence-more-info").hide("slow");
+      $("#learn-more-violence").text(what);
+    }
+  });
+
+  $("#learn-more-illness").click(function() {
+    if ($(this).text() == what) {
+      $("#illness-more-info").show("slow");
+      $(this).text("Close");
+    } else {
+      $("#illness-more-info").hide("slow");
+      $(this).text(what);
     }
   });
 
   $("#illness").click(function() {
-    if ($(this).text() == "Close") {
-      $("#illness-more-info").hide("slow");
-      $(this).html(learnMoreText);
-    } else {
+    if($(this).prop('checked') == true) {
       $("#illness-more-info").show("slow");
-      $(this).text("Close");
+      $("#learn-more-illness").text("Close");
+    } else if ($("#learn-more-illness").text() == "Close"){
+      $("#illness-more-info").hide("slow");
+      $("#learn-more-illness").text(what);
     }
   });
+
 });
 
 // Google Maps
