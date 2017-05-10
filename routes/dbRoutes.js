@@ -3,7 +3,10 @@ var mongoModel = require("../models/mongoModel.js")
 
 // Define the routes for this controller
 exports.init = function(app) {
-  app.get('/', index); // essentially the app welcome page
+  app.get('/', index); // App home page
+  app.get('/form-1', form1); // Form page 1
+  app.get('/form-2', form2); // Form page 2
+
   // The collection parameter maps directly to the mongoDB collection
   app.put('/:collection', doCreate); // CRUD Create
   app.get('/:collection', doRetrieve); // CRUD Retrieve
@@ -11,11 +14,21 @@ exports.init = function(app) {
   // The CRUD Delete path is left for you to define
 }
 
-// No path:  display instructions for use
-index = function(req, res) {
-  res.render('index');
-  //res.render('help', {title: 'MongoDB Test'})
-};
+  // No path:  display instructions for use
+  index = function(req, res) {
+    res.render('index');
+    //res.render('help', {title: 'MongoDB Test'})
+  };
+
+  // Display form page 1
+  form1 = function(req, res) {
+    res.render('form-1');
+  };
+
+  // Display form page 2
+  form2 = function(req, res) {
+    res.render('form-2');
+  };
 
 /********** CRUD Create *******************************************************
  * Take the object defined in the request body and do the Create
