@@ -1,3 +1,19 @@
+.row{
+	width: 90%;
+}
+
+
+input[type=text]:disabled{
+	font-size:1.5rem;
+	color:black;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+input[type=text]:disabled+label{
+	color:black;
+}
+
 .right{
 	float:right;
 }
@@ -5,7 +21,10 @@
 .card-title{
 	font-size:16px;
 }
-
+.card-panel{
+	padding:8px;
+    margin: .5rem 0 0 0;
+}
 .margin-top-0 {
 	margin-top: 0px !important;
 }
@@ -30,6 +49,9 @@
 	margin-top: 40px;
 }
 
+.margin-top-50 {
+	margin-top: 50px;
+}
 .margin-left-10 {
 	margin-left: 10px;
 }
@@ -61,21 +83,26 @@ help{
 
 span.badge {
 	color: white;
-	font-size: 12px;
+	font-size: 10px;
 	right: inherit;
 	margin-left: 5px;
 	margin-top: 3px;
+	padding: 3px;
+	padding-left:8px;
+	padding-right: 8px;
 	cursor: pointer;
 	position:right;
+	border-radius: 4px;
 }
 
 .hidden {
 	display: none;
-	background: #d1d1d1;
+	background: #f5f5f5;
 	padding-top: 15px;
 	padding-bottom: 15px;
 	padding-left: 20px;
 	padding-right: 20px;
+	width: 90%;
 }
 
 .bold-label {
@@ -100,7 +127,6 @@ span.badge {
 #infowindow-content {
 	display: none;
 }
-
 #map #infowindow-content {
 	display: inline;
 }
@@ -111,7 +137,6 @@ span.badge {
 }
 
 .pac-card {
-	margin: 10px 10px 0 0;
 	border-radius: 2px 0 0 2px;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -141,7 +166,7 @@ span.badge {
 	background-color: #fff;
 	font-family: Roboto;
 	font-size: 15px;
-	font-weight: 300;
+	font-weight: 300; 
 	margin-left: 12px;
 	padding: 0 11px 0 13px;
 	text-overflow: ellipsis;
@@ -181,7 +206,7 @@ span.badge {
 }
 
 span.badge.new {
-    margin-right: 10px;
+    margin-right: 10%;
 }
 
 .sortable {
@@ -200,4 +225,18 @@ span.badge.new {
 
 .wide-button {
 	width: 200px;
+}
+
+.chips .input {
+  background: none;
+  border: 0;
+  color: rgba(0, 0, 0, 0.6);
+  display: inline-block;
+  font-size: 1rem;
+  height: 3rem;
+  line-height: 32px;
+  outline: 0;
+  margin: 0;
+  padding: 0 !important;
+  width: inherit !important;
 }
