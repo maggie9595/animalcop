@@ -4,7 +4,11 @@ var path = require('path');
 var bodyParser = require('body-parser');
 
 var express = require('express');
+var helpers = require('express-helpers');
 var app = express();
+
+// Express helpers
+helpers(app);
 
 // Set the views directory
 app.set('views', __dirname + '/views');

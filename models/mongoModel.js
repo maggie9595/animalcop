@@ -1,26 +1,10 @@
-/*
- * This model uses the Node.js MongoDB Driver.
- * To install:  npm install mongodb --save
- */
 var mongoClient = require('mongodb').MongoClient;
 
 /*
  * This connection_string is for mongodb running locally.
- * Change nameOfMyDb to reflect the name you want for your database
  */
-var connection_string = 'localhost:27017/nameOfMyDb';
-/*
- * If OPENSHIFT env variables have values, then this app must be running on 
- * OPENSHIFT.  Therefore use the connection info in the OPENSHIFT environment
- * variables to replace the connection_string.
- */
-if(process.env.OPENSHIFT_MONGODB_DB_PASSWORD){
-  connection_string = process.env.OPENSHIFT_MONGODB_DB_USERNAME + ":" +
-  process.env.OPENSHIFT_MONGODB_DB_PASSWORD + "@" +
-  process.env.OPENSHIFT_MONGODB_DB_HOST + ':' +
-  process.env.OPENSHIFT_MONGODB_DB_PORT + '/' +
-  process.env.OPENSHIFT_APP_NAME;
-}
+var connection_string = 'localhost:27017/animalcop';
+
 // Global variable of the connected database
 var mongoDB; 
 
