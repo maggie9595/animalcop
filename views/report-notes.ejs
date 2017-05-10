@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Humane Reports</title>
+		<!--Import Google Icon Font-->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!--Import materialize.css-->
+		<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css" media="screen,projection">
+		<!-- Import custom application styles -->
+		<link type="text/css" rel="stylesheet" href="css/styles.css" media="screen,projection"/>
+		<!--Let browser know website is optimized for mobile-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	</head>
+
+	<body>
+		<header>
+			<nav class="indigo darken-2"> 
+				<div class="container">
+					<div class="nav-wrapper grey lighten-2">
+						<a href="index.html" class="center brand-logo">Humane Reports</a>
+						<ul class="right side-nav" id="nav-mobile">
+				         	<li class="hide-on-small-only"><a href="parallax.html"><i class="mdi-navigation-arrow-back"></i></a></li>
+				        </ul>
+				        <a class="button-collapse" href="#" data-activates='nav-mobile'><i class="mdi-navigation-menu"></i></a>
+					</div>
+					<ul id="slide-out" class="side-nav">
+						<center><li><a class="subheader">Menu</a></li></center>
+						<li><a class="waves-effect" href="dashboard.html">Itinerary/Backlog</a></li>
+						<li><a class="waves-effect" href="archive.html">Archived Cases</a></li>
+						<li><a class="waves-effect" href="account.html">My Account</a></li>
+					</ul>
+  					<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+				</div>
+			</nav> 
+		</header>
+        <div class="container">
+        <div class="row margin-top-20">
+					<div class="col s12">
+						<ul class="tabs">
+							<li class="tab col s3"><a class="active" href="#incoming_report">Incoming Report</a></li>
+							<li class="tab col s3"><a href="#notes"> Notes </a></li>
+						</ul>
+					</div>
+        <div class= "margin-left-50 ">
+
+        <div id="incoming_report" >
+            <div class="col s12 col s12 card-panel blue-grey lighten-5">
+            <div class="col s12 margin-left-50">
+                <div class="row">
+                    <div class="col s12 m4 l3">
+                        <p class="bold-label">Urgency Level</p>
+                    </div>
+                    <div class="col s12 m4 l3">
+                        <p>Med</p>
+                    </div>
+                    <div class="col s12 m4 l3">
+                      <div class="chip">Visible wounds</div>
+                    </div>
+                </div>
+                <!--Address-->
+
+                <div class="row"> 
+                    <div class="col s12 m4 l3">      
+                         <p class="bold-label">Address</p>
+                    </div>
+                    <div class="col s12 m4 l9">
+                        <p>543 Wilkins Ave</p>
+                    </div>
+                </div>
+                </div>
+                <div class="row"> 
+                    <!--Address-->
+                    <div class="col s12 m4 l3">
+                        <p class="bold-label">Reporter Name</p>
+                    </div>
+                    <div class="col s12 m4 l9">
+                        <p>John Doe</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 m4 l3">
+                        <p class="bold-label">Reporter Contact</p>
+                    </div>
+                    <div class="margin-top-20 col s12 m4 l3">
+                        <a ref="tel:1-543-594-3211">1-543-594-3211</a>
+                    </div>
+                    <div class="margin-top-20 col s12 m4 l3">
+                        <a ref="jdoe@gmail.com">jdoe@gmail.com</a>
+                    </div>
+                </div>
+                <div class="row divider"></div>
+                <div class="row"> 
+                    <div class="col s12 m4 l3">
+                        <p class="bold-label">Animal Type</p>
+                    </div>
+                    <div class="col s12 m4 l2">
+                        <p> Dog </p>
+                    </div>
+                </div>
+                <div class="row"> 
+                <div class="col s12 m4 l3">
+                    <p class="bold-label">Incident Type</p>
+                </div>
+                <div class="col s12 m4 l3">
+                      <div class="chip">Left outside</div>
+                </div>
+                <div class="col s12 m4 l3">
+                    <div class="chip">Inadequate shelter </div>
+                </div>
+                <div class="col s12 m4 l3">
+                    <div class="chip">Extreme weather</div>
+                </div>
+                </div>
+
+                <div class="row"> 
+                    <div class="col s12 m4 l3">
+                        <p class="bold-label">Date</p>
+                    </div>
+                    <div class="col s9" class="margin-top-30">
+                        <div class="input-field">Ongoing</div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 m4 l3">
+                        <p class="bold-label">Animal Description</p>
+                    </div>
+                    <div class="col 9">
+                        <p>I have been seeing my neighbor’s dog chained outside everyday and it looks really sad and hungry so I am worried about it. </p>
+                    </div>
+                </div>
+            <div class="row">
+                    <div class="col s12 m4 l3">
+                        <p class="bold-label">Additional Details</p>
+                    </div>
+                    <div class="col 9">
+                        <p>I have been seeing my neighbor’s dog chained outside everyday and it looks really sad and hungry so I am worried about it. </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 m4 l3">
+                        <p class="bold-label">Images</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 m4 l3">
+                        <img class="responsive-img" src="assets/allegheny.png">
+                    </div>
+                    <div class="col s12 m4 l3">
+                        <img class="responsive-img" src="assets/agencies.png">
+                    </div>
+                    <div class="col s12 m4 l3">
+                        <img class="responsive-img" src="assets/agencies.png">
+                    </div>
+                </div>
+            </div>
+            <div class="row margin-top-50">
+                <div class="col s12">
+                    <h5> Preview Route</h5>
+                </div>
+            </div>
+                <!--google maps implementation-->
+                <button class="btn waves-effect waves-light" type="add"  name="action">Add to Itinerary
+                    <i class="material-icons">add</i>
+                </button>
+                <button class="btn waves-effect waves-light" type="add"  name="action">Add to Backlog
+                     <i class="material-icons add">log</i>
+                </button>
+            </div>
+                    </div>
+
+    <!--end of incoming report-->
+            </div>        
+        <div id="notes" class="col s12">
+            <div class="row">
+                <div class="col s6">
+                    <h5> Owner Information</h5>
+                </div>
+            </div>
+   
+            <form class="col s12">
+						<div class="row">
+							<div class="input-field col s12">
+								<div class="bold-label">Owner Name</div>
+								<input placeholder="Owner Name" id="owner_name" type="text">
+							</div>
+						</div>
+						<div class="row">
+							<div class="input-field col s12">
+								<div class="bold-label">Owner Number </div>
+								<input placeholder="xxx-xxx-xxxx" id="callback_number" type="text">
+							</div>
+						</div>
+						<div class="row">
+							<div class="input-field col s12">
+								<div class="bold-label">Owner Email</div>
+								<input placeholder="name@domain.com" id="email" type="text">
+							</div>
+						</div>
+                        <div class="row">
+                                   <!--I don't know how to add the dates, would be a javascript thing -->
+							<div class="col s12">
+                            <div class="bold-label">Notes</div>
+                            </div>
+                        </div>	
+                        <div class="row">
+                                <div class="input-field col s12">
+								<textarea id="textarea1" class="materialize-textarea"></textarea>
+                                <label for="textarea1"> Today's Date</label>
+							</div>
+						</div>
+                <div class="row">
+                <div class="col s3">
+                    <i class="material-icons">note_add</i>
+                    <div class="bold-label">Add Note</div>
+                </div>
+                </div>
+                        
+                <div class="row">
+                <div class="col s6">
+                    <h5> Animal Details</h5>
+                </div>
+                
+                </div>
+                    <div class="row card-panel blue-grey lighten-5">
+                        <div class="input-field col s12">
+                            <div class="bold-label">Animal Name</div>
+                            <input placeholder="Name of Animal" id="email" type="text">
+                        </div>
+                        <div class="input-field col s12">
+								<div class="bold-label">Type of Animal</div>
+								<select>
+									<option value="" disabled selected>Choose</option>
+									<option value="1">Dog</option>
+									<option value="2">Cat</option>
+									<option value="3">Bird</option>
+									<option value="4">Chicken</option>
+									<option value="5">Small mammal (rodent,rabbit,etc)</option>
+									<option value="6">Farm Animal (horse, pig, etc)</option>
+								</select>
+				        </div>
+                        <div class="input-field col s12">
+                            <div class="bold-label">Animal Description</div>
+                            <input placeholder="Describe the animal in detail" id="email" type="text">
+                        </div>
+                        <div class="row">
+                            <div class="col s3">
+                                <div class="bold-label">Add Photos</div>
+                                <a class="btn-floating btn-large waves-light"><i class="material-icons">add_a_photo</i></a>
+                            </div>
+                        </div>
+                </div>
+                <div class="row">
+                <div class="col s3">
+                    <div class="bold-label">Add Animal</div>
+                    <a class="btn-floating btn-large waves-effect waves-light blue">        <i class="material-icons">add_circle_outline</i></a>
+                </div>
+                </div>
+                
+
+            </form>
+            </div>
+        </div>
+
+		<br>
+		<br>
+		<br>
+
+		<!--Import jQuery before materialize.js-->
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<script type="text/javascript" src="jquery.ui.touch-punch.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+		<!-- Google Maps -->
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAn6V9t-lR5_9IzWjc5FGhBWj67bQQqpkY&callback=initMap"
+        async defer></script>
+		<!-- Import custom application javascript -->
+		<script type="text/javascript" src="js/dashboard.js"></script>
+	</body>
+</html>

@@ -1,55 +1,144 @@
 $(document).ready(function() {
-	// Initialize the datepicker
-	$('.datepicker').pickadate({
-		selectMonths: true, 
-		selectYears: 5
-	});
+  // Initialize the datepicker
+  $('.datepicker').pickadate({
+    selectMonths: true, 
+    selectYears: 5
+  });
 
-	// Initialize dropdowns
-	$('select').material_select();
+  // Initialize dropdowns
+  $('select').material_select();
 
-	// Submit form button
-	$('#submit-button').click(function(event) {
-		event.preventDefault();
-		window.location = "confirmation.html";
-	});
+  // Submit form button
+  $('#submit-button').click(function(event) {
+    event.preventDefault();
+    window.location = "confirmation.html";
+  });
 
-	// Initialize learn more text variable with the arrow character
-	var learnMoreText = $("#learn-more-shelter").html();
+  // Initialize learn more text variable with the arrow character
+  var learnMoreText = $("#learn-more-shelter").html();
+  // In case people want to change the badge wording later
+  var what = "What is this?"
 
-	// Learn more buttons for types of incidents
-	$("#learn-more-shelter").click(function() {
-		if ($(this).text() == "Close") {
-			$("#shelter-more-info").hide("slow");
-			$(this).html(learnMoreText);
-		} else {
-			$("#shelter-more-info").show("slow");
-			$(this).text("Close");
-		}
-	});
+  // Learn more buttons for types of incidents
 
-	$("#learn-more-conditions").click(function() {
-		if ($(this).text() == "Close") {
-			$("#conditions-more-info").hide("slow");
-			$(this).html(learnMoreText);
-		} else {
-			$("#conditions-more-info").show("slow");
-			$(this).text("Close");
-		}
-	});
+  $("#learn-more-shelter").click(function() {
+    if ($(this).text() == what) {
+      $("#shelter-more-info").show("slow");
+      $(this).text("Close");
+    } else {
+      $("#shelter-more-info").hide("slow");
+      $(this).text(what);
+    }
+  });
 
-	$("#learn-more-outside").click(function() {
-		if ($(this).text() == "Close") {
-			$("#outside-more-info").hide("slow");
-			$(this).html(learnMoreText);
-		} else {
-			$("#outside-more-info").show("slow");
-			$(this).text("Close");
-		}
-	});
+  $("#shelter").click(function() {
+    if($(this).prop('checked') == true) {
+      $("#shelter-more-info").show("slow");
+      $("#learn-more-shelter").text("Close");
+    } else if ($("#learn-more-shelter").text() == "Close"){
+      $("#shelter-more-info").hide("slow");
+      $("#learn-more-shelter").text(what);
+    }
+  });
 
-	
+  $("#learn-more-conditions").click(function() {
+    if ($(this).text() == what) {
+      $("#conditions-more-info").show("slow");
+      $(this).text("Close");
+    } else {
+      $("#conditions-more-info").hide("slow");
+      $(this).text(what);
+    }
+  });
+
+  $("#conditions").click(function() {
+    if($(this).prop('checked') == true) {
+      $("#conditions-more-info").show("slow");
+      $("#learn-more-conditions").text("Close");
+    } else if ($("#learn-more-conditions").text() == "Close"){
+      $("#conditions-more-info").hide("slow");
+      $("#learn-more-conditions").text(what);
+    }
+  });
+
+  $("#learn-more-outside").click(function() {
+    if ($(this).text() == what) {
+      $("#outside-more-info").show("slow");
+      $(this).text("Close");
+    } else {
+      $("#outside-more-info").hide("slow");
+      $(this).text(what);
+    }
+  });
+
+  $("#outside").click(function() {
+    if($(this).prop('checked') == true) {
+      $("#outside-more-info").show("slow");
+      $("#learn-more-outside").text("Close");
+    } else if ($("#learn-more-outside").text() == "Close"){
+      $("#outside-more-info").hide("slow");
+      $("#learn-more-outside").text(what);
+    }
+  });
+
+  $("#learn-more-violence").click(function() {
+    if ($(this).text() == what) {
+      $("#violence-more-info").show("slow");
+      $(this).text("Close");
+    } else {
+      $("#violence-more-info").hide("slow");
+      $(this).text(what);
+    }
+  });
+
+  $("#violence").click(function() {
+    if($(this).prop('checked') == true) {
+      $("#violence-more-info").show("slow");
+      $("#learn-more-violence").text("Close");
+    } else if ($("#learn-more-violence").text() == "Close"){
+      $("#violence-more-info").hide("slow");
+      $("#learn-more-violence").text(what);
+    }
+  });
+
+  $("#learn-more-illness").click(function() {
+    if ($(this).text() == what) {
+      $("#illness-more-info").show("slow");
+      $(this).text("Close");
+    } else {
+      $("#illness-more-info").hide("slow");
+      $(this).text(what);
+    }
+  });
+
+  $("#illness").click(function() {
+    if($(this).prop('checked') == true) {
+      $("#illness-more-info").show("slow");
+      $("#learn-more-illness").text("Close");
+    } else if ($("#learn-more-illness").text() == "Close"){
+      $("#illness-more-info").hide("slow");
+      $("#learn-more-illness").text(what);
+    }
+  });
+
 });
+  
+  //unchecks everything if none of the above is selected
+  $("#noneoftheabove").click(function() {
+    if($(this).prop('checked') == true) {
+      $("#shelter, #conditions, #outside, #violence, #illness").prop('checked', false);
+      $("#shelter-more-info, #conditions-more-info, #outside-more-info, #violence-more-info, #illness-more-info").hide("slow");
+    }
+  });
+
+  //unchecks none of the above if something else is selected
+  $("#shelter, #conditions, #outside, #violence, #illness").click(function() {
+    if($(this).prop('checked') == true && $("#noneoftheabove").prop('checked') == true) {
+      $("#noneoftheabove").prop('checked', false);
+    }
+
+  });
+
 
 // Google Maps
 function initMap() {
@@ -82,10 +171,10 @@ function initMap() {
   marker.addListener('dragend', reverseGeocode);
 
   // Get new location with reverse geocoding
-	function reverseGeocode(event) {
-		var latlng = {lat: event.latLng.lat(), lng: event.latLng.lng()};
-		var geocoder = new google.maps.Geocoder;
-		geocoder.geocode({'location': latlng}, function(results, status) {
+  function reverseGeocode(event) {
+    var latlng = {lat: event.latLng.lat(), lng: event.latLng.lng()};
+    var geocoder = new google.maps.Geocoder;
+    geocoder.geocode({'location': latlng}, function(results, status) {
       if (status === 'OK') {
         if (results[1]) {
           map.setZoom(17);
@@ -101,7 +190,7 @@ function initMap() {
         window.alert('Geocoder failed due to: ' + status);
       }
     });
-	}
+  }
 
   // Try HTML5 geolocation.
   if (navigator.geolocation) {

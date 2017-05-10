@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Report Animal Neglect and Cruelty</title>
+
+		<!--Import Google Icon Font-->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!--Import materialize.css-->
+		<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css" media="screen,projection">
+		<!-- Import custom application styles -->
+		<link type="text/css" rel="stylesheet" href="css/styles.css" media="screen,projection"/>
+		<!--Let browser know website is optimized for mobile-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	</head>
+
+	<body>
+		<header>
+			<nav class="indigo darken-2"> 
+				<div class="container">
+					<div class="nav-wrapper grey lighten-2">
+						<a href="home2.html" class="brand-logo">Report Animal Neglect and Cruelty</a>
+						<ul class="right side-nav" id="nav-mobile">
+				         	<li class="hide-on-small-only"><a href="parallax.html"><i class="mdi-navigation-arrow-back"></i></a></li>
+				        </ul>
+				        <a class="button-collapse" href="#" data-activates='nav-mobile'><i class="mdi-navigation-menu"></i></a>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<main style="background-color: lightgrey">
+			<br>
+			<div class="container grey lighten-2 z-depth-2" style="padding-left: 50px; padding-top: 10px; padding-bottom: 10px">
+				<h5 style="color:white"> Page 2 of 2 </h5>
+			</div>
+			<div class="container z-depth-2" style="background-color: white">
+				<br>
+				<form class="container">
+					<div>
+						<h5 >Describe the Location and Time</h5>
+
+						<!--location-->
+						<div class="input-field">
+							<div class="bold-label">Location of incident</div>
+							<!-- Google Maps -->
+							<div class="pac-card" id="pac-card">
+								<div id="pac-container">
+									<input id="pac-input" type="text"
+									placeholder="Enter a location">
+								</div>
+							</div>
+							<div id="map" class="margin-top-15"></div>
+							<div id="infowindow-content">
+								<img src="" width="16" height="16" id="place-icon">
+								<span id="place-name"  class="title"></span><br>
+								<span id="place-address"></span>
+							</div>
+						</div>
+					</div>
+
+					<!--incident time-->
+					<div class="margin-top-20">
+						<div class="input-field">
+							<div class="bold-label">Time of incident</div>
+							<div class="regular-label">If this is an ongoing incident, please provide the time you last witnessed it.</div>
+						</div>
+						<div class="row">
+							<div class="input-field col s3">
+								<input placeholder="Select date" id="date" type="date" class="datepicker">
+							</div>
+							<div class="input-field inline col s3">
+								<input placeholder="XX:XX" id="time" type="text">
+							</div>
+							<div class="input-field inline col s2">
+								<select>
+									<option value="AM">AM</option>
+									<option value="PM">PM</option>
+								</select>
+					  		</div>
+
+					  	</div>
+					  	<div style="padding:10px">
+					  		<input type="checkbox" id="ongoing" />
+      						<label for="ongoing">This is an ongoing incident</label>
+      					</div>
+					</div>
+
+
+
+					<!--animal description-->
+      				<div class="margin-top-50">
+      					<h5 >Describe the Animals Involved</h5>
+      					<br>
+      					<!--owner name-->
+						<div class="input-field">
+							<div class="bold-label">Animal owner's name (if available)</div>
+							<input placeholder="Name" id="owner_name" type="text">
+						</div>
+						
+						<!--number of animals-->					
+						<br>
+						<div class="input-field">
+							<div class="bold-label">Number of animals involved</div>
+							<div class="regular-label">Please provide an estimate if you are unsure.</div>
+								
+							<select>
+								<option value="" disabled selected>Choose</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6 or more</option>
+							</select>
+						</div>
+						
+						<!--type of animals-->
+						<br>
+						<div>
+							<div class="bold-label margin-top-20">Type of animal(s)</div>
+							<div class="regular-label">Select all that apply.</div>
+
+							<div style="padding: 10px">
+								<p>
+									<input type="checkbox" id="dog" />
+									<label for="dog">Dog</label>
+								</p>
+								<p>
+									<input type="checkbox" id="cat" />
+									<label for="cat">Cat</label>
+								</p>
+								<p>
+									<input type="checkbox" id="bird" />
+									<label for="bird">Bird</label>
+								</p>
+								<p>
+									<input type="checkbox" id="chicken" />
+									<label for="chicken">Chicken</label>
+								</p>
+								<p>
+									<input type="checkbox" id="mammal" />
+									<label for="mammal">Small mammal (rodent, rabbit, etc.)</label>
+								</p>
+								<p>
+									<input type="checkbox" id="farm" />
+									<label for="farm">Farm animal (horse, pig, etc.)</label>
+								</p>
+								<p>
+									<input type="checkbox" id="unknown" />
+									<label for="unknown">Unknown</label>
+								</p>
+
+								<div class="row">
+									<div class="margin-top-0 input-field inline col s5">
+										<input placeholder="Other" id="other" type="text">
+									</div>
+								</div>
+							</div>
+							
+						</div>
+
+						<!--appearance of animals-->
+						<br>
+						<div>
+							<div class="input-field">
+								<div class="bold-label">Please describe the appearance of the animal (breed, color, size, etc.)</div>
+								<div class="regular-label">If there are multiple animals, please describe each one involved in the incident.</div>
+								<textarea placeholder="Enter animal description" id="description" class="materialize-textarea"></textarea>
+							</div>
+						</div>
+
+						<!--urgency indicators-->
+						<br>
+						<div>
+							<div class="bold-label">Do any of the animals have... (optional)</div>
+							<div class="regular-label">Select any and all that apply.</div>
+							<div style="padding:10px">
+									<p>
+										<input type="checkbox" id="wounds" />
+										<label for="wounds">Visible wounds?</label>
+									</p>
+									<p>
+										<input type="checkbox" id="hunger" />
+										<label for="hunger">Signs of severe hunger/thirst?</label>
+									</p>
+									<p>
+										<input type="checkbox" id="shelter" />
+										<label for="shelter">Inadequate shelter given extreme weather conditions?</label>
+									</p>
+							</div>
+						</div>
+					
+					</div>
+
+
+					<!--upload pictures-->	
+					<br>
+					<br>
+					<div>
+						<div class="bold-label">Upload pictures of the animal(s) (optional)</div>
+						<div class="file-field input-field">
+							<div class="btn indigo">
+								<span>Upload</span>
+								<input type="file">
+							</div>
+							<div class="file-path-wrapper col s8">
+								<input class="file-path" type="text">
+							</div>		
+						</div>
+					</div>
+						
+					<!--additional details-->
+					<br>
+					<div>
+						<div class="input-field">
+							<div class="bold-label">Additional details (optional)</div>
+							<div class="regular-label">Please provide any additional information that might help us understand the situation and respond in the most appropriate manner.</div>
+							<textarea placeholder="Enter additional details" id="details" class="materialize-textarea"></textarea>
+						</div>
+					</div>
+
+					<br>
+
+					<!--your information-->
+					<div>
+						<h5 class="margin-top-30">Your Information</h5>
+						<p>We may need your phone number to contact you for more information or updates regarding the details of this report. We guarantee that the information you give us will not be used for anything unrelated to the investigation of this incident.</p>
+
+						<div class="input-field">
+							<div class="bold-label">Name (optional)</div>
+							<input placeholder="Your name" id="reporter_name" type="text">
+						</div>
+
+						<div class="input-field">
+							<div class="bold-label">Callback number (optional)</div>
+							<div class="regular-label">We request a callback number so that we may contact you for additional details or clarifications during the investigation of this report.</div>
+							<input placeholder="xxx-xxx-xxxx" id="callback_number" type="text">
+						</div>
+
+						<div class="input-field">
+							<div class="bold-label">Email updates (optional)</div>
+							<div class="regular-label">If you are interested in an email update that the case has been investigated and resolved, please provide your email here.</div>
+							<input placeholder="name@domain.com" id="email" type="text">
+						</div>
+					</div>
+						<br>
+						<br>
+						<div class="row">
+							<button class="indigo btn-large waves-effect waves-light margin-left-10" type="submit" name="action" id="submit-button">Submit Report
+							    <i class="material-icons right">send</i>
+							</button>
+						</div>
+						<br>
+						<br>
+					
+					</form>
+				</div>
+
+			</div>
+			<br>
+			<br>
+			<br>
+
+		</main>
+
+		<!--Import jQuery before materialize.js-->
+		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+		<!-- Google Maps -->
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAn6V9t-lR5_9IzWjc5FGhBWj67bQQqpkY&libraries=places&callback=initMap"
+        async defer></script>
+		<!-- Import custom application javascript -->
+		<script type="text/javascript" src="js/form.js"></script>
+	</body>
+</html>

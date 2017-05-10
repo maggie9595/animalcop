@@ -7,7 +7,7 @@
 		<!--Import materialize.css-->
 		<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css" media="screen,projection">
 		<!-- Import custom application styles -->
-		<link type="text/css" rel="stylesheet" href="styles.css" media="screen,projection"/>
+		<link type="text/css" rel="stylesheet" href="css/styles.css" media="screen,projection"/>
 		<!--Let browser know website is optimized for mobile-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	</head>
@@ -62,7 +62,6 @@
 						<span id="place-address"></span>
 					</div>
 				</div>
-
 				<div class="row margin-top-20">
 					<div class="col s12">
 						<ul class="tabs">
@@ -72,7 +71,26 @@
 					</div>
 					<div id="itinerary" class="col s12">
                         <div id="numbers" class="col s2">
-                            <div class="card-panel teal lighten-2">This is a card panel with a teal lighten-2 class</div>
+                            <div class="row">
+                                <div class="card-panel blue-grey lighten-5">
+                                    <h4>1</h4>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="card-panel blue-grey lighten-5">
+                                    <h4>2</h4>
+                                </div>
+                            </div>  
+                            <div class="row">
+                                <div class="card-panel blue-grey lighten-5">
+                                    <h4>3</h4>
+                                </div>
+                            </div>  
+                            <div class="row">
+                                <div class="card-panel blue-grey lighten-5">
+                                    <h4>4</h4>
+                                </div>
+                            </div>  
                         </div>
 						<ul class="collection sortable">
 							<li class="collection-item avatar">
@@ -143,20 +161,12 @@
 		<!--Import jQuery before materialize.js-->
 		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 		<script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-		<script type="text/javascript" src="jquery.ui.touch-punch.min.js"></script>
+		<script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
 		<!-- Google Maps -->
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAn6V9t-lR5_9IzWjc5FGhBWj67bQQqpkY&callback=initMap"
         async defer></script>
 		<!-- Import custom application javascript -->
-		<script type="text/javascript" src="dashboard.js"></script>
+		<script type="text/javascript" src="js/dashboard.js"></script>
 	</body>
-
-	<!-- <footer class="page-footer indigo darken-2">
-		<div class="footer-copyright">
-			<div class="container">
-				© 2017 Team Animal Cop
-			</div>
-		</div>
-	</footer> -->
 </html>
