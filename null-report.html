@@ -33,108 +33,137 @@
 			</nav>
 		</header>
 
-		<main>
-			<div class="container">
+		<main style="background-color: #F1F2F2">
+
+		<br>
+			<div class="container grey lighten-2 z-depth-2" style="padding-left: 50px; padding-top: 10px; padding-bottom: 10px">
+				<h5 style="color:white"> Page 2 of 2 </h5>
+			</div>
+
+			<div class="container z-depth-2" style="background-color: white; padding-left: 100px; padding-right: 100px">
 				<br>
 				<h4>Contact Another Agency About your Report</h4>
 
 						<div class="row">
-							<div class="col s9">
+							<div class="col s12">
 								<div class="bold-label">Type of incident (required)</div>
 								<div class="regular-label">Use this to see which agency you should report to.</div>
 								<div>
 								<p>
 									<div class="row">
 										<div class="col md8 s8">
-										<input type="checkbox" id="shelter" />
-										<label for="shelter">Animal that is lost, running-at large, or stray.</label>
+										<input type="checkbox" class="filled-in" id="running" />
+										<label for="running">Animal that is lost, running-at large, or stray.</label>
 										</div>
 										<div class="col md4 s4">
-										<span class="badge orange" id="learn-more-shelter">Learn more &#9654;</span>
+										<span class="badge orange" id="learn-more-running">Report &#9654;</span>
 										</div>
 
 									</div>
 
 								</p>
-								<div id="shelter-more-info" class="hidden">
+								<div id="running-more-info" class="hidden">
 									Any shelter must be proportional to the animal size, have at least three walls, a waterproof roof, and protects the animal for regional from the elements.
 									<br><br>
-									<a href="#">Learn more about this law</a>
+									<a href="#">Report about this law</a>
 								</div>
 
 								<p>
 								<div class="row">
 										<div class="col md8 s8">
-											<input type="checkbox" id="conditions" />
-											<label for="conditions">Animal being a nuisance or making disruptive noises</label>	
+											<input type="checkbox" class="filled-in" id="nuisance" />
+											<label for="nuisance">Animal being a nuisance or making disruptive noises</label>	
 										</div>
 										<div class="col md4 s4 right" >
-											<span class="badge orange" id="learn-more-conditions">Learn more &#9654;</span>
+											<span class="badge orange" id="learn-more-nuisance">Report &#9654;</span>
 										</div>
 								</div>
 								</p>
-								<div id="conditions-more-info" class="hidden">
+								<div id="nuisance-more-info" class="hidden">
 									Sanitation: Animals must be in a space free of excretions and other waste materials, dirt and trash that may be a health hazard.
 									<br>
 									Food & Water: Animals need access to portable drinking water and edible food.
 									<br><br>
-									<a href="#">Learn more about this law</a>
 								</div>
 
 								<p>
 								<div class="row">
 										<div class="col md8 s8">
-											<input type="checkbox" id="outside" />
-											<label for="outside">Animal attacks, bites, or otherwise dangerous animals</label>
+											<input type="checkbox" class="filled-in" id="bites" />
+											<label for="bites">Animal attacks, bites, or otherwise dangerous animals</label>
 										</div>
 										<div class="col md4 s4">
-										<span class="badge orange" id="learn-more-outside">Learn more &#9654;</span>
-										</div>
+											<span class="badge orange" id="learn-more-bites">Report &#9654;</span>
+										</div>							
+
 								</div>
 								</p>
-								<div id="outside-more-info" class="hidden">
+								<div id="bites-more-info" class="hidden">
 									Animals may be left outside if the following conditions are met: 
 									<ul>
 										<li>- Animal is not outside for more than half an hour when the temperature is below 32 F or above 90 F.</li>
 										<li>- The animal has access to portable drinking water, edible food, and adequate shade or shelter.</li>
 									</ul>
-									<a href="#">Learn more about this law</a>
+									<a href="#">Report about this law</a>
 								</div>
 
 								<p>
 								<div class="row">
 										<div class="col md8 s8">
-											<input type="checkbox" id="violence" />
-											<label for="violence">Animal without proper licensing or vaccinations.</label>
+											<input type="checkbox" class="filled-in" id="license" />
+											<label for="license">Animal without proper licensing or vaccinations.</label>
 										</div>
 										<div class="col md4 s4">
-											<span class="badge orange" id="learn-more-violence">Learn more &#9654;</span>
+											<span class="badge orange" id="learn-more-license">Report &#9654;</span>
 										</div>
 								</div>
 								</p>
+								<div id="license-more-info" class="hidden">
+									Animals may be left outside if the following conditions are met: 
+									<ul>
+										<li>- Animal is not outside for more than half an hour when the temperature is below 32 F or above 90 F.</li>
+										<li>- The animal has access to portable drinking water, edible food, and adequate shade or shelter.</li>
+									</ul>
+									<a href="#">Report about this law</a>
+								</div>	
 
 								<p>
 									<div class="row">
 										<div class="col md8 s8">
-											<input type="checkbox" id="illness" />
-											<label for="illness">Theft of an animal</label>
+											<input type="checkbox" class="filled-in" id="theft" />
+											<label for="theft">Theft of an animal</label>
 										</div>
-										<div class="col md4 s4">
-											<span class="badge orange" id="learn-more-illness">Learn more &#9654;</span>
+										<div class="col md4 s4" align="center">
+											<span class="badge orange" id="learn-more-theft">Report &#9654;</span>
 										</div>
 									</div>
-
 								</p>
+								<div id="theft-more-info" class="hidden">
+									Animals may be left outside if the following conditions are met: 
+									<ul>
+										<li>- Animal is not outside for more than half an hour when the temperature is below 32 F or above 90 F.</li>
+										<li>- The animal has access to portable drinking water, edible food, and adequate shade or shelter.</li>
+									</ul>
+									<a href="#">Report about this law</a>
+								</div>
 
 								<p>
 									<div class="row">
 										<div class="col md8 s8">
-											<input type="checkbox" id="illness" />
-											<label for="illness">Pet limit violations</label>
+											<input type="checkbox" class="filled-in" id="limit" />
+											<label for="limit">Pet limit violations</label>
 										</div>
-										<div class="col md4 s4">
-											<span class="badge orange" id="learn-more-illness">Learn more &#9654;</span>
+										<div class="col md4 s4" align="center">
+											<span class="badge orange" id="learn-more-limit">Report &#9654;</span>
 										</div>
+									</div>
+									<div id="limit-more-info" class="hidden">
+									Animals may be left outside if the following conditions are met: 
+									<ul>
+										<li>- Animal is not outside for more than half an hour when the temperature is below 32 F or above 90 F.</li>
+										<li>- The animal has access to portable drinking water, edible food, and adequate shade or shelter.</li>
+									</ul>
+									<a href="#">Report about this law</a>
 									</div>
 
 								</p>								
@@ -150,13 +179,11 @@
 
 						<br>
 
-						<div class="row">
 
 
 
 					</form>
 				</div>
-
 			</div>
 		</main>
 
@@ -171,24 +198,9 @@
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAn6V9t-lR5_9IzWjc5FGhBWj67bQQqpkY&libraries=places&callback=initMap"
         async defer></script>
 		<!-- Import custom application javascript -->
-		<script type="text/javascript" src="form.js"></script>
-		<script type="text/javascript">
-
-			 $(document).ready(function(){
-   			 // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
-
-   			 // <!-- Load Modal on Open -->
-
-   			 $('#modal1').modal('show');
-
-  				});
-
-   		 	$(window).on('load',function(){
-       		$('#modal1').modal('show');
-   			});
+		<script type="text/javascript" src="null-report.js"></script>
 
 
-		</script>
 	</body>
 
 	<!-- <footer class="page-footer indigo darken-2">
