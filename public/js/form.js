@@ -8,10 +8,24 @@ $(document).ready(function() {
   // Initialize dropdowns
   $('select').material_select();
 
+  $('#pac-input').keypress(function(event) {
+    if (event.keyCode == 13) {
+      event.preventDefault();
+    }
+  });
+
   // Submit form button
   $('#submit-button').click(function(event) {
     event.preventDefault();
-    window.location = "/confirmation";
+
+    // Make sure all required questions have been answered
+    if($("#pac-input").val().length == 0) {
+      $("#location-error").removeClass("hidden");
+      window.scrollTo(0, 0);
+    } else {
+      window.location = "/confirmation";
+    }
+    
   });
 
   // Initialize learn more text variable with the arrow character
@@ -156,10 +170,9 @@ function redirectForm() {
   } else {
     // If nothing is checked
     $("#incident-error").removeClass("hidden");
+    window.scrollTo(0, 0);
   }
 }
-  
-
 
 // Google Maps
 function initMap() {
