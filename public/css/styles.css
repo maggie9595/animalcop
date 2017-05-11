@@ -147,6 +147,15 @@ span.badge {
 	font-family: Roboto;
 }
 
+@media screen and (max-width: 780px) {
+	.pac-card {
+		top: 50px !important;
+	}
+	#pac-input {
+		text-align: center;
+	}
+}
+
 #pac-container {
 	padding-bottom: 12px;
 	margin-right: 12px;

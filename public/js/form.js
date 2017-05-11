@@ -32,14 +32,21 @@ $(document).ready(function() {
     if(($("#date").val().length == 0) && ($("#time").val().length == 0) && ($("#ongoing").prop('checked') == false)) {
       validForm = false;
       $("#date-error").removeClass("hidden");
-      window.scrollTo(0, 0);
     } else {
       validForm = validForm && true;
       $("#date-error").addClass("hidden");
     }
 
+    if($("#number-animals").find("option:selected").val() == "") {
+      validForm = false;
+      $("#number-animals-error").removeClass("hidden");
+    } else {
+      validForm = validForm && true;
+      $("#number-animals-error").addClass("hidden");
+    }
+
     // Submit the form only if all required fields have been answered/it is valid
-    if (validForm) {
+    if(validForm) {
       window.location = "/confirmation";
     } else {
       window.scrollTo(0, 0);
