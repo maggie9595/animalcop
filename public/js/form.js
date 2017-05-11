@@ -20,7 +20,6 @@ $(document).ready(function() {
   var what = "What is this?"
 
   // Learn more buttons for types of incidents
-
   $("#learn-more-shelter").click(function() {
     if ($(this).text() == what) {
       $("#shelter-more-info").show("slow");
@@ -121,9 +120,7 @@ $(document).ready(function() {
     }
   });
 
-});
-  
-  //unchecks everything if none of the above is selected
+  // Unchecks everything if none of the above is selected
   $("#noneoftheabove").click(function() {
     if($(this).prop('checked') == true) {
       $("#shelter, #conditions, #outside, #violence, #illness").prop('checked', false);
@@ -131,13 +128,34 @@ $(document).ready(function() {
     }
   });
 
-  //unchecks none of the above if something else is selected
+  // Unchecks none of the above if something else is selected
   $("#shelter, #conditions, #outside, #violence, #illness").click(function() {
     if($(this).prop('checked') == true && $("#noneoftheabove").prop('checked') == true) {
       $("#noneoftheabove").prop('checked', false);
     }
-
   });
+
+});
+  
+
+// Decide whether to go to form page 2 (if one of the correct types of incidents is selected)
+// or go to null-report page for who to contact if they can't use the form
+function redirectForm() {
+  if($("#shelter").prop('checked') == true) {
+    window.location = "/form-2";
+  } else if ($("#conditions").prop('checked') == true) {
+    window.location = "/form-2";
+  } else if ($("#outside").prop('checked') == true) {
+    window.location = "/form-2";
+  } else if ($("#violence").prop('checked') == true) {
+    window.location = "/form-2";
+  } else if ($("#illness").prop('checked') == true) {
+    window.location = "/form-2";
+  } else if ($("#noneoftheabove").prop('checked') == true) {
+    window.location = "/null-report";
+  }
+}
+  
 
 
 // Google Maps

@@ -50,136 +50,137 @@
 				<h5 style="color:white"> Page 1 of 2 </h5>
 			</div>
 
-			<div class="container z-depth-2" style="background-color: white; padding-left: 100px; padding-right: 100px">
-				<br>
-				<h5>Describe the Type of Incident</h5>	
-				<br>
-				<div class="col s9">
-					<div class="bold-label">Type of incident</div>
-					<div class="regular-label">Please note that the list below shows what is considered animal cruelty under PA and federal law. If you feel you are in immediate danger from an animal, it is always appropriate to call 911.</div>
-					<div style="padding:10px">
-						
-						<!--inadequate shelter-->
-						<p>
-							<div class="row">
-								<div class="col md8 s8">
-									<input type="checkbox" class="filled-in" id="shelter"/>
-									<label for="shelter">Animal with inadequate shelter</label>
-								</div>
-								<div class="col md4 s4">
-									<span class="badge indigo" id="learn-more-shelter">What is this?</span>
-								</div>
-							</div>
+			<form id="form-1">
+				<div class="container z-depth-2" style="background-color: white; padding-left: 100px; padding-right: 100px">
+					<br>
+					<h5>Describe the Type of Incident</h5>	
+					<br>
+					<div class="col s9">
+						<div class="bold-label">Type of incident</div>
+						<div class="regular-label">Please note that the list below shows what is considered animal cruelty under PA and federal law. If you feel you are in immediate danger from an animal, it is always appropriate to call 911.</div>
+						<div style="padding:10px">
 							
-							<div id="shelter-more-info" class="hidden">
-								Any shelter must be proportional to the animal size, have at least three walls, a waterproof roof, and protects the animal for regional from the elements.
-								<br>
-							</div>
-						</p>
-						
-						<!--improper conditions-->
-						<p>
-							<div class="row">
-								<div class="col md8 s8">
-									<input type="checkbox" class="filled-in" id="conditions"/>
-									<label for="conditions">Animal living in improper conditions</label>	
+							<!--inadequate shelter-->
+							<p>
+								<div class="row">
+									<div class="col md8 s8">
+										<input type="checkbox" class="filled-in" id="shelter"/>
+										<label for="shelter">Animal with inadequate shelter</label>
+									</div>
+									<div class="col md4 s4">
+										<span class="badge indigo" id="learn-more-shelter">What is this?</span>
+									</div>
 								</div>
-							<div class="col md4 s4 right">
-								<span class="badge indigo" id="learn-more-conditions">What is this?</span>
-							</div>
-							</div>
-						
-							<div id="conditions-more-info" class="hidden">
-								Sanitation: Animals must be in a space free of excretions and other waste materials, dirt and trash that may be a health hazard.
-								<br>
-								Food & Water: Animals need access to portable drinking water and edible food.
-								<br>
-							</div>
-						</p>
-						
-						<!--animal outside-->
-						<p>
-							<div class="row">
-								<div class="col md8 s8">
-									<input type="checkbox" class="filled-in" id="outside"/>
-									<label for="outside">Animal tethered outside in improper conditions</label>
+								
+								<div id="shelter-more-info" class="hidden">
+									Any shelter must be proportional to the animal size, have at least three walls, a waterproof roof, and protects the animal for regional from the elements.
+									<br>
 								</div>
-								<div class="col md4 s4">
-									<span class="badge indigo" id="learn-more-outside">What is this?</span>
+							</p>
+							
+							<!--improper conditions-->
+							<p>
+								<div class="row">
+									<div class="col md8 s8">
+										<input type="checkbox" class="filled-in" id="conditions"/>
+										<label for="conditions">Animal living in improper conditions</label>	
+									</div>
+								<div class="col md4 s4 right">
+									<span class="badge indigo" id="learn-more-conditions">What is this?</span>
 								</div>
-							</div>
-						
-							<div id="outside-more-info" class="hidden">
-								Animals may be left outside if the following conditions are met: 
-								<ul>
-									<li>- Animal is not outside for more than half an hour when the temperature is below 32 F or above 90 F.</li>
-									<li>- The animal has access to portable drinking water, edible food, and adequate shade or shelter.</li>
-								</ul>
-							</div>
-						</p>
+								</div>
+							
+								<div id="conditions-more-info" class="hidden">
+									Sanitation: Animals must be in a space free of excretions and other waste materials, dirt and trash that may be a health hazard.
+									<br>
+									Food & Water: Animals need access to portable drinking water and edible food.
+									<br>
+								</div>
+							</p>
+							
+							<!--animal outside-->
+							<p>
+								<div class="row">
+									<div class="col md8 s8">
+										<input type="checkbox" class="filled-in" id="outside"/>
+										<label for="outside">Animal tethered outside in improper conditions</label>
+									</div>
+									<div class="col md4 s4">
+										<span class="badge indigo" id="learn-more-outside">What is this?</span>
+									</div>
+								</div>
+							
+								<div id="outside-more-info" class="hidden">
+									Animals may be left outside if the following conditions are met: 
+									<ul>
+										<li>- Animal is not outside for more than half an hour when the temperature is below 32 F or above 90 F.</li>
+										<li>- The animal has access to portable drinking water, edible food, and adequate shade or shelter.</li>
+									</ul>
+								</div>
+							</p>
 
-						<!--violence-->
-						<p>
-							<div class="row">
-								<div class="col md8 s8">
-									<input type="checkbox" class="filled-in" id="violence" />
-									<label for="violence">Physical violence against animal</label>
+							<!--violence-->
+							<p>
+								<div class="row">
+									<div class="col md8 s8">
+										<input type="checkbox" class="filled-in" id="violence" />
+										<label for="violence">Physical violence against animal</label>
+									</div>
+									<div class="col md4 s4">
+										<span class="badge indigo" id="learn-more-violence">What is this?</span>
+									</div>
 								</div>
-								<div class="col md4 s4">
-									<span class="badge indigo" id="learn-more-violence">What is this?</span>
+								<div id="violence-more-info" class="hidden">
+									Violence includes:
+									<ul>
+										<li>- beating, maiming, disfiguring, or poisoning an animal</li>
+										<li>- killing an animal (if violating the Animal Destruction Method Authorization Law)</li>
+										<li>- transporting/working animals in a cruel manner</li>
+										<li>- participating in or permitting animal fighting (e.g. dogfighting)</li>
+									</ul>
 								</div>
-							</div>
-							<div id="violence-more-info" class="hidden">
-								Violence includes:
-								<ul>
-									<li>- beating, maiming, disfiguring, or poisoning an animal</li>
-									<li>- killing an animal (if violating the Animal Destruction Method Authorization Law)</li>
-									<li>- transporting/working animals in a cruel manner</li>
-									<li>- participating in or permitting animal fighting (e.g. dogfighting)</li>
-								</ul>
-							</div>
-						</p>
+							</p>
+						
+							<!--illness-->					
+							<p>
+								<div class="row">
+									<div class="col md8 s8">
+										<input type="checkbox" class="filled-in" id="illness" />
+										<label for="illness">Neglect of animal's illness or injuries</label>									
+									</div>
+									<div class="col md4 s4">
+										<span class="badge indigo" id="learn-more-illness">What is this?</span>
+									</div>
+								</div>
+								<div id="illness-more-info" class="hidden">
+									Illness is...
+									<ul>
+									</ul>
+								</div>
+							</p>
+
+							<!--none of the above-->
+							<p>
+								<div class="row">
+									<div class="col md8 s8">
+										<input type="checkbox" class="filled-in" id="noneoftheabove" />
+										<label for="noneoftheabove">None of the above</label>
+									</div>	
 					
-						<!--illness-->					
-						<p>
-							<div class="row">
-								<div class="col md8 s8">
-									<input type="checkbox" class="filled-in" id="illness" />
-									<label for="illness">Neglect of animal's illness or injuries</label>									
 								</div>
-								<div class="col md4 s4">
-									<span class="badge indigo" id="learn-more-illness">What is this?</span>
-								</div>
-							</div>
-							<div id="illness-more-info" class="hidden">
-								Illness is...
-								<ul>
-								</ul>
-							</div>
-						</p>
+							</p>
+			
+						</div>
+						<br>
 
-						<!--none of the above-->
-						<p>
-							<div class="row">
-								<div class="col md8 s8">
-									<input type="checkbox" class="filled-in" id="noneoftheabove" />
-									<label for="noneoftheabove">None of the above</label>
-								</div>	
-				
-							</div>
-						</p>
-		
+						<div class="row">
+							<a href="javascript:redirectForm();" class="grey lighten-2 btn-large waves-effect waves-light margin-left-10" type="next" name="action" id="next-button" style="color: black">Next
+							</a>
+						</div>
+						<br>
+						<br>
 					</div>
-					<br>
-
-					<div class="row">
-						<a href="index2.html" class="grey lighten-2 btn-large waves-effect waves-light margin-left-10" type="next" name="action" id="next-button" style="color: black">Next
-						</a>
-					</div>
-					<br>
-					<br>
-				</div>
-				
+				</form>
 			</div>
 			<br>
 			<br>
