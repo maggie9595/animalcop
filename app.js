@@ -4,6 +4,7 @@ var path = require('path');
 var bodyParser = require('body-parser');
 
 var express = require('express');
+var favicon = require('serve-favicon')
 var helpers = require('express-helpers');
 var app = express();
 
@@ -18,6 +19,9 @@ app.set('view engine', 'ejs');
 
 // Define how to log events
 app.use(morgan('tiny'));	
+
+// Favicon
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 
 // parse application/x-www-form-urlencoded, with extended qs library
 app.use(bodyParser.urlencoded({ extended: true }));

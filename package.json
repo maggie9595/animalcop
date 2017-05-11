@@ -1,5 +1,5 @@
 {
-  "name": "Animal Cop",
+  "name": "AnimalCop",
   "version": "1.0.0",
   "description": "BHCI Project - Team Animal Cop",
   "author": {
@@ -16,7 +16,8 @@
     "express": "^4.13.3",
     "express-helpers": "^1.3.2",
     "mongodb": "^2.0.48",
-    "morgan": "^1.6.1"
+    "morgan": "^1.6.1",
+    "serve-favicon": "^2.4.2"
   },
   "devDependencies": {},
   "bundleDependencies": [],
