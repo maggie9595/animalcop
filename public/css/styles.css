@@ -154,6 +154,9 @@ span.badge {
 	#pac-input {
 		text-align: center;
 	}
+	.pac-container, .pac-item {
+	    width: inherit !important;
+	}
 }
 
 #pac-container {
