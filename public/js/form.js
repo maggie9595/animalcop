@@ -11,7 +11,7 @@ $(document).ready(function() {
   // Submit form button
   $('#submit-button').click(function(event) {
     event.preventDefault();
-    window.location = "confirmation.html";
+    window.location = "/confirmation";
   });
 
   // Initialize learn more text variable with the arrow character

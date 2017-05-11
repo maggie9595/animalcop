@@ -6,6 +6,7 @@ exports.init = function(app) {
   app.get('/', index); // App home page
   app.get('/form-1', form1); // Form page 1
   app.get('/form-2', form2); // Form page 2
+  app.get('/confirmation', confirmation); // Form submitted confirmation
   app.get('/null-report', nullReport); // Null report when the incident is none of the above
 
   // The collection parameter maps directly to the mongoDB collection
@@ -29,6 +30,11 @@ exports.init = function(app) {
   // Display form page 2
   form2 = function(req, res) {
     res.render('form-2');
+  };
+
+  // Display form submitted confirmation page
+  confirmation = function(req, res) {
+    res.render('confirmation');
   };
 
   // Display null report page
