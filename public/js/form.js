@@ -153,6 +153,9 @@ function redirectForm() {
     window.location = "/form-2";
   } else if ($("#noneoftheabove").prop('checked') == true) {
     window.location = "/null-report";
+  } else {
+    // If nothing is checked
+    $("#incident-error").removeClass("hidden");
   }
 }
   

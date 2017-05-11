@@ -241,3 +241,8 @@ span.badge.new {
   padding: 0 !important;
   width: inherit !important;
 }
+
+.red-text {
+	color: red;
+	font-weight: bold;
+}
