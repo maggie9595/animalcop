@@ -9,6 +9,11 @@ exports.init = function(app) {
   app.get('/confirmation', confirmation); // Form submitted confirmation
   app.get('/null-report', nullReport); // Null report when the incident is none of the above
 
+  app.get('/dashboard', dashboard); // Humane officer dashboard
+  app.get('/archive', archive); // Humane officer archived cases page
+  app.get('/report', getReport); // Humane officer report notes for each case
+  app.get('/account', account); // Humane officer account page
+
   // The collection parameter maps directly to the mongoDB collection
   app.put('/:collection', doCreate); // CRUD Create
   app.get('/:collection', doRetrieve); // CRUD Retrieve
@@ -40,6 +45,26 @@ exports.init = function(app) {
   // Display null report page
   nullReport = function(req, res) {
     res.render('null-report');
+  };
+
+  // Display humane officer dashboard
+  dashboard = function(req, res) {
+    res.render('dashboard');
+  };
+
+  // Display humane officer archived cases page
+  archive = function(req, res) {
+    res.render('archive');
+  };
+
+  // Display report notes page for each individual report
+  getReport = function(req, res) {
+    res.render('report');
+  };
+
+  // Display humane officer account page
+  account = function(req, res) {
+    res.render('account');
   };
 
 /********** CRUD Create *******************************************************

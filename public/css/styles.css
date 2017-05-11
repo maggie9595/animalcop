@@ -1,7 +1,6 @@
-.row{
+.row {
 	width: 90%;
 }
-
 
 input[type=text]:disabled{
 	font-size:1.5rem;
