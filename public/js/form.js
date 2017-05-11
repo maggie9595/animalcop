@@ -18,12 +18,32 @@ $(document).ready(function() {
   $('#submit-button').click(function(event) {
     event.preventDefault();
 
+    var validForm = true;
+
     // Make sure all required questions have been answered
     if($("#pac-input").val().length == 0) {
+      validForm = false;
       $("#location-error").removeClass("hidden");
+    } else {
+      validForm = validForm && true;
+      $("#location-error").addClass("hidden");
+    }
+
+    if(($("#date").val().length == 0) && ($("#time").val().length == 0) && ($("#ongoing").prop('checked') == false)) {
+      validForm = false;
+      $("#date-error").removeClass("hidden");
       window.scrollTo(0, 0);
     } else {
+      validForm = validForm && true;
+      $("#date-error").addClass("hidden");
+    }
+
+    // Submit the form only if all required fields have been answered/it is valid
+    if (validForm) {
       window.location = "/confirmation";
+    } else {
+      window.scrollTo(0, 0);
+      $("#error-text").removeClass("hidden");
     }
     
   });
