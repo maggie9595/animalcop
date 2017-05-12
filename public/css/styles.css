@@ -258,3 +258,10 @@ span.badge.new {
 	color: red;
 	font-weight: bold;
 }
+
+#har-logo {
+	margin-top: 10px;
+	margin-right: 10px;
+	height: 45px;
+	float: left;
+}
