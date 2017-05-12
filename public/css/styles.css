@@ -261,7 +261,12 @@ span.badge.new {
 
 #har-logo {
 	margin-top: 10px;
-	margin-right: 10px;
+	margin-right: 20px;
 	height: 45px;
 	float: left;
 }
+
+	nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
+    height: 64px;
+    line-height: 64px;
+	}
