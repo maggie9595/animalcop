@@ -57,16 +57,32 @@
 							<li class="tab col s3"><a class="active">Itinerary</a></li>
 						</ul>
 						<div class="col s12 z-depth-1" style="background-color: #F3F3F4">
-							<ul class="collection sortable">
-								<li class="collection-item avatar">
-									<i class="material-icons circle">clear</i>
-									<span class="title"><b><u>456 Beeler St</u></b></span>
-									<p>Animal Left Outside<br>
-									Today
-									</p>
-									<a href="#!" class="secondary-content"><span class="new badge red" data-badge-caption="">High</span><i class="material-icons">sort</i></a>
-								</li>
-							</ul>
+							<% if (itinerary) { %>
+								<ul class="collection sortable">
+									<li class="collection-item avatar">
+										<i class="material-icons circle">clear</i>
+										<span class="title"><b><u>456 Beeler St</u></b></span>
+										<p>Animal Left Outside<br>
+										Today
+										</p>
+										<a href="#!" class="secondary-content"><span class="new badge red" data-badge-caption="">High</span><i class="material-icons">sort</i></a>
+									</li>
+								</ul>
+							<% } else { %>
+								<br>
+								<container>
+									<row>
+										<div class="row">
+											<div class="col s12">
+												You have nothing scheduled for today. 
+												<br><br>
+												Plan your day by using <a class="btn-floating grey"><i class="material-icons">add</i></a> to add items to your itinerary.
+											</div>
+										</div>
+									</row>
+								</container>
+								<br>
+							<% } %>
 						</div>
 					</div>
 				</div>

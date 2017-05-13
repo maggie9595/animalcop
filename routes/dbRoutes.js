@@ -3,6 +3,7 @@ var mongoModel = require("../models/mongoModel.js")
 
 var newReports = "";
 var inProgressReports = "";
+var itinerary = "";
 
 // Define the routes for this controller
 exports.init = function(app) {
@@ -90,7 +91,19 @@ exports.init = function(app) {
         }
       });
 
-    res.render('dashboard', {newReports: newReports, inProgressReports: inProgressReports});
+    // Get reports in the itinerary from database
+    mongoModel.retrieve(
+      "reports", 
+      {"itinerary": true},
+      function(modelData) {
+        if (modelData.length) {
+          itinerary = modelData;
+        } else {
+          console.log("No reports in itinerary");
+        }
+      });
+
+    res.render('dashboard', {newReports: newReports, inProgressReports: inProgressReports, itinerary: itinerary});
   };
 
   // Display humane officer archived cases page
