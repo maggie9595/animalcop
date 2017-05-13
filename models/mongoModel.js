@@ -8,13 +8,8 @@ var connection_string = 'mongodb://localhost:27017/animalcop';
 // Global variable of the connected database
 var mongoDB; 
 
-/*
- * In the methods below, notice the use of a callback argument,
- * how that callback function is called, and the argument it is given.
- * Why do we need to be passed a callback function? Why can't the create, 
- * retrieve, and update functinons just return the data directly?
- * (This is what we discussed in class.)
- */
+// Incident types from form page 1
+var incidentTypes = "";
 
 /********** CRUD Create -> Mongo insert ***************************************
  * @param {string} collection - The collection within the database
@@ -25,20 +20,16 @@ var mongoDB;
  * http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#insertOne
  */
 exports.create = function(collection, data, callback) {
-  console.log("4. Start insert function in mongoModel");
   // Do an asynchronous insert into the given collection
   mongoDB.collection(collection).insertOne(
     data,                     // the object to be inserted
     function(err, status) {   // callback upon completion
       if (err) doError(err);
-      console.log("5. Done with mongo insert operation in mongoModel");
       // use the callback function supplied by the controller to pass
       // back true if successful else false
       var success = (status.result.n == 1 ? true : false);
       callback(success);
-      console.log("6. Done with insert operation callback in mongoModel");
     });
-  console.log("7. Done with insert function in mongoModel");
 }
 
 /********** CRUD Retrieve -> Mongo find ***************************************
@@ -93,8 +84,14 @@ exports.update = function(collection, filter, update, callback) {
  * The delete model is left as an exercise for you to define.
  */
 
+// Helper to save incident types from form page 1
+exports.saveInfo = function(data) {
+  incidentTypes = data;
+  console.log(incidentTypes);
+}
+
 
 var doError = function(e) {
-        console.error("ERROR: " + e);
-        throw new Error(e);
-    }
+    console.error("ERROR: " + e);
+    throw new Error(e);
+}

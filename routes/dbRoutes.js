@@ -5,8 +5,9 @@ var mongoModel = require("../models/mongoModel.js")
 exports.init = function(app) {
   app.get('/', index); // App home page
   app.get('/form-1', form1); // Form page 1
+  app.post('/form-1', form1Post); // Form page 1 post info
   app.get('/form-2', form2); // Form page 2
-  app.get('/confirmation', confirmation); // Form submitted confirmation
+  app.get('/confirmation', submitForm); // Form submitted confirmation
   app.get('/null-report', nullReport); // Null report when the incident is none of the above
 
   app.get('/dashboard', dashboard); // Humane officer dashboard
@@ -24,7 +25,6 @@ exports.init = function(app) {
   // No path:  display instructions for use
   index = function(req, res) {
     res.render('index');
-    //res.render('help', {title: 'MongoDB Test'})
   };
 
   // Display form page 1
@@ -33,13 +33,27 @@ exports.init = function(app) {
   };
 
   // Display form page 2
+  form1Post = function(req, res) {
+    // Save the info from page 1 
+    mongoModel.saveInfo(req.body.data);
+    res.end();
+  };
+
+  // Display form page 2
   form2 = function(req, res) {
     res.render('form-2');
   };
 
-  // Display form submitted confirmation page
-  confirmation = function(req, res) {
-    res.render('confirmation');
+  // Submit form and display form submitted confirmation page
+  submitForm = function(req, res) {
+    mongoModel.create ("reports", 
+                      req.body,
+                      function(result) {
+                        // result equal to true means create was successful
+                        var success = (result ? "Create successful" : "Create unsuccessful");
+                        console.log(success);
+                        res.render('confirmation');
+                      });
   };
 
   // Display null report page
@@ -181,34 +195,4 @@ doUpdate = function(req, res){
 
 /********** CRUD Delete *******************************************************
  * The delete route handler is left as an exercise for you to define.
- */
-
-
-/*
- * How to test:
- *  - Create a test web page
- *  - Use REST Console for Chrome
- *    (If you use this option, be sure to set the Body Content Headers Content-Type to:
- *    application/x-www-form-urlencoded . Else body-parser won't work correctly.)
- *  - Use CURL (see tests below)
- *    curl comes standard on linux and MacOS.  For windows, download it from:
- *    http://curl.haxx.se/download.html
- *
- * Tests via CURL for Create and Update (Retrieve can be done from browser)
-
-# >>>>>>>>>> test CREATE success by adding 3 fruits
-curl -i -X PUT -d "name=apricot&price=2" http://localhost:50000/fruit
-curl -i -X PUT -d "name=banana&price=3" http://localhost:50000/fruit
-curl -i -X PUT -d "name=cantaloupe&price=4" http://localhost:50000/fruit
-# >>>>>>>>>> test CREATE missing what to put
-curl -i -X PUT  http://localhost:50000/fruit
-# >>>>>>>>>> test UPDATE success - modify
-curl -i -X POST -d 'find={"name":"banana"}&update={"$set":{"color":"yellow"}}' http://localhost:50000/fruit
-# >>>>>>>>>> test UPDATE success - insert
-curl -i -X POST -d 'find={"name":"plum"}&update={"$set":{"color":"purple"}}' http://localhost:50000/fruit
-# >>>>>>>>>> test UPDATE missing filter, so apply to all
-curl -i -X POST -d 'update={"$set":{"edible":"true"}}' http://localhost:50000/fruit
-# >>>>>>>>>> test UPDATE missing update operation
-curl -i -X POST -d 'find={"name":"pear"}' http://localhost:50000/fruit
-
  */

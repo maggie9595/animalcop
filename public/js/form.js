@@ -198,23 +198,40 @@ $(document).ready(function() {
 // Decide whether to go to form page 2 (if one of the correct types of incidents is selected)
 // or go to null-report page for who to contact if they can't use the form
 function redirectForm() {
+  var incidentTypes = "";
+  
   if($("#shelter").prop('checked') == true) {
-    window.location = "/form-2";
-  } else if ($("#conditions").prop('checked') == true) {
-    window.location = "/form-2";
-  } else if ($("#outside").prop('checked') == true) {
-    window.location = "/form-2";
-  } else if ($("#violence").prop('checked') == true) {
-    window.location = "/form-2";
-  } else if ($("#illness").prop('checked') == true) {
-    window.location = "/form-2";
-  } else if ($("#noneoftheabove").prop('checked') == true) {
+    incidentTypes += '1';
+  }
+  if ($("#conditions").prop('checked') == true) {
+    incidentTypes += '2';
+  }
+  if ($("#outside").prop('checked') == true) {
+    incidentTypes += '3';
+  }
+  if ($("#violence").prop('checked') == true) {
+    incidentTypes += '4';
+  }
+  if ($("#illness").prop('checked') == true) {
+    incidentTypes += '5';
+  }
+
+  if ($("#noneoftheabove").prop('checked') == true) {
     window.location = "/null-report";
-  } else {
-    // If nothing is checked
+  } 
+
+  // If nothing is checked
+  if(incidentTypes == "") {
     $("#incident-error").removeClass("hidden");
     window.scrollTo(0, 0);
+  } else {
+    // Make the ajax call to form page 2 with data from page 1
+    $.post("/form-1", { data: incidentTypes })
+      .done(function( data ) {
+        window.location = "/form-2";
+    });
   }
+
 }
 
 // Google Maps
