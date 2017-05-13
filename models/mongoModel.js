@@ -8,6 +8,13 @@ var connection_string = 'mongodb://localhost:27017/animalcop';
 // Global variable of the connected database
 var mongoDB; 
 
+// Use connect method to connect to the MongoDB server
+mongoClient.connect(connection_string, function(err, db) {
+  if (err) doError(err);
+  console.log("Connected to MongoDB server at: " + connection_string);
+  mongoDB = db; // Make reference to db globally available
+})
+
 // Incident types from form page 1
 var incidentTypes = "";
 
