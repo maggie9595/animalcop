@@ -66,10 +66,10 @@ exports.init = function(app) {
     // Get all reports from database
     mongoModel.retrieve(
       "reports", 
-      req.query,
+      {"status": "new"},
       function(modelData) {
         if (modelData.length) {
-          res.render('dashboard',{reports: modelData});
+          res.render('dashboard',{newReports: modelData});
         } else {
           console.log("No reports in database");
           res.end();

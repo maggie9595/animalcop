@@ -28,6 +28,11 @@ var incidentTypes = "";
  */
 exports.create = function(collection, data, callback) {
   data.incidentTypes = incidentTypes;
+  data.status = "new";
+  data.itinerary = false;
+
+  var today = new Date();
+  data.received = (today.getMonth()+1)+'/'+today.getDate()+'/'+today.getFullYear();
   console.log(data);
   
   // Do an asynchronous insert into the given collection

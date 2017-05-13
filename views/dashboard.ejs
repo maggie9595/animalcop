@@ -18,7 +18,7 @@
 			<nav class="indigo darken-2"> 
 				<div class="container">
 					<div class="nav-wrapper grey lighten-2">
-						<a class="center brand-logo">Pittsburgh Humane Reports</a>
+						<a class="center brand-logo">Humane Reports</a>
 				        <a class="button-collapse" href="#" data-activates='nav-mobile'><i class="mdi-navigation-menu"></i></a>
 					</div>
 					<ul id="slide-out" class="side-nav">
@@ -51,22 +51,20 @@
 					</div>
 				</div>
 
-				<%= reports.length %>
-
 				<div class="row margin-top-30">
 					<div class="col s12">
 						<ul class="tabs z-depth-1 indigo lighten-1">
 							<li class="tab col s3"><a class="active">Itinerary</a></li>
 						</ul>
-						<div class="col s12 z-depth-1">
+						<div class="col s12 z-depth-1" style="background-color: #F3F3F4">
 							<ul class="collection sortable">
 								<li class="collection-item avatar">
 									<i class="material-icons circle">clear</i>
-									<span class="title"><b>456 Beeler St</b></span>
+									<span class="title"><b><u>456 Beeler St</u></b></span>
 									<p>Animal Left Outside<br>
 									Today
 									</p>
-									<a href="#!" class="secondary-content"><span class="new badge red" data-badge-caption="">High</span><i class="material-icons">more_vert</i></a>
+									<a href="#!" class="secondary-content"><span class="new badge red" data-badge-caption="">High</span><i class="material-icons">sort</i></a>
 								</li>
 							</ul>
 						</div>
@@ -79,66 +77,62 @@
 							<li class="tab col s3"><a class="active" href="#new">New</a></li>
 							<li class="tab col s3"><a href="#in-progress">In Progress</a></li>
 						</ul>
-					</div>
 
-					<div id="new" class="col s12 margin-top-10">
-						<ul class="collection sortable">
+						<!-- New reports -->
+						<div id="new" class="col z-depth-1 s12">
+							<ul class="collection">
+								<% for (var i=0; i < newReports.length; i++) { %>
+									<li class="collection-item avatar">
+										<i class="material-icons circle">add</i>
+										<span class="title"><b><u><%= newReports[i].address %></u></b></span>
+										<p>
+											<% if (newReports[i].incidentTypes.includes("1")) { %>
+												Animal with inadequate shelter <br>
+											<% } %>
+											<% if (newReports[i].incidentTypes.includes("2")) { %>
+												Animal living in improper conditions <br>
+											<% } %>
+											<% if (newReports[i].incidentTypes.includes("3")) { %>
+												Animal tethered outside in improper conditions <br>
+											<% } %>
+											<% if (newReports[i].incidentTypes.includes("4")) { %>
+												Physical violence against animal <br>
+											<% } %>
+											<% if (newReports[i].incidentTypes.includes("5")) { %>
+												Neglect of animal's illness or injuries <br>
+											<% } %>
 
-							<li class="collection-item avatar">
-								<i class="material-icons circle">clear</i>
-								<span class="title"><b>456 Beeler St</b></span>
-								<p>Animal Left Outside<br>
-								Today
-								</p>
-								<a href="#!" class="secondary-content"><span class="new badge red" data-badge-caption="">High</span><i class="material-icons">more_vert</i></a>
-							</li>
-							<li class="collection-item avatar">
-								<i class="material-icons circle">clear</i>
-								<span class="title"><b>99 Harris St</b></span>
-								<p>Hoarding Case<br>
-								1 Day Ago
-								</p>
-								<a href="#!" class="secondary-content"><span class="new badge red" data-badge-caption="">High</span><i class="material-icons">more_vert</i></a>
-							</li>
-							<li class="collection-item avatar">
-								<i class="material-icons circle">clear</i>
-								<span class="title"><b>74 Ellsworth Ave</b></span>
-								<p>Neglect/Abandonment<br>
-								2 Days Ago
-								</p>
-								<a href="#!" class="secondary-content"><i class="material-icons">more_vert</i></a>
-							</li>
-							<li class="collection-item avatar">
-								<i class="material-icons circle">clear</i>
-								<span class="title"><b>342 Wilkins Ave</b></span>
-								<p>Animal Noise<br>
-								5 Days Ago
-								</p>
-								<a href="#!" class="secondary-content"><i class="material-icons">more_vert</i></a>
-							</li>
-						</ul>
-					</div>
+											Received <%= newReports[i].received %>
+										</p>
+
+										<% if (newReports[i].incidentTypes.includes("4") || newReports[i].incidentTypes.includes("5") || newReports[i].animalConditions.length > 0) { %>
+											<div class="secondary-content"><span class="new badge red" data-badge-caption="">High</span></div>
+										<% } %>
+									</li>
+								<% } %>
+							</ul>
+						</div>
 					
-					<div id="in-progress" class="col s12 margin-top-10">
-						<ul class="collection sortable">
-							<li class="collection-item avatar">
-								<i class="material-icons circle">add</i>
-								<span class="title"><b>101 Harris St</b></span>
-								<p>Animal Noise<br>
-								4 Days Ago
-								</p>
-								<a href="#!" class="secondary-content"><i class="material-icons">more_vert</i></a>
-							</li>
-							<li class="collection-item avatar">
-								<i class="material-icons circle">add</i>
-								<span class="title"><b>15 Roselawn Ter</b></span>
-								<p>Animal Noise<br>
-								4 Days Ago
-								</p>
-								<a href="#!" class="secondary-content"><i class="material-icons">more_vert</i></a>
-							</li>
-						</ul>
-					</div>
+						<div id="in-progress" class="col s12 z-depth-1">
+							<ul class="collection sortable">
+								<li class="collection-item avatar">
+									<i class="material-icons circle">add</i>
+									<span class="title"><b>101 Harris St</b></span>
+									<p>Animal Noise<br>
+									4 Days Ago
+									</p>
+									<a href="#!" class="secondary-content"><i class="material-icons">more_vert</i></a>
+								</li>
+								<li class="collection-item avatar">
+									<i class="material-icons circle">add</i>
+									<span class="title"><b>15 Roselawn Ter</b></span>
+									<p>Animal Noise<br>
+									4 Days Ago
+									</p>
+									<a href="#!" class="secondary-content"><i class="material-icons">more_vert</i></a>
+								</li>
+							</ul>
+						</div>
 				</div>
 
 
