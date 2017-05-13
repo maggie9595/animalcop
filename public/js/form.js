@@ -45,6 +45,14 @@ $(document).ready(function() {
       $("#number-animals-error").addClass("hidden");
     }
 
+    if(($("#type-animals input:checkbox:checked").length == 0) && ($("#other-type-animal").val().length == 0)) {
+      validForm = false;
+      $("#type-animals-error").removeClass("hidden");
+    } else {
+      validForm = validForm && true;
+      $("#type-animals-error").addClass("hidden");
+    }
+
     // Submit the form only if all required fields have been answered/it is valid
     if(validForm) {
       window.location = "/confirmation";

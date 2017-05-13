@@ -119,10 +119,11 @@
 						<!--type of animals-->
 						<br>
 						<div>
+							<div class="red-text hidden" id="type-animals-error">* Please answer this required question.</div>
 							<div class="bold-label margin-top-20">Type of animal(s)</div>
 							<div class="regular-label">Select all that apply.</div>
 
-							<div style="padding: 10px">
+							<div style="padding: 10px" id="type-animals">
 								<p>
 									<input type="checkbox" id="dog" />
 									<label for="dog">Dog</label>
@@ -153,8 +154,8 @@
 								</p>
 
 								<div class="row">
-									<div class="margin-top-0 input-field inline col s5">
-										<input placeholder="Other" id="other" type="text">
+									<div class="margin-top-0 input-field inline col s8">
+										<input placeholder="Other" id="other-type-animal" type="text">
 									</div>
 								</div>
 							</div>
