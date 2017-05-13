@@ -265,3 +265,12 @@ span.badge.new {
 	height: 45px;
 	float: left;
 }
+
+@media screen and (max-width: 600px) {
+	#har-logo {
+		margin-top: 5px;
+		margin-right: 20px;
+		height: 45px;
+		float: left;
+	}
+}
