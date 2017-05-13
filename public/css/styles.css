@@ -199,19 +199,19 @@ span.badge {
 }
 
 .tabs .tab a {
-	color: black;
+	color: white;
 	text-decoration: none;
 }
 
 .tabs .tab a:hover {
-    color: #3f51b5;
+    color: #d7dcff;
 }
 
 .tabs .indicator {
     position: absolute;
     bottom: 0;
     height: 2px;
-    background-color: #3f51b5;
+    background-color: white;
 }
 
 .secondary-content {
