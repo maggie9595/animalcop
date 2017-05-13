@@ -101,7 +101,7 @@
 									<% for (var i=0; i < newReports.length; i++) { %>
 										<li class="collection-item avatar">
 											<i class="material-icons circle">add</i>
-											<span class="title"><b><u><%= newReports[i].address %></u></b></span>
+											<span class="title"><b><u><%= newReports[i].address.split(',')[0] %></u></b></span>
 											<p>
 												<% if (newReports[i].incidentTypes.includes("1")) { %>
 													Animal with inadequate shelter <br>
@@ -119,11 +119,11 @@
 													Neglect of animal's illness or injuries <br>
 												<% } %>
 
-												Received <%= newReports[i].received %>
+												Received on <%= newReports[i].received %>
 											</p>
 
 											<% if (newReports[i].incidentTypes.includes("4") || newReports[i].incidentTypes.includes("5") || newReports[i].animalConditions.length > 0) { %>
-												<div class="secondary-content"><span class="new badge red" data-badge-caption="">High</span></div>
+												<div class="secondary-content hide-on-med-down"><span class="new badge red" data-badge-caption="">High</span></div>
 											<% } %>
 										</li>
 									<% } %>
@@ -140,7 +140,7 @@
 									<% for (var i=0; i < inProgressReports.length; i++) { %>
 										<li class="collection-item avatar">
 											<i class="material-icons circle">add</i>
-											<span class="title"><b><u><%= inProgressReports[i].address %></u></b></span>
+											<span class="title"><b><u><%= inProgressReports[i].address.split(',')[0] %></u></b></span>
 											<p>
 												<% if (inProgressReports[i].incidentTypes.includes("1")) { %>
 													Animal with inadequate shelter <br>
@@ -158,9 +158,9 @@
 													Neglect of animal's illness or injuries <br>
 												<% } %>
 
-												Received <%= inProgressReports[i].received %>
+												Received on <%= inProgressReports[i].received %>
 												<br>
-												Last visited <%= inProgressReports[i].markedAsInProgress %>
+												Last visited on <%= inProgressReports[i].markedAsInProgress %>
 											</p>
 
 											<% if (inProgressReports[i].incidentTypes.includes("4") || inProgressReports[i].incidentTypes.includes("5") || inProgressReports[i].animalConditions.length > 0) { %>

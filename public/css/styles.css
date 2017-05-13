@@ -273,4 +273,13 @@ span.badge.new {
 		height: 45px;
 		float: left;
 	}
+
+	span.badge.new {
+	    margin-right: 10%;
+	}
+
+	.collection .collection-item.avatar .secondary-content {
+		right: 3px;
+		top: 5px;
+	}
 }
