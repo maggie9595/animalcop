@@ -63,10 +63,60 @@ $(document).ready(function() {
     }
 
     // Submit the form only if all required fields have been answered/it is valid
-    if(true) {
+    if(validForm) {
+      // Get all animal types selected
+      var animalTypes = "";
+      if($("#dog").prop('checked') == true) {
+        animalTypes += '1';
+      }
+      if($("#cat").prop('checked') == true) {
+        animalTypes += '2';
+      }
+      if($("#bird").prop('checked') == true) {
+        animalTypes += '3';
+      }
+      if($("#chicken").prop('checked') == true) {
+        animalTypes += '4';
+      }
+      if($("#mammal").prop('checked') == true) {
+        animalTypes += '5';
+      }
+      if($("#farm").prop('checked') == true) {
+        animalTypes += '6';
+      }
+      if($("#unknown").prop('checked') == true) {
+        animalTypes += '7';
+      }
+
+      // Get all animal conditions selected
+      var animalConditions = "";
+      if($("#wounds").prop('checked') == true) {
+        animalConditions += '1';
+      }
+      if($("#hunger").prop('checked') == true) {
+        animalConditions += '2';
+      }
+      if($("#shelter").prop('checked') == true) {
+        animalConditions += '3';
+      }
+
+      // Submit form
       $.post("/form-2", 
         { 
-          address: $("#pac-input").val() 
+          address: $("#pac-input").val(),
+          date: $("#date").val(),
+          time: $("#time").val() + " " + $("#time-of-day").find("option:selected").val(),
+          ongoing: $("#ongoing").prop('checked'),
+          owner: $("#owner-name").val(),
+          numberAnimals: $("#number-animals").find("option:selected").val(),
+          animalTypes: animalTypes,
+          otherAnimalType: $("#other-type-animal").val(),
+          description: $("#description").val(),
+          animalConditions: animalConditions,
+          additionalDetails: $("#details").val(),
+          reporterName: $("#reporter-name").val(),
+          reporterNumber: $("#callback-number").val(),
+          reporterEmail: $("#email").val()
         }).done(function( data ) {
           window.location = "/confirmation";
       });

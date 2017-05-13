@@ -20,6 +20,9 @@ var incidentTypes = "";
  * http://mongodb.github.io/node-mongodb-native/2.0/api/Collection.html#insertOne
  */
 exports.create = function(collection, data, callback) {
+  data.incidentTypes = incidentTypes;
+  console.log(data);
+  
   // Do an asynchronous insert into the given collection
   mongoDB.collection(collection).insertOne(
     data,                     // the object to be inserted

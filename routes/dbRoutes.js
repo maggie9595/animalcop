@@ -47,8 +47,7 @@ exports.init = function(app) {
 
   // Submit form and display form submitted confirmation page
   submitForm = function(req, res) {
-    console.log(req.body);
-    mongoModel.create ("reports", 
+    mongoModel.create("reports", 
                       req.body,
                       function(result) {
                         // result equal to true means create was successful
