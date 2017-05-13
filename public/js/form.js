@@ -53,6 +53,14 @@ $(document).ready(function() {
       $("#type-animals-error").addClass("hidden");
     }
 
+    if($("#description").val().length == 0) {
+      validForm = false;
+      $("#description-error").removeClass("hidden");
+    } else {
+      validForm = validForm && true;
+      $("#description-error").addClass("hidden");
+    }
+
     // Submit the form only if all required fields have been answered/it is valid
     if(validForm) {
       window.location = "/confirmation";
