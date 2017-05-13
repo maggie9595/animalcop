@@ -1,6 +1,9 @@
 // include my model for this application
 var mongoModel = require("../models/mongoModel.js")
 
+var newReports = "";
+var inProgressReports = "";
+
 // Define the routes for this controller
 exports.init = function(app) {
   app.get('/', index); // App home page
@@ -63,18 +66,31 @@ exports.init = function(app) {
 
   // Display humane officer dashboard
   dashboard = function(req, res) {
-    // Get all reports from database
+    // Get all new reports from database
     mongoModel.retrieve(
       "reports", 
       {"status": "new"},
       function(modelData) {
         if (modelData.length) {
-          res.render('dashboard',{newReports: modelData});
+          newReports = modelData;
         } else {
-          console.log("No reports in database");
-          res.end();
+          console.log("No new reports in database");
         }
       });
+
+    // Get all in progress reports from database
+    mongoModel.retrieve(
+      "reports", 
+      {"status": "inProgress"},
+      function(modelData) {
+        if (modelData.length) {
+          inProgressReports = modelData;
+        } else {
+          console.log("No in progress reports in database");
+        }
+      });
+
+    res.render('dashboard', {newReports: newReports, inProgressReports: inProgressReports});
   };
 
   // Display humane officer archived cases page

@@ -80,58 +80,82 @@
 
 						<!-- New reports -->
 						<div id="new" class="col z-depth-1 s12">
-							<ul class="collection">
-								<% for (var i=0; i < newReports.length; i++) { %>
-									<li class="collection-item avatar">
-										<i class="material-icons circle">add</i>
-										<span class="title"><b><u><%= newReports[i].address %></u></b></span>
-										<p>
-											<% if (newReports[i].incidentTypes.includes("1")) { %>
-												Animal with inadequate shelter <br>
-											<% } %>
-											<% if (newReports[i].incidentTypes.includes("2")) { %>
-												Animal living in improper conditions <br>
-											<% } %>
-											<% if (newReports[i].incidentTypes.includes("3")) { %>
-												Animal tethered outside in improper conditions <br>
-											<% } %>
-											<% if (newReports[i].incidentTypes.includes("4")) { %>
-												Physical violence against animal <br>
-											<% } %>
-											<% if (newReports[i].incidentTypes.includes("5")) { %>
-												Neglect of animal's illness or injuries <br>
-											<% } %>
+							<% if (newReports) { %>
+								<ul class="collection">
+									<% for (var i=0; i < newReports.length; i++) { %>
+										<li class="collection-item avatar">
+											<i class="material-icons circle">add</i>
+											<span class="title"><b><u><%= newReports[i].address %></u></b></span>
+											<p>
+												<% if (newReports[i].incidentTypes.includes("1")) { %>
+													Animal with inadequate shelter <br>
+												<% } %>
+												<% if (newReports[i].incidentTypes.includes("2")) { %>
+													Animal living in improper conditions <br>
+												<% } %>
+												<% if (newReports[i].incidentTypes.includes("3")) { %>
+													Animal tethered outside in improper conditions <br>
+												<% } %>
+												<% if (newReports[i].incidentTypes.includes("4")) { %>
+													Physical violence against animal <br>
+												<% } %>
+												<% if (newReports[i].incidentTypes.includes("5")) { %>
+													Neglect of animal's illness or injuries <br>
+												<% } %>
 
-											Received <%= newReports[i].received %>
-										</p>
+												Received <%= newReports[i].received %>
+											</p>
 
-										<% if (newReports[i].incidentTypes.includes("4") || newReports[i].incidentTypes.includes("5") || newReports[i].animalConditions.length > 0) { %>
-											<div class="secondary-content"><span class="new badge red" data-badge-caption="">High</span></div>
-										<% } %>
-									</li>
-								<% } %>
-							</ul>
+											<% if (newReports[i].incidentTypes.includes("4") || newReports[i].incidentTypes.includes("5") || newReports[i].animalConditions.length > 0) { %>
+												<div class="secondary-content"><span class="new badge red" data-badge-caption="">High</span></div>
+											<% } %>
+										</li>
+									<% } %>
+								</ul>
+							<% } else { %>
+								<br><center>There are currently no new reports!</center><br>
+							<% } %>
 						</div>
 					
-						<div id="in-progress" class="col s12 z-depth-1">
-							<ul class="collection sortable">
-								<li class="collection-item avatar">
-									<i class="material-icons circle">add</i>
-									<span class="title"><b>101 Harris St</b></span>
-									<p>Animal Noise<br>
-									4 Days Ago
-									</p>
-									<a href="#!" class="secondary-content"><i class="material-icons">more_vert</i></a>
-								</li>
-								<li class="collection-item avatar">
-									<i class="material-icons circle">add</i>
-									<span class="title"><b>15 Roselawn Ter</b></span>
-									<p>Animal Noise<br>
-									4 Days Ago
-									</p>
-									<a href="#!" class="secondary-content"><i class="material-icons">more_vert</i></a>
-								</li>
-							</ul>
+						<!-- In progress reports -->
+						<div id="in-progress" class="col z-depth-1 s12">
+							<% if (inProgressReports) { %>
+								<ul class="collection">
+									<% for (var i=0; i < inProgressReports.length; i++) { %>
+										<li class="collection-item avatar">
+											<i class="material-icons circle">add</i>
+											<span class="title"><b><u><%= inProgressReports[i].address %></u></b></span>
+											<p>
+												<% if (inProgressReports[i].incidentTypes.includes("1")) { %>
+													Animal with inadequate shelter <br>
+												<% } %>
+												<% if (inProgressReports[i].incidentTypes.includes("2")) { %>
+													Animal living in improper conditions <br>
+												<% } %>
+												<% if (inProgressReports[i].incidentTypes.includes("3")) { %>
+													Animal tethered outside in improper conditions <br>
+												<% } %>
+												<% if (inProgressReports[i].incidentTypes.includes("4")) { %>
+													Physical violence against animal <br>
+												<% } %>
+												<% if (inProgressReports[i].incidentTypes.includes("5")) { %>
+													Neglect of animal's illness or injuries <br>
+												<% } %>
+
+												Received <%= inProgressReports[i].received %>
+												<br>
+												Last visited <%= inProgressReports[i].markedAsInProgress %>
+											</p>
+
+											<% if (inProgressReports[i].incidentTypes.includes("4") || inProgressReports[i].incidentTypes.includes("5") || inProgressReports[i].animalConditions.length > 0) { %>
+												<div class="secondary-content"><span class="new badge red" data-badge-caption="">High</span></div>
+											<% } %>
+										</li>
+									<% } %>
+								</ul>
+							<% } else { %>
+								<br><center>There are currently no in progress reports!</center><br>
+							<% } %>
 						</div>
 				</div>
 

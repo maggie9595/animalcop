@@ -1,9 +1,7 @@
 var mongoClient = require('mongodb').MongoClient;
 
-/*
- * This connection_string is for mongodb running locally.
- */
-var connection_string = 'mongodb://localhost:27017/animalcop';
+// database running on mLab
+var connection_string = 'mongodb://admin:admin@ds131878.mlab.com:31878/animalcop'
 
 // Global variable of the connected database
 var mongoDB; 
