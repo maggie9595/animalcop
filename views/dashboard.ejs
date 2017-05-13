@@ -51,16 +51,39 @@
 					</div>
 				</div>
 
+				<%= reports.length %>
+
 				<div class="row margin-top-30">
 					<div class="col s12">
 						<ul class="tabs z-depth-1 indigo lighten-1">
-							<li class="tab col s3"><a class="active" href="#itinerary">Itinerary</a></li>
-							<li class="tab col s3"><a href="#backlog">Backlog</a></li>
+							<li class="tab col s3"><a class="active">Itinerary</a></li>
+						</ul>
+						<div class="col s12 z-depth-1">
+							<ul class="collection sortable">
+								<li class="collection-item avatar">
+									<i class="material-icons circle">clear</i>
+									<span class="title"><b>456 Beeler St</b></span>
+									<p>Animal Left Outside<br>
+									Today
+									</p>
+									<a href="#!" class="secondary-content"><span class="new badge red" data-badge-caption="">High</span><i class="material-icons">more_vert</i></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="row margin-top-30">
+					<div class="col s12">
+						<ul class="tabs z-depth-1 indigo lighten-1">
+							<li class="tab col s3"><a class="active" href="#new">New</a></li>
+							<li class="tab col s3"><a href="#in-progress">In Progress</a></li>
 						</ul>
 					</div>
 
-					<div id="itinerary" class="col s12 margin-top-10">
+					<div id="new" class="col s12 margin-top-10">
 						<ul class="collection sortable">
+
 							<li class="collection-item avatar">
 								<i class="material-icons circle">clear</i>
 								<span class="title"><b>456 Beeler St</b></span>
@@ -96,7 +119,7 @@
 						</ul>
 					</div>
 					
-					<div id="backlog" class="col s12 margin-top-10">
+					<div id="in-progress" class="col s12 margin-top-10">
 						<ul class="collection sortable">
 							<li class="collection-item avatar">
 								<i class="material-icons circle">add</i>

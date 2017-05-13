@@ -15,12 +15,6 @@ exports.init = function(app) {
   app.get('/archive', archive); // Humane officer archived cases page
   app.get('/report', getReport); // Humane officer report notes for each case
   app.get('/account', account); // Humane officer account page
-
-  // The collection parameter maps directly to the mongoDB collection
-  app.put('/:collection', doCreate); // CRUD Create
-  app.get('/:collection', doRetrieve); // CRUD Retrieve
-  app.post('/:collection', doUpdate); // CRUD Update
-  // The CRUD Delete path is left for you to define
 }
 
   // No path:  display instructions for use
@@ -69,7 +63,18 @@ exports.init = function(app) {
 
   // Display humane officer dashboard
   dashboard = function(req, res) {
-    res.render('dashboard');
+    // Get all reports from database
+    mongoModel.retrieve(
+      "reports", 
+      req.query,
+      function(modelData) {
+        if (modelData.length) {
+          res.render('dashboard',{reports: modelData});
+        } else {
+          console.log("No reports in database");
+          res.end();
+        }
+      });
   };
 
   // Display humane officer archived cases page
@@ -87,52 +92,6 @@ exports.init = function(app) {
     res.render('account');
   };
 
-/********** CRUD Create *******************************************************
- * Take the object defined in the request body and do the Create
- * operation in mongoModel.  (Note: The mongoModel method was called "insert"
- * when we discussed this in class but I changed it to "create" to be
- * consistent with CRUD operations.)
- */ 
-doCreate = function(req, res){
-  /*
-   * A series of console.log messages are produced in order to demonstrate
-   * the order in which the code is executed.  Given that asynchronous 
-   * operations are involved, the order will *not* be sequential as implied
-   * by the preceding numbers.  These numbers are only shorthand to quickly
-   * identify the individual messages.
-   */
-  console.log("1. Starting doCreate in dbRoutes");
-  /*
-   * First check if req.body has something to create.
-   * Object.keys(req.body).length is a quick way to count the number of
-   * properties in the req.body object.
-   */
-  if (Object.keys(req.body).length == 0) {
-    res.render('message', {title: 'Mongo Demo', obj: "No create message body found"});
-    return;
-  }
-  /*
-   * Call the model Create with:
-   *  - The collection to do the Create into
-   *  - The object to add to the model, received as the body of the request
-   *  - An anonymous callback function to be called by the model once the
-   *    create has been successful.  The insertion of the object into the 
-   *    database is asynchronous, so the model will not be able to "return"
-   *    (as in a function return) confirmation that the create was successful.
-   *    Consequently, so that this controller can be alerted with the create
-   *    is successful, a callback function is provided for the model to 
-   *    call in the future whenever the create has completed.
-   */
-  mongoModel.create ( req.params.collection, 
-	                    req.body,
-		                  function(result) {
-		                    // result equal to true means create was successful
-  		                  var success = (result ? "Create successful" : "Create unsuccessful");
-	  	                  res.render('message', {title: 'Mongo Demo', obj: success});
-     		                console.log("2. Done with callback in dbRoutes create");
-		                  });
-  console.log("3. Done with doCreate in dbRoutes");
-}
 
 /********** CRUD Retrieve (or Read) *******************************************
  * Take the object defined in the query string and do the Retrieve
