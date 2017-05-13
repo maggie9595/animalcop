@@ -7,7 +7,8 @@ exports.init = function(app) {
   app.get('/form-1', form1); // Form page 1
   app.post('/form-1', form1Post); // Form page 1 post info
   app.get('/form-2', form2); // Form page 2
-  app.get('/confirmation', submitForm); // Form submitted confirmation
+  app.post('/form-2', submitForm); // Submit form
+  app.get('/confirmation', confirmation); // Form submitted confirmation
   app.get('/null-report', nullReport); // Null report when the incident is none of the above
 
   app.get('/dashboard', dashboard); // Humane officer dashboard
@@ -46,6 +47,7 @@ exports.init = function(app) {
 
   // Submit form and display form submitted confirmation page
   submitForm = function(req, res) {
+    console.log(req.body);
     mongoModel.create ("reports", 
                       req.body,
                       function(result) {
@@ -54,6 +56,11 @@ exports.init = function(app) {
                         console.log(success);
                         res.render('confirmation');
                       });
+  };
+
+  // Display confirmation page
+  confirmation = function(req, res) {
+    res.render('confirmation');
   };
 
   // Display null report page

@@ -2,7 +2,8 @@ $(document).ready(function() {
   // Initialize the datepicker
   $('.datepicker').pickadate({
     selectMonths: true, 
-    selectYears: 5
+    selectYears: 5,
+    format: 'mmmm d, yyyy',
   });
 
   // Initialize dropdowns
@@ -62,8 +63,13 @@ $(document).ready(function() {
     }
 
     // Submit the form only if all required fields have been answered/it is valid
-    if(validForm) {
-      window.location = "/confirmation";
+    if(true) {
+      $.post("/form-2", 
+        { 
+          address: $("#pac-input").val() 
+        }).done(function( data ) {
+          window.location = "/confirmation";
+      });
     } else {
       window.scrollTo(0, 0);
       $("#error-text").removeClass("hidden");
@@ -225,7 +231,7 @@ function redirectForm() {
     $("#incident-error").removeClass("hidden");
     window.scrollTo(0, 0);
   } else {
-    // Make the ajax call to form page 2 with data from page 1
+    // Save form 1 information and send to form page 2
     $.post("/form-1", { data: incidentTypes })
       .done(function( data ) {
         window.location = "/form-2";

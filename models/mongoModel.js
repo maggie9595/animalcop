@@ -87,7 +87,7 @@ exports.update = function(collection, filter, update, callback) {
 // Helper to save incident types from form page 1
 exports.saveInfo = function(data) {
   incidentTypes = data;
-  console.log(incidentTypes);
+  console.log("incident types: " + incidentTypes);
 }
 
 
