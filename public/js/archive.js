@@ -3,7 +3,11 @@ $(document).ready(function() {
 	$('select').material_select();
 
 	// Initialize collapse button
-  $(".button-collapse").sideNav();
+	$(".button-collapse").sideNav();
+
+	$("#owner_name").val("Jane Smith");
+	$("#owner_number").val("412-123-4567");
+	$("#owner_email").val("janesmith@gmail.com");
 });
 
 function addToItinerary(id) {
@@ -17,7 +21,7 @@ function addAnimal(id) {
  	$("#animal-details").append(animalDetails);
 }
 
-function addAnimal(id) {
+function addNote(id) {
  	$("#notes").append(note);
 }
 

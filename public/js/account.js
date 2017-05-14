@@ -9,12 +9,12 @@ $(document).ready(function() {
 	$('select').material_select();
 
 	// Initialize collapse button
-  $(".button-collapse").sideNav();
+	$(".button-collapse").sideNav();
 
-  // Initialize jQuery Sortable
-  $(".sortable").sortable();
-  $(".sortable").disableSelection();
-	
-  $("#email").val("janedoe@arl.org");
-  $("#phone").val("412-123-4567");
+	// Initialize jQuery Sortable
+	$(".sortable").sortable();
+	$(".sortable").disableSelection();
+
+	$("#email").val("janedoe@arl.org");
+	$("#phone").val("412-123-4567");
 });
