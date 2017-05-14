@@ -125,26 +125,28 @@
 									<% for (var i=0; i < newReports.length; i++) { %>
 										<li class="collection-item avatar">
 											<a href="javascript:addToItinerary('<%-newReports[i]._id%>');"><i class="material-icons circle btn-floating waves-light waves-effect">add</i></a>
-											<span class="title"><b><u><%= newReports[i].address.split(',')[0] %></u></b></span>
-											<p>
-												<% if (newReports[i].incidentTypes.includes("1")) { %>
-													Animal with inadequate shelter <br>
-												<% } %>
-												<% if (newReports[i].incidentTypes.includes("2")) { %>
-													Animal living in improper conditions <br>
-												<% } %>
-												<% if (newReports[i].incidentTypes.includes("3")) { %>
-													Animal tethered outside in improper conditions <br>
-												<% } %>
-												<% if (newReports[i].incidentTypes.includes("4")) { %>
-													Physical violence against animal <br>
-												<% } %>
-												<% if (newReports[i].incidentTypes.includes("5")) { %>
-													Neglect of animal's illness or injuries <br>
-												<% } %>
+											<a href="/report/<%-newReports[i]._id%>">
+												<span class="title"><b><u><%= newReports[i].address.split(',')[0] %></u></b></span>
+												<p>
+													<% if (newReports[i].incidentTypes.includes("1")) { %>
+														Animal with inadequate shelter <br>
+													<% } %>
+													<% if (newReports[i].incidentTypes.includes("2")) { %>
+														Animal living in improper conditions <br>
+													<% } %>
+													<% if (newReports[i].incidentTypes.includes("3")) { %>
+														Animal tethered outside in improper conditions <br>
+													<% } %>
+													<% if (newReports[i].incidentTypes.includes("4")) { %>
+														Physical violence against animal <br>
+													<% } %>
+													<% if (newReports[i].incidentTypes.includes("5")) { %>
+														Neglect of animal's illness or injuries <br>
+													<% } %>
 
-												Received on <%= newReports[i].received %>
-											</p>
+													Received on <%= newReports[i].received %>
+												</p>
+											</a>
 
 											<% if (newReports[i].incidentTypes.includes("4") || newReports[i].incidentTypes.includes("5") || newReports[i].animalConditions.length > 0) { %>
 												<div class="secondary-content"><span class="new badge red" data-badge-caption="">High</span></div>
@@ -164,28 +166,30 @@
 									<% for (var i=0; i < inProgressReports.length; i++) { %>
 										<li class="collection-item avatar">
 											<a href="javascript:addToItinerary('<%-inProgressReports[i]._id%>');"><i class="material-icons circle btn-floating waves-light waves-effect">add</i></a>
-											<span class="title"><b><u><%= inProgressReports[i].address.split(',')[0] %></u></b></span>
-											<p>
-												<% if (inProgressReports[i].incidentTypes.includes("1")) { %>
-													Animal with inadequate shelter <br>
-												<% } %>
-												<% if (inProgressReports[i].incidentTypes.includes("2")) { %>
-													Animal living in improper conditions <br>
-												<% } %>
-												<% if (inProgressReports[i].incidentTypes.includes("3")) { %>
-													Animal tethered outside in improper conditions <br>
-												<% } %>
-												<% if (inProgressReports[i].incidentTypes.includes("4")) { %>
-													Physical violence against animal <br>
-												<% } %>
-												<% if (inProgressReports[i].incidentTypes.includes("5")) { %>
-													Neglect of animal's illness or injuries <br>
-												<% } %>
+											<a href="/report/<%-inProgressReports[i]._id%>">
+												<span class="title"><b><u><%= inProgressReports[i].address.split(',')[0] %></u></b></span>
+												<p>
+													<% if (inProgressReports[i].incidentTypes.includes("1")) { %>
+														Animal with inadequate shelter <br>
+													<% } %>
+													<% if (inProgressReports[i].incidentTypes.includes("2")) { %>
+														Animal living in improper conditions <br>
+													<% } %>
+													<% if (inProgressReports[i].incidentTypes.includes("3")) { %>
+														Animal tethered outside in improper conditions <br>
+													<% } %>
+													<% if (inProgressReports[i].incidentTypes.includes("4")) { %>
+														Physical violence against animal <br>
+													<% } %>
+													<% if (inProgressReports[i].incidentTypes.includes("5")) { %>
+														Neglect of animal's illness or injuries <br>
+													<% } %>
 
-												Received on <%= inProgressReports[i].received %>
-												<br>
-												Last visited on <%= inProgressReports[i].dateUpdated %>
-											</p>
+													Received on <%= inProgressReports[i].received %>
+													<br>
+													Last visited on <%= inProgressReports[i].dateUpdated %>
+												</p>
+											</a>
 
 											<% if (inProgressReports[i].incidentTypes.includes("4") || inProgressReports[i].incidentTypes.includes("5") || inProgressReports[i].animalConditions.length > 0) { %>
 												<div class="secondary-content"><span class="new badge red" data-badge-caption="">High</span></div>
