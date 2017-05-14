@@ -45,8 +45,8 @@
 					</div>
 
 					<div class="row margin-top-5 right" style="margin-bottom: 0px;">
-						<div class="col s12">
-							<select>
+						<div class="col s12" id="sort-by">
+							<select id="sort-by-select">
 								<option value="" disabled selected>Sort by</option>
 								<option value="1">Date</option>
 								<option value="2">Urgency</option>
@@ -59,36 +59,34 @@
 					<div id="archive" class="col s12">
 						<% if (archivedReports) { %>
 							<ul class="collection">
-								<% for (var i=0; i < itinerary.length; i++) { %>
+								<% for (var i=0; i < archivedReports.length; i++) { %>
 									<li class="collection-item avatar">
-										<a href="javascript:removeFromItinerary('<%-itinerary[i]._id%>');"><i class="material-icons circle btn-floating waves-light waves-effect">clear</i></a>
-										<a href="/report/<%-itinerary[i]._id%>">
-											<span class="title"><b><u><%= itinerary[i].address.split(',')[0] %></u></b></span>
+										<a href="javascript:addToItinerary('<%-archivedReports[i]._id%>');"><i class="material-icons circle btn-floating waves-light waves-effect">add</i></a>
+										<a href="/report/<%-archivedReports[i]._id%>">
+											<span class="title"><b><u><%= archivedReports[i].address.split(',')[0] %></u></b></span>
 											<p>
-												<% if (itinerary[i].incidentTypes.includes("1")) { %>
+												<% if (archivedReports[i].incidentTypes.includes("1")) { %>
 													Animal with inadequate shelter <br>
 												<% } %>
-												<% if (itinerary[i].incidentTypes.includes("2")) { %>
+												<% if (archivedReports[i].incidentTypes.includes("2")) { %>
 													Animal living in improper conditions <br>
 												<% } %>
-												<% if (itinerary[i].incidentTypes.includes("3")) { %>
+												<% if (archivedReports[i].incidentTypes.includes("3")) { %>
 													Animal tethered outside in improper conditions <br>
 												<% } %>
-												<% if (itinerary[i].incidentTypes.includes("4")) { %>
+												<% if (archivedReports[i].incidentTypes.includes("4")) { %>
 													Physical violence against animal <br>
 												<% } %>
-												<% if (itinerary[i].incidentTypes.includes("5")) { %>
+												<% if (archivedReports[i].incidentTypes.includes("5")) { %>
 													Neglect of animal's illness or injuries <br>
 												<% } %>
 
-												Received on <%= itinerary[i].received %>
+												Received on <%= archivedReports[i].received %>
 											</p>
 										</a>
 
-										<% if (itinerary[i].incidentTypes.includes("4") || itinerary[i].incidentTypes.includes("5") || itinerary[i].animalConditions.length > 0) { %>
-											<div class="secondary-content"><span class="new badge red" data-badge-caption="">High</span><i class="material-icons">sort</i></div>
-										<% } else { %>
-											<div class="secondary-content"><i class="material-icons">sort</i></div>
+										<% if (archivedReports[i].incidentTypes.includes("4") || archivedReports[i].incidentTypes.includes("5") || archivedReports[i].animalConditions.length > 0) { %>
+											<div class="secondary-content"><span class="new badge red" data-badge-caption="">High</span></div>
 										<% } %>
 									</li>
 								<% } %>

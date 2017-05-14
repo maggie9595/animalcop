@@ -8,6 +8,14 @@ $(document).ready(function() {
 	$("#owner_name").val("Jane Smith");
 	$("#owner_number").val("412-123-4567");
 	$("#owner_email").val("janesmith@gmail.com");
+
+	$("#sort-by-select").change(function() {
+		if ($("#sort-by").find("option:selected").val() == "1") {
+			window.location = "/archiveByDate";
+		} else if ($("#sort-by").find("option:selected").val() == "2") {
+			window.location = "/archiveByUrgency";
+		}
+	});
 });
 
 function addToItinerary(id) {

@@ -19,6 +19,8 @@ exports.init = function(app) {
 
   app.get('/dashboard', dashboard); // Humane officer dashboard
   app.get('/archive', archive); // Humane officer archived cases page
+  app.get('/archiveByUrgency', archiveByUrgency); // Humane officer archived cases page
+  app.get('/archiveByDate', archiveByDate); // Humane officer archived cases page
   app.get('/report/:id', getReport); // Humane officer report notes for each case
   app.get('/account', account); // Humane officer account page
   app.post('/addToItinerary', addToItinerary); // Add a case to the itinerary
@@ -115,6 +117,37 @@ exports.init = function(app) {
 
   // Display humane officer archived cases page
   archive = function(req, res) {
+    mongoModel.retrieve(
+      "reports", 
+      {"status": "completed"},
+      function(modelData) {
+        if (modelData.length) {
+          res.render('archive', {archivedReports: modelData});
+        } else {
+          console.log("There are no reports in the archive");
+          res.render('archive', {archivedReports: ""});
+        }
+      });
+  };
+
+  // Display humane officer archived cases page sorted by descending date
+  archiveByDate = function(req, res) {
+    mongoModel.retrieve(
+      "reports", 
+      {"status": "completed"},
+      function(modelData) {
+        if (modelData.length) {
+          modelData.sort(function(a,b){return b.received > a.received});
+          res.render('archive', {archivedReports: modelData});
+        } else {
+          console.log("There are no reports in the archive");
+          res.render('archive', {archivedReports: ""});
+        }
+      });
+  };
+
+  // Display humane officer archived cases page
+  archiveByUrgency = function(req, res) {
     mongoModel.retrieve(
       "reports", 
       {"status": "completed"},
