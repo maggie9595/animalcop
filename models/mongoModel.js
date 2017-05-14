@@ -93,10 +93,6 @@ exports.update = function(collection, filter, update, callback) {
         });
 }
 
-/********** CRUD Delete -> Mongo deleteOne or deleteMany **********************
- * The delete model is left as an exercise for you to define.
- */
-
 // Helper to save incident types from form page 1
 exports.saveInfo = function(data) {
   incidentTypes = data;

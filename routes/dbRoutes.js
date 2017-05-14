@@ -125,7 +125,8 @@ exports.init = function(app) {
       {"_id": ObjectId(req.params.id)},
       function(modelData) {
         if (modelData.length) {
-          res.render('report', {report: modelData});
+          console.log(modelData);
+          res.render('report', {currentReport: modelData});
         } else {
           console.log("Report not found");
         }

@@ -133,106 +133,64 @@
 
         <h5>Report Notes</h5>
         <div id="notes" class="col s12">
-            <div class="row">
+            <div class="row card-panel">
                 <div class="col s6">
                     <h5> Owner Information</h5>
+
+                    <div class="row">
+                            <div class="input-field col s12">
+                                <div class="bold-label">Owner Name</div>
+                                <input placeholder="Owner Name" id="owner_name" type="text">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <div class="bold-label">Owner Number </div>
+                                <input placeholder="xxx-xxx-xxxx" id="callback_number" type="text">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <div class="bold-label">Owner Email</div>
+                                <input placeholder="name@domain.com" id="email" type="text">
+                            </div>
+                        </div>
                 </div>
             </div>
-   
-            <div class="col s12">
-						<div class="row">
-							<div class="input-field col s12">
-								<div class="bold-label">Owner Name</div>
-								<input placeholder="Owner Name" id="owner_name" type="text">
-							</div>
-						</div>
-						<div class="row">
-							<div class="input-field col s12">
-								<div class="bold-label">Owner Number </div>
-								<input placeholder="xxx-xxx-xxxx" id="callback_number" type="text">
-							</div>
-						</div>
-						<div class="row">
-							<div class="input-field col s12">
-								<div class="bold-label">Owner Email</div>
-								<input placeholder="name@domain.com" id="email" type="text">
-							</div>
-						</div>
-                        <div class="row">
-                                   <!--I don't know how to add the dates, would be a javascript thing -->
-							<div class="col s12">
-                            <div class="bold-label">Notes</div>
-                            </div>
-                        </div>	
-                        <div class="row">
-                                <div class="input-field col s12">
-								<textarea id="textarea1" class="materialize-textarea"></textarea>
-                                <label for="textarea1"> Today's Date</label>
-							</div>
-						</div>
-                <div class="row">
-                <div class="col s3">
-                    <i class="material-icons">note_add</i>
-                    <div class="bold-label">Add Note</div>
+                    
+                <div class="row margin-top-20">
+                    <div class="col s3">
+                        <div class="bold-label">Add Note</div>
+                        <a href="javascript:addNote();" class="btn-floating btn-large waves-effect waves-light indigo"><i class="material-icons right">note_add</i></a>
+                    </div>
                 </div>
+
+                <div id="notes">
                 </div>
-                        
-                <div class="row">
-                <div class="col s6">
-                    <h5> Animal Details</h5>
+
+                <div class="row margin-top-20">
+                    <div class="col s3">
+                        <div class="bold-label">Add Animal</div>
+                        <a href="javascript:addAnimal();" class="btn-floating btn-large waves-effect waves-light indigo"><i class="material-icons right">add_circle_outline</i></a>
+                    </div>
                 </div>
-                
-                </div>
-                    <div class="row card-panel blue-grey lighten-5">
-                        <div class="input-field col s12">
-                            <div class="bold-label">Animal Name</div>
-                            <input placeholder="Name of Animal" id="email" type="text">
-                        </div>
-                        <div class="input-field col s12">
-								<div class="bold-label">Type of Animal</div>
-								<select>
-									<option value="" disabled selected>Choose</option>
-									<option value="1">Dog</option>
-									<option value="2">Cat</option>
-									<option value="3">Bird</option>
-									<option value="4">Chicken</option>
-									<option value="5">Small mammal (rodent,rabbit,etc)</option>
-									<option value="6">Farm Animal (horse, pig, etc)</option>
-								</select>
-				        </div>
-                        <div class="input-field col s12">
-                            <div class="bold-label">Animal Description</div>
-                            <input placeholder="Describe the animal in detail" id="email" type="text">
-                        </div>
-                        <div class="row">
-                            <div class="col s3">
-                                <div class="bold-label">Add Photos</div>
-                                <a class="btn-floating btn-large waves-light"><i class="material-icons">add_a_photo</i></a>
-                            </div>
-                        </div>
-                </div>
-                <div class="row">
-                <div class="col s3">
-                    <div class="bold-label">Add Animal</div>
-                    <a class="btn-floating btn-large waves-effect waves-light blue"><i class="material-icons right">add_circle_outline</i></a>
-                </div>
+
+                <div id="animal-details">
                 </div>
                 
             </div>
         </div>
 
-        <br>
-        <br>
-
-        <% if (report.itinerary == false) { %>
-        <div class="row">
-            <a class="indigo btn waves-effect waves-light" type="submit" name="action" href="javascript:addToItinerary('<%-report._id%>');">Add Case to Itinerary
+        <div class="row center margin-top-30">
+            <a class="indigo btn waves-effect waves-light" type="submit" name="action" href="javascript:addToItinerary('<%-currentReport._id%>');">Add Case to Itinerary
                 <i class="material-icons right">add</i>
             </a>
         </div>
-        <% } %>
+        <div class="row margin-top-20 center">
+            <button class="wide-button indigo btn waves-effect waves-light margin-left-10" name="action" id="start-trip-button">Save
+            </button>
+        </div>
 
-		<br>
 		<br>
 		<br>
 
