@@ -1,6 +1,8 @@
 // include my model for this application
 var mongoModel = require("../models/mongoModel.js")
 
+var ObjectId = require('mongodb').ObjectId; 
+
 var newReports = "";
 var inProgressReports = "";
 var itinerary = "";
@@ -19,6 +21,8 @@ exports.init = function(app) {
   app.get('/archive', archive); // Humane officer archived cases page
   app.get('/report', getReport); // Humane officer report notes for each case
   app.get('/account', account); // Humane officer account page
+  app.post('/addToItinerary', addToItinerary); // Add a case to the itinerary
+  app.post('/removeFromItinerary', removeFromItinerary); // Remove a case from the itinerary
 }
 
   // No path:  display instructions for use
@@ -70,11 +74,12 @@ exports.init = function(app) {
     // Get all new reports from database
     mongoModel.retrieve(
       "reports", 
-      {"status": "new"},
+      {"status": "new", "itinerary": false},
       function(modelData) {
         if (modelData.length) {
           newReports = modelData;
         } else {
+          newReports = "";
           console.log("No new reports in database");
         }
       });
@@ -82,11 +87,12 @@ exports.init = function(app) {
     // Get all in progress reports from database
     mongoModel.retrieve(
       "reports", 
-      {"status": "inProgress"},
+      {"status": "inProgress", "itinerary": false},
       function(modelData) {
         if (modelData.length) {
           inProgressReports = modelData;
         } else {
+          inProgressReports = "";
           console.log("No in progress reports in database");
         }
       });
@@ -99,6 +105,7 @@ exports.init = function(app) {
         if (modelData.length) {
           itinerary = modelData;
         } else {
+          itinerary = "";
           console.log("No reports in itinerary");
         }
       });
@@ -120,6 +127,22 @@ exports.init = function(app) {
   account = function(req, res) {
     res.render('account');
   };
+
+  // Add a case to itinerary
+  addToItinerary = function(req, res) {
+    mongoModel.update("reports", {"_id": ObjectId(req.body.data)}, {$set: {"itinerary": true}},
+      function(status) {
+        res.end();
+      });
+  }
+
+  // Remove a case from the itinerary
+  removeFromItinerary = function(req, res) {
+    mongoModel.update("reports", {"_id": ObjectId(req.body.data)}, {$set: {"itinerary": false}},
+      function(status) {
+        res.end();
+      });
+  }
 
 
 /********** CRUD Retrieve (or Read) *******************************************

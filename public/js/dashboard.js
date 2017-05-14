@@ -14,8 +14,22 @@ $(document).ready(function() {
   // Initialize jQuery Sortable
   $(".sortable").sortable();
   $(".sortable").disableSelection();
-	
 });
+
+function addToItinerary(id) {
+  $.post("/addToItinerary", { data: id })
+      .done(function( data ) {
+        // window.location = "/dashboard";
+        location.reload();
+    });
+}
+
+function removeFromItinerary(id) {
+  $.post("/removeFromItinerary", { data: id })
+      .done(function( data ) {
+        location.reload();
+    });
+}
 
 // Google Maps
 function initMap() {

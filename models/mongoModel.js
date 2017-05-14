@@ -81,10 +81,10 @@ exports.retrieve = function(collection, query, callback) {
 exports.update = function(collection, filter, update, callback) {
   mongoDB
     .collection(collection)     // The collection to update
-    .updateMany(                // Use updateOne to only update 1 document
+    .updateOne(                // Use updateOne to only update 1 document
       filter,                   // Filter selects which documents to update
       update,                   // The update operation
-      {upsert:true},            // If document not found, insert one with this update
+      {upsert:false},            // If document not found, insert one with this update
                                 // Set upsert false (default) to not do insert
       function(err, status) {   // Callback upon error or success
         if (err) doError(err);
