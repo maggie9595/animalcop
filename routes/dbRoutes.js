@@ -19,7 +19,7 @@ exports.init = function(app) {
 
   app.get('/dashboard', dashboard); // Humane officer dashboard
   app.get('/archive', archive); // Humane officer archived cases page
-  app.get('/report', getReport); // Humane officer report notes for each case
+  app.get('/report/:id', getReport); // Humane officer report notes for each case
   app.get('/account', account); // Humane officer account page
   app.post('/addToItinerary', addToItinerary); // Add a case to the itinerary
   app.post('/removeFromItinerary', removeFromItinerary); // Remove a case from the itinerary
@@ -120,7 +120,16 @@ exports.init = function(app) {
 
   // Display report notes page for each individual report
   getReport = function(req, res) {
-    res.render('report');
+    mongoModel.retrieve(
+      "reports", 
+      {"_id": ObjectId(req.params.id)},
+      function(modelData) {
+        if (modelData.length) {
+          res.render('report', {report: modelData});
+        } else {
+          console.log("Report not found");
+        }
+      });
   };
 
   // Display humane officer account page

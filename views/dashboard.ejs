@@ -61,33 +61,34 @@
 									<% for (var i=0; i < itinerary.length; i++) { %>
 										<li class="collection-item avatar">
 											<a href="javascript:removeFromItinerary('<%-itinerary[i]._id%>');"><i class="material-icons circle btn-floating waves-light waves-effect">clear</i></a>
-											<span class="title"><b><u><%= itinerary[i].address.split(',')[0] %></u></b></span>
-											<p>
-												<% if (itinerary[i].incidentTypes.includes("1")) { %>
-													Animal with inadequate shelter <br>
-												<% } %>
-												<% if (itinerary[i].incidentTypes.includes("2")) { %>
-													Animal living in improper conditions <br>
-												<% } %>
-												<% if (itinerary[i].incidentTypes.includes("3")) { %>
-													Animal tethered outside in improper conditions <br>
-												<% } %>
-												<% if (itinerary[i].incidentTypes.includes("4")) { %>
-													Physical violence against animal <br>
-												<% } %>
-												<% if (itinerary[i].incidentTypes.includes("5")) { %>
-													Neglect of animal's illness or injuries <br>
-												<% } %>
+											<a href="/report/<%-itinerary[i]._id%>">
+												<span class="title"><b><u><%= itinerary[i].address.split(',')[0] %></u></b></span>
+												<p>
+													<% if (itinerary[i].incidentTypes.includes("1")) { %>
+														Animal with inadequate shelter <br>
+													<% } %>
+													<% if (itinerary[i].incidentTypes.includes("2")) { %>
+														Animal living in improper conditions <br>
+													<% } %>
+													<% if (itinerary[i].incidentTypes.includes("3")) { %>
+														Animal tethered outside in improper conditions <br>
+													<% } %>
+													<% if (itinerary[i].incidentTypes.includes("4")) { %>
+														Physical violence against animal <br>
+													<% } %>
+													<% if (itinerary[i].incidentTypes.includes("5")) { %>
+														Neglect of animal's illness or injuries <br>
+													<% } %>
 
-												Received on <%= itinerary[i].received %>
-											</p>
+													Received on <%= itinerary[i].received %>
+												</p>
+											</a>
 
 											<% if (itinerary[i].incidentTypes.includes("4") || itinerary[i].incidentTypes.includes("5") || itinerary[i].animalConditions.length > 0) { %>
 												<div class="secondary-content"><span class="new badge red" data-badge-caption="">High</span><i class="material-icons">sort</i></div>
 											<% } else { %>
 												<div class="secondary-content"><i class="material-icons">sort</i></div>
 											<% } %>
-											
 										</li>
 									<% } %>
 								</ul>
