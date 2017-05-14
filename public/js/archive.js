@@ -10,7 +10,9 @@ $(document).ready(function() {
 	$("#owner_email").val("janesmith@gmail.com");
 
 	$("#sort-by-select").change(function() {
-		if ($("#sort-by").find("option:selected").val() == "1") {
+		if ($("#sort-by").find("option:selected").val() == "0") {
+			window.location = "/archive";
+		} else if ($("#sort-by").find("option:selected").val() == "1") {
 			window.location = "/archiveByDate";
 		} else if ($("#sort-by").find("option:selected").val() == "2") {
 			window.location = "/archiveByUrgency";

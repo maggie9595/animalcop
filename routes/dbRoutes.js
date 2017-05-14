@@ -115,7 +115,7 @@ exports.init = function(app) {
     res.render('dashboard', {newReports: newReports, inProgressReports: inProgressReports, itinerary: itinerary});
   };
 
-  // Display humane officer archived cases page
+  // Display humane officer archived cases page by ascending date (default)
   archive = function(req, res) {
     mongoModel.retrieve(
       "reports", 
@@ -146,13 +146,14 @@ exports.init = function(app) {
       });
   };
 
-  // Display humane officer archived cases page
+  // Display humane officer archived cases page by descending urgency
   archiveByUrgency = function(req, res) {
     mongoModel.retrieve(
       "reports", 
       {"status": "completed"},
       function(modelData) {
         if (modelData.length) {
+          modelData.sort(function(a,b){return b.animalConditions.length > a.animalConditions.length});
           res.render('archive', {archivedReports: modelData});
         } else {
           console.log("There are no reports in the archive");
