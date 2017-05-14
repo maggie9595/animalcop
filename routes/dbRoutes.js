@@ -115,7 +115,17 @@ exports.init = function(app) {
 
   // Display humane officer archived cases page
   archive = function(req, res) {
-    res.render('archive');
+    mongoModel.retrieve(
+      "reports", 
+      {"status": "completed"},
+      function(modelData) {
+        if (modelData.length) {
+          res.render('archive', {archivedReports: modelData});
+        } else {
+          console.log("There are no reports in the archive");
+          res.render('archive', {archivedReports: ""});
+        }
+      });
   };
 
   // Display report notes page for each individual report

@@ -35,76 +35,77 @@
 
 		<main>
 			<div class="container">
-				<div class="row margin-top-20">
-					<div class="input-field col s12">
-						<i class="material-icons prefix">search</i>
-						<input id="search-tool" type="text" class="validate">
-						<label for="search-tool">Search in previous cases</label>
+				<% if (archivedReports) { %>
+					<div class="row margin-top-20">
+						<div class="input-field col s12">
+							<i class="material-icons prefix">search</i>
+							<input id="search-tool" type="text" class="validate">
+							<label for="search-tool">Search in previous cases</label>
+						</div>
 					</div>
-				</div>
 
-				<div class="row margin-top-5 right" style="margin-bottom: 0px;">
-					<div class="col s12">
-						<select>
-							<option value="" disabled selected>Sort by</option>
-							<option value="1">Date</option>
-							<option value="2">Urgency</option>
-						</select>
+					<div class="row margin-top-5 right" style="margin-bottom: 0px;">
+						<div class="col s12">
+							<select>
+								<option value="" disabled selected>Sort by</option>
+								<option value="1">Date</option>
+								<option value="2">Urgency</option>
+							</select>
+						</div>
 					</div>
-				</div>
+				<% } %>
 
 				<div class="row">
-					<div id="itinerary" class="col s12">
-						<ul class="collection">
-							<li class="collection-item avatar">
-								<i class="material-icons circle">add</i>
-								<span class="title"><b>456 Beeler St</b></span>
-								<p>Animal Left Outside<br>
-								Today
-								</p>
-								<a href="#!" class="secondary-content"><span class="new badge red" data-badge-caption="">High</span><i class="material-icons">more_vert</i></a>
-							</li>
-							<li class="collection-item avatar">
-								<i class="material-icons circle">add</i>
-								<span class="title"><b>99 Harris St</b></span>
-								<p>Hoarding Case<br>
-								1 Day Ago
-								</p>
-								<a href="#!" class="secondary-content"><span class="new badge red" data-badge-caption="">High</span><i class="material-icons">more_vert</i></a>
-							</li>
-							<li class="collection-item avatar">
-								<i class="material-icons circle">add</i>
-								<span class="title"><b>74 Ellsworth Ave</b></span>
-								<p>Neglect/Abandonment<br>
-								2 Days Ago
-								</p>
-								<a href="#!" class="secondary-content"><span class="new badge orange darken-2" data-badge-caption="">Medium</span><i class="material-icons">more_vert</i></a>
-							</li>
-							<li class="collection-item avatar">
-								<i class="material-icons circle">add</i>
-								<span class="title"><b>342 Wilkins Ave</b></span>
-								<p>Animal Noise<br>
-								5 Days Ago
-								</p>
-								<a href="#!" class="secondary-content"><span class="new badge yellow darken-2" data-badge-caption="">Low</span><i class="material-icons">more_vert</i></a>
-							</li>
-							<li class="collection-item avatar">
-								<i class="material-icons circle">add</i>
-								<span class="title"><b>101 Harris St</b></span>
-								<p>Animal Noise<br>
-								4 Days Ago
-								</p>
-								<a href="#!" class="secondary-content"><span class="new badge yellow darken-2" data-badge-caption="">Low</span><i class="material-icons">more_vert</i></a>
-							</li>
-							<li class="collection-item avatar">
-								<i class="material-icons circle">add</i>
-								<span class="title"><b>15 Roselawn Ter</b></span>
-								<p>Animal Noise<br>
-								4 Days Ago
-								</p>
-								<a href="#!" class="secondary-content"><span class="new badge yellow darken-2" data-badge-caption="">Low</span><i class="material-icons">more_vert</i></a>
-							</li>
-						</ul>
+					<div id="archive" class="col s12">
+						<% if (archivedReports) { %>
+							<ul class="collection">
+								<% for (var i=0; i < itinerary.length; i++) { %>
+									<li class="collection-item avatar">
+										<a href="javascript:removeFromItinerary('<%-itinerary[i]._id%>');"><i class="material-icons circle btn-floating waves-light waves-effect">clear</i></a>
+										<a href="/report/<%-itinerary[i]._id%>">
+											<span class="title"><b><u><%= itinerary[i].address.split(',')[0] %></u></b></span>
+											<p>
+												<% if (itinerary[i].incidentTypes.includes("1")) { %>
+													Animal with inadequate shelter <br>
+												<% } %>
+												<% if (itinerary[i].incidentTypes.includes("2")) { %>
+													Animal living in improper conditions <br>
+												<% } %>
+												<% if (itinerary[i].incidentTypes.includes("3")) { %>
+													Animal tethered outside in improper conditions <br>
+												<% } %>
+												<% if (itinerary[i].incidentTypes.includes("4")) { %>
+													Physical violence against animal <br>
+												<% } %>
+												<% if (itinerary[i].incidentTypes.includes("5")) { %>
+													Neglect of animal's illness or injuries <br>
+												<% } %>
+
+												Received on <%= itinerary[i].received %>
+											</p>
+										</a>
+
+										<% if (itinerary[i].incidentTypes.includes("4") || itinerary[i].incidentTypes.includes("5") || itinerary[i].animalConditions.length > 0) { %>
+											<div class="secondary-content"><span class="new badge red" data-badge-caption="">High</span><i class="material-icons">sort</i></div>
+										<% } else { %>
+											<div class="secondary-content"><i class="material-icons">sort</i></div>
+										<% } %>
+									</li>
+								<% } %>
+							</ul>
+						<% } else { %>
+							<br>
+							<container>
+								<row>
+									<div class="row">
+										<div class="col s12">
+											There are no archived cases.
+										</div>
+									</div>
+								</row>
+							</container>
+							<br>
+						<% } %>
 					</div>
 					
 			</div>
