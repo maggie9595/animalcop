@@ -1,4 +1,13 @@
 $(document).ready(function() {
+  // Refreshing page twice each load 
+  // Hack for itinerary not updating right after database change
+  window.onload = function() {
+    if(!window.location.hash) {
+        window.location = window.location + '#loaded';
+        location.reload();
+    }
+  }
+
 	// Initialize the datepicker
 	$('.datepicker').pickadate({
 		selectMonths: true, 
@@ -19,15 +28,14 @@ $(document).ready(function() {
 function addToItinerary(id) {
   $.post("/addToItinerary", { data: id })
       .done(function( data ) {
-        // window.location = "/dashboard";
-        location.reload();
+        window.location = "/dashboard";
     });
 }
 
 function removeFromItinerary(id) {
   $.post("/removeFromItinerary", { data: id })
       .done(function( data ) {
-        location.reload();
+        window.location = "/dashboard";
     });
 }
 
