@@ -1,3 +1,7 @@
+// Save latitude and longitude to use to submit form later
+var latitude;
+var longitude;
+
 $(document).ready(function() {
   // Initialize the datepicker
   $('.datepicker').pickadate({
@@ -104,6 +108,8 @@ $(document).ready(function() {
       $.post("/form-2", 
         { 
           address: $("#pac-input").val(),
+          latitude: latitude,
+          longitude: longitude,
           date: $("#date").val(),
           time: $("#time").val() + " " + $("#time-of-day").find("option:selected").val(),
           ongoing: $("#ongoing").prop('checked'),
@@ -322,6 +328,10 @@ function initMap() {
 
   // Get new location with reverse geocoding
   function reverseGeocode(event) {
+    // Save variables to use when submitting form
+    latitude = event.latLng.lat();
+    longitude = event.latLng.lng();
+
     var latlng = {lat: event.latLng.lat(), lng: event.latLng.lng()};
     var geocoder = new google.maps.Geocoder;
     geocoder.geocode({'location': latlng}, function(results, status) {
@@ -381,6 +391,11 @@ function initMap() {
       map.setZoom(17);  // Why 17? Because it looks good.
     }
     marker.setPosition(place.geometry.location);
+
+    // Save variables to use when submitting form
+    latitude = place.geometry.location.lat();
+    longitude = place.geometry.location.lng();
+
     marker.setVisible(true);
 
     var address = '';
