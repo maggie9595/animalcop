@@ -219,6 +219,12 @@
 		<!-- Google Maps -->
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAn6V9t-lR5_9IzWjc5FGhBWj67bQQqpkY&callback=initMap"
         async defer></script>
+
+        <!-- Save EJS variable for use with Google Maps API -->
+        <script>
+        	var itinerary = <%- JSON.stringify(itinerary) %>
+        </script>
+
 		<!-- Import custom application javascript -->
 		<script type="text/javascript" src="js/dashboard.js"></script>
 	</body>

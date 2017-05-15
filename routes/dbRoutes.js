@@ -112,6 +112,8 @@ exports.init = function(app) {
         }
       });
 
+    console.log(itinerary);
+    
     res.render('dashboard', {newReports: newReports, inProgressReports: inProgressReports, itinerary: itinerary});
   };
 
