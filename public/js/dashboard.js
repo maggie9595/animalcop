@@ -50,6 +50,7 @@ function initMap() {
     map: map
   });
 
+  // Itinerary on map
   var itineraryLocations = [];
 
   for (var i=0; i < itinerary.length; i++) {
@@ -59,7 +60,8 @@ function initMap() {
   for (var i = 0; i < itineraryLocations.length; i++) {
     marker = new google.maps.Marker({
       position: new google.maps.LatLng(itineraryLocations[i][1], itineraryLocations[i][2]),
-      map: map
+      map: map,
+      icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png'
     });
 
     google.maps.event.addListener(marker, 'click', (function (marker, i) {
@@ -70,6 +72,49 @@ function initMap() {
     })(marker, i));
   }
 
+  // New reports on map
+  var newReportLocations = [];
+
+  for (var i=0; i < newReports.length; i++) {
+    newReportLocations.push(["New report:<br><br>" + newReports[i].address + "<br><br> Received on " + newReports[i].received, newReports[i].latitude, newReports[i].longitude, 0]);
+  }
+
+  for (var i = 0; i < newReportLocations.length; i++) {
+    marker = new google.maps.Marker({
+      position: new google.maps.LatLng(newReportLocations[i][1], newReportLocations[i][2]),
+      map: map, 
+      icon: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+    });
+
+    google.maps.event.addListener(marker, 'click', (function (marker, i) {
+      return function () {
+        infowindow.setContent(newReportLocations[i][0]);
+        infowindow.open(map, marker);
+      }
+    })(marker, i));
+  }
+
+  // In progress reports on map
+  var inProgressReportLocations = [];
+
+  for (var i=0; i < inProgressReports.length; i++) {
+    inProgressReportLocations.push(["Case in progress:<br><br>" + inProgressReports[i].address + "<br><br> Received on " + inProgressReports[i].received + "<br><br> Last visited on " + inProgressReports[i].dateUpdated, inProgressReports[i].latitude, inProgressReports[i].longitude, 0]);
+  }
+
+  for (var i = 0; i < inProgressReportLocations.length; i++) {
+    marker = new google.maps.Marker({
+      position: new google.maps.LatLng(inProgressReportLocations[i][1], inProgressReportLocations[i][2]),
+      map: map, 
+      icon: "http://maps.google.com/mapfiles/ms/icons/green-dot.png",
+    });
+
+    google.maps.event.addListener(marker, 'click', (function (marker, i) {
+      return function () {
+        infowindow.setContent(inProgressReportLocations[i][0]);
+        infowindow.open(map, marker);
+      }
+    })(marker, i));
+  }
   
   var infowindow = new google.maps.InfoWindow();
   var infowindowContent = document.getElementById('infowindow-content');

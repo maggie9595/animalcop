@@ -220,9 +220,11 @@
 		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAn6V9t-lR5_9IzWjc5FGhBWj67bQQqpkY&callback=initMap"
         async defer></script>
 
-        <!-- Save EJS variable for use with Google Maps API -->
+        <!-- Save EJS variables for use with Google Maps API -->
         <script>
         	var itinerary = <%- JSON.stringify(itinerary) %>
+        	var newReports = <%- JSON.stringify(newReports) %>
+        	var inProgressReports = <%- JSON.stringify(inProgressReports) %>
         </script>
 
 		<!-- Import custom application javascript -->
