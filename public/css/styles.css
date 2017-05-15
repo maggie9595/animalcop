@@ -275,7 +275,11 @@ span.badge.new {
 	}
 
 	span.badge.new {
-	    margin-right: 10%;
+	    margin-right: 90%;
+	}
+
+	.report-text {
+		width: 80%;
 	}
 
 	.collection .collection-item.avatar .secondary-content {
@@ -283,3 +287,4 @@ span.badge.new {
 		top: 5px;
 	}
 }
+

@@ -63,7 +63,7 @@
 											<a href="javascript:removeFromItinerary('<%-itinerary[i]._id%>');"><i class="material-icons circle btn-floating waves-light waves-effect">clear</i></a>
 											<a href="/report/<%-itinerary[i]._id%>">
 												<span class="title"><b><u><%= itinerary[i].address.split(',')[0] %></u></b></span>
-												<p>
+												<p class="report-text">
 													<% if (itinerary[i].incidentTypes.includes("1")) { %>
 														Animal with inadequate shelter <br>
 													<% } %>
@@ -127,7 +127,7 @@
 											<a href="javascript:addToItinerary('<%-newReports[i]._id%>');"><i class="material-icons circle btn-floating waves-light waves-effect">add</i></a>
 											<a href="/report/<%-newReports[i]._id%>">
 												<span class="title"><b><u><%= newReports[i].address.split(',')[0] %></u></b></span>
-												<p>
+												<p class="report-text">
 													<% if (newReports[i].incidentTypes.includes("1")) { %>
 														Animal with inadequate shelter <br>
 													<% } %>
@@ -168,7 +168,7 @@
 											<a href="javascript:addToItinerary('<%-inProgressReports[i]._id%>');"><i class="material-icons circle btn-floating waves-light waves-effect">add</i></a>
 											<a href="/report/<%-inProgressReports[i]._id%>">
 												<span class="title"><b><u><%= inProgressReports[i].address.split(',')[0] %></u></b></span>
-												<p>
+												<p class="report-text">
 													<% if (inProgressReports[i].incidentTypes.includes("1")) { %>
 														Animal with inadequate shelter <br>
 													<% } %>
